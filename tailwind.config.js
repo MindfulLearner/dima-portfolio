@@ -12,11 +12,8 @@ module.exports = {
         // SectionTextEditor1 presentazione
         backgroundTextEditor1: '#1f1f1f', // background
         emptybarColor: '#181818', // color of the empty bar
-        // SectionTextEditor2
-        successColor: '#38C172', // color of the success
-        dangerColor: '#E3342F', // color of the danger
-        warningColor: '#FFAA00', // color of the warning
-        infoColor: '#6CB2EB', // color of the info
+        // bottom section
+        bottomSectionColor: '#181818', // color of the bottom section
       },
     },
   },
