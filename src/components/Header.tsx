@@ -25,12 +25,12 @@ function Header() {
       </div>
 
       {/* parte centrale searchbar con controllo per andare a sinistra e a destra */}
-      <div className="flex w-1/3 gap-5 justify-center items-center bg-searchbarColor rounded-md border border-neutralColor">
+      <div className="flex w-1/3 gap-5 justify-center items-center">
         <div className="flex text-white gap-3">
           <FontAwesomeIcon icon={faArrowLeft} />
           <FontAwesomeIcon icon={faArrowRight} />
         </div>
-        <div className="flex gap-3 items-center text-white">
+        <div className="w-[400px] justify-center bg-searchbarColor rounded-md border border-neutralColor flex gap-3 items-center text-white">
           <FontAwesomeIcon icon={faSearch} />
           <p>dima-portfolio [SSH: dima@dima-portfolio]</p>
         </div>
