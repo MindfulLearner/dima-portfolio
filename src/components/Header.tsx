@@ -4,7 +4,7 @@ import { faArrowLeft, faArrowRight, faSearch, faGear, faSignOut, faSignIn } from
 
 function Header() {
   return (
-    <div className="flex justify-between items-center header h-[34px] bg-myVSCodeColor outline outline-1 outline-gray-400">
+    <div className="flex justify-between items-center header h-[34px] bg-myVSCodeColor outline outline-1 outline-borderColor">
       {/* parte sinistra con controllo per aprire il file explorer  con icona e i controlli per aprire i file */}
       <div className="flex w-1/3 gap-5 items-center pl-2">
         <div className="w-[20px] h-[20px]">
@@ -30,7 +30,7 @@ function Header() {
           <FontAwesomeIcon icon={faArrowLeft} />
           <FontAwesomeIcon icon={faArrowRight} />
         </div>
-        <div className="w-[400px] justify-center bg-searchbarColor rounded-md outline outline-1 outline-gray-400 flex gap-3 items-center text-white">
+        <div className="w-[400px] justify-center bg-searchbarColor rounded-md outline outline-1 outline-borderColor flex gap-3 items-center text-white">
           <FontAwesomeIcon icon={faSearch} />
           <p>dima-portfolio [SSH: dima@dima-portfolio]</p>
         </div>

@@ -14,6 +14,14 @@ module.exports = {
         emptybarColor: '#181818', // color of the empty bar
         // bottom section
         bottomSectionColor: '#181818', // color of the bottom section
+        // side panel
+        sidePanelColor: '#181818', // color of the side panel
+        //footer
+        footerColor: '#181818', // color of the footer
+        sshColor: '#0078d4', // color of the ssh
+        
+        // global color
+        borderColor: '#2b2b2b', // color of the border
       },
     },
   },

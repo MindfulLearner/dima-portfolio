@@ -6,7 +6,7 @@ import TextEditorPanel4 from "./TextEditorPanel4";
 
 function TextEditorSection() {
   return (
-    <div className="flex h-[calc(100%-220px)] bg-yellow-500 border-b border-gray-400">
+    <div className="flex h-[calc(100%-220px)] bg-yellow-500 border-b border-borderColor">
       <div className="h-full w-[35%] bg-red-500">
         <TextEditorPanel1 />
         <TextEditorPanel2 />
