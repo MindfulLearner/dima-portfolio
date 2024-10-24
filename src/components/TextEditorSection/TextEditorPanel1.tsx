@@ -4,10 +4,10 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 
 function TextEditorPanel1() {
   return (
-    <div className="h-1/2 bg-backgroundTextEditor1">
-      <div className="w-full bg-emptybarColor">
+    <div className="h-1/2 bg-backgroundTextEditor1 border-b border-gray-400">
+      <div className="w-full flex  bg-emptybarColor">
         {/* barra navigazione */}
-        <div className="bg-backgroundTextEditor1 max-w-[200px] pl-2 flex h-[31px] items-center gap-2">
+        <div className="bg-backgroundTextEditor1 max-w-[200px] pl-2 pr-2 flex h-[31px] items-center gap-2">
           <div className="h-6 w-6">
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
@@ -16,6 +16,9 @@ function TextEditorPanel1() {
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
+        </div>
+        <div className="w-full bg-emptybarColor border-b border-l border-gray-400">
+          <div className="text-gray-300">vuoto placeholder</div>
         </div>
       </div>
 

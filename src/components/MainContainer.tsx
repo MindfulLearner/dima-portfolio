@@ -5,8 +5,8 @@ import SideTerminal from "./SidePanel/SidePanel";
 
 function MainContainer() {
   return (
-    <div className="flex h-[calc(100vh-35px)]">
-      <div className="w-[80%] bg-blue-500">
+    <div className="flex h-[calc(100vh-34px)]">
+      <div className="w-[calc(100%-250px)] border-r border-gray-400">
         <TextEditorSection />
         <BottomSection />
       </div>

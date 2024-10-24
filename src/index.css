@@ -3,9 +3,9 @@
 @import 'tailwindcss/utilities';
 
 
-* {
+/* * {
   outline: 1px dashed black;
-}
+} */
 
 .centered {
   margin: 0 auto;
