@@ -10,8 +10,8 @@ module.exports = {
         myVSCodeColor: '#1f1f1f', // color of the header
         searchbarColor: '#313131', // color of the searchbar
         // SectionTextEditor1 presentazione
-        backgroundTextEditor1: '#6b6b6b', // background
-        neutralColor: '#6C757D', // color of the neutral
+        backgroundTextEditor1: '#1f1f1f', // background
+        emptybarColor: '#181818', // color of the empty bar
         // SectionTextEditor2
         successColor: '#38C172', // color of the success
         dangerColor: '#E3342F', // color of the danger
