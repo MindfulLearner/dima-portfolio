@@ -11,7 +11,7 @@ function Header() {
           <img className="w-full h-full" src="/icons/png-fungo-icon.png" alt="" />
         </div>
         <div>
-          <ul className="flex gap-5 text-white">
+          <ul className="text-sm font-quicksand flex gap-5 text-white">
             <li>file</li>
             <li>edit</li>
             <li>select</li>
@@ -32,19 +32,19 @@ function Header() {
         </div>
         <div className="w-[400px] justify-center bg-searchbarColor rounded-md outline outline-1 outline-borderColor flex gap-3 items-center text-white">
           <FontAwesomeIcon icon={faSearch} />
-          <p>dima-portfolio [SSH: dima@dima-portfolio]</p>
+          <p className="font-quicksand text-sm">dima-portfolio [SSH: dima@dima-portfolio]</p>
         </div>
       </div>
 
       {/* parte destra con controllo per uscire dal vscode */}
       <div className="flex justify-end w-1/3 gap-4 pr-3">
-        <div className="flex gap-3 text-white text-lg">
+        <div className="flex gap-3 text-white text-sm">
           <FontAwesomeIcon icon={faGear} />
           <FontAwesomeIcon icon={faGear} />
           <FontAwesomeIcon icon={faGear} />
           <FontAwesomeIcon icon={faGear} />
         </div>
-        <div className="flex gap-5 text-white">
+        <div className="flex gap-5 text-white text-sm">
           <FontAwesomeIcon icon={faSignOut} />
           <FontAwesomeIcon icon={faSignIn} />
           <FontAwesomeIcon icon={faSignOut} />

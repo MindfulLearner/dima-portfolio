@@ -11,9 +11,8 @@ function TextEditorPanel3() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
             <div className="text-gray-300">U</div>
-            <div className="text-gray-300">x</div>
           </div>
         </div>
         {/* questo ha un border a sinistra e sotto .. ? come sistemare  anche bg di questo */}
@@ -22,7 +21,7 @@ function TextEditorPanel3() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
@@ -32,7 +31,7 @@ function TextEditorPanel3() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
@@ -40,12 +39,11 @@ function TextEditorPanel3() {
       </div>
 
       <div className="p-10 h-[calc(100%-31px)]">
-        <h1 className="text-5xl font-bold text-gray-300">Hello.</h1>
-        <h2 className="text-xl font-bold mt-2 text-gray-300">I'm Joshua</h2>
+        <h1 className="text-5xl font-bold text-gray-300">CAROSELLO</h1>
+        <h2 className="text-xl font-bold mt-2 text-gray-300">CAROSELLO</h2>
         <div className="flex mt-2 text-gray-300">
           <p>
-            I'm a software developer learner, based in Italy, Milan. This is my
-            portfolio and everything you see here is interactive.
+            CAROSELLO
           </p>
         </div>
       </div>
