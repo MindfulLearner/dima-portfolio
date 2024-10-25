@@ -11,7 +11,7 @@ function TextEditorPanel2() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="text-gray-300">Presentation.tsx</div>
+            <div className="text-gray-300">AboutMe.tsx</div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
@@ -22,21 +22,47 @@ function TextEditorPanel2() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="text-gray-300">Presentation.tsx</div>
+            <div className="text-gray-300">ContactMe.tsx</div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
         </div>
       </div>
 
-      <div className="p-10 h-[calc(100%-31px)]">
-        <h1 className="text-5xl font-bold text-gray-300">Hello.</h1>
-        <h2 className="text-xl font-bold mt-2 text-gray-300">I'm Joshua</h2>
-        <div className="flex mt-2 text-gray-300">
-          <p>
-            I'm a software developer learner, based in Italy, Milan. This is my
-            portfolio and everything you see here is interactive.
-          </p>
+      <div className="h-[calc(100%-31px)]">
+        <div className="h-[calc(100%-250px)]">
+          {/* qui ci conterra titolo o messaggi */}
+          <div className="text-white text-lg font-bold pl-2 pr-2">
+            Reach me
+          </div>
+        </div>
+        <div className="overflow-x-auto no-scrollbar h-[250px] gap-5 items-center flex">
+          {/* qui conterra cards */}
+          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
+            <div className="w-[50px] h-[50px]">
+              <img src="/icons/png-fungo-icon.png" alt="fungo" />
+            </div>
+          </div>
+          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
+            <div className="w-[50px] h-[50px]">
+              <img src="/icons/png-fungo-icon.png" alt="fungo" />
+            </div>
+          </div>
+          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
+            <div className="w-[50px] h-[50px]">
+              <img src="/icons/png-fungo-icon.png" alt="fungo" />
+            </div>
+          </div>
+          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
+            <div className="w-[50px] h-[50px]">
+              <img src="/icons/png-fungo-icon.png" alt="fungo" />
+            </div>
+          </div>
+          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
+            <div className="w-[50px] h-[50px]">
+              <img src="/icons/png-fungo-icon.png" alt="fungo" />
+            </div>
+          </div>
         </div>
       </div>
 
