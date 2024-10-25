@@ -1,8 +1,8 @@
 //text editor panel 2
 import React from "react";
 import { SquareCards } from "../PublicComponents/Components/squareCards";
-import ItemGithubSvg from "../PublicComponents/svgtsx/component-github-svg";
-import ItemLinkedinSvg from "../PublicComponents/svgtsx/component-linkedin-svg";
+import { ArraySvgComponents } from "../data/ArraySvgComponents";
+import { motion } from "framer-motion";
 
 function TextEditorPanel2() {
   return (
@@ -39,17 +39,26 @@ function TextEditorPanel2() {
         </div>
         <div className="overflow-x-auto no-scrollbar h-[250px] gap-5 items-center flex">
           {/* qui conterra cards */}
-          <SquareCards
+          {/*  animazione dei componenti che si muovno a desinistra verso destra all'infinito*/}
+          {ArraySvgComponents.map((Item, index) => (
+            <motion.div
+            animate={{ x: [0, -500] }}
+            transition={{ duration: 10, ease: "linear", repeat: Infinity }}
+            >
+            <SquareCards
             shadow="shadow-lg"
-            width="max-w-[120px]"
-            height="max-h-[120px]"
-            color="bg-texteditor2CardsColor"
-            flex="flex"
-            items="items-center"
-            justify="justify-center"
-          >
-            <ItemGithubSvg fill="white" width="40" height="40" />
-          </SquareCards>
+                width="min-w-[120px]"
+                height="min-h-[120px]"
+                color="bg-texteditor2CardsColor"
+                flex="flex"
+                items="items-center"
+                justify="justify-center"
+                key={index}
+            >
+                <Item fill="white" width="40" height="40" />
+              </SquareCards>
+            </motion.div>
+          ))}
         </div>
       </div>
 
