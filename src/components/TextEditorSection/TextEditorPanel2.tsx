@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 
 
 function TextEditorPanel2() {
+  /**
+   * this is the state that will handle the hovered card
+   */
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   function handleMouseEnter(index: number) {
@@ -63,8 +66,7 @@ function TextEditorPanel2() {
             >
               <SquareCards
                 shadow="shadow-lg"
-                width="min-w-[120px]"
-                height="min-h-[120px]"
+              
                 flex="flex"
                 items="items-center"
                 justify="justify-center"
@@ -72,12 +74,14 @@ function TextEditorPanel2() {
                 onMouseLeave={handleMouseLeave}
                 backgroundColor={
                   hoveredCard === index ? "bg-white" : "bg-texteditor2CardsColor"
-                }
+                } 
+                width={hoveredCard === index ? "min-w-[120px]" : "min-w-[110px]"}
+                height={hoveredCard === index ? "min-h-[120px]" : "min-h-[110px]"}
                 style={{
-                  transition: "background-color 0.3s ease",
+                  transition: "background-color 0.3s ease, min-width 0.3s ease, min-height 0.3s ease",
                 }}
               >
-                <Item fill={hoveredCard === index ? "black" : "white"} width={hoveredCard === index ? "40" : "30"} height={hoveredCard === index ? "40" : "30"} style={{transition: "width 0.3s ease, height 0.3s ease"}}/>
+                <Item fill={hoveredCard === index ? "black" : "white"} width={hoveredCard === index ? "45" : "40"} height={hoveredCard === index ? "45" : "40"} style={{transition: "width 0.3s ease, height 0.3s ease, fill 0.3s ease"}}/>
               </SquareCards>
             </motion.div>
           ))}
