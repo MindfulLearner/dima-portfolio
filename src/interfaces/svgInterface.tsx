@@ -5,4 +5,5 @@ export interface SvgInterface {
     width?: string;
     height?: string;
     fill?: string;
+    style?: React.CSSProperties;
 }

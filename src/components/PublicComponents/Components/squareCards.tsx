@@ -6,6 +6,7 @@ export const SquareCards = ({ children, ...props }: SquareInterface) => {
       className={`${props.shadow} ${props.width} ${props.height} ${props.backgroundColor} ${props.flex} ${props.items} ${props.justify}`}
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
+      style={props.style}
     >
       {children}
     </div>

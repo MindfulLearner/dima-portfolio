@@ -54,10 +54,11 @@ function TextEditorPanel2() {
             ...ArraySvgComponents,
             ...ArraySvgComponents,
             ...ArraySvgComponents,
+            ...ArraySvgComponents,
           ].map((Item, index) => (
             <motion.div
-              animate={{ x: [0, -500] }}
-              transition={{ duration: 15, ease: "linear", repeat: Infinity }}
+              animate={{ x: [0, -1500] }}
+              transition={{ duration: 35, ease: "linear", repeat: Infinity }}
               key={index}
             >
               <SquareCards
@@ -72,8 +73,11 @@ function TextEditorPanel2() {
                 backgroundColor={
                   hoveredCard === index ? "bg-white" : "bg-texteditor2CardsColor"
                 }
+                style={{
+                  transition: "background-color 0.3s ease",
+                }}
               >
-                <Item fill={hoveredCard === index ? "black" : "white"} width="40" height="40" />
+                <Item fill={hoveredCard === index ? "black" : "white"} width={hoveredCard === index ? "40" : "30"} height={hoveredCard === index ? "40" : "30"} style={{transition: "width 0.3s ease, height 0.3s ease"}}/>
               </SquareCards>
             </motion.div>
           ))}

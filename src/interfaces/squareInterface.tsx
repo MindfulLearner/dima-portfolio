@@ -17,4 +17,5 @@ export interface SquareInterface {
      */
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
+    style?: React.CSSProperties;
 }
