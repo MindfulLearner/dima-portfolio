@@ -1,7 +1,23 @@
 //text editor panel 2
-import React from "react";
+import React, { useState } from "react";
+import { SquareCards } from "../PublicComponents/Components/squareCards";
+import { ArraySvgComponents } from "../data/ArraySvgComponents";
+import { motion } from "framer-motion";
+
 
 function TextEditorPanel2() {
+  /**
+   * this is the state that will handle the hovered card
+   */
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  function handleMouseEnter(index: number) {
+    setHoveredCard(index);
+  }
+
+  function handleMouseLeave() {
+    setHoveredCard(null);
+  }
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-borderColor  ">
       <div className="w-full flex  bg-emptybarColor">
@@ -32,37 +48,43 @@ function TextEditorPanel2() {
       <div className="h-[calc(100%-31px)]">
         <div className="h-[calc(100%-250px)]">
           {/* qui ci conterra titolo o messaggi */}
-          <div className="text-white text-lg font-bold pl-2 pr-2">
-            Reach me
-          </div>
+          <div className="text-white text-lg font-bold pl-2 pr-2">Reach me</div>
         </div>
         <div className="overflow-x-auto no-scrollbar h-[250px] gap-5 items-center flex">
           {/* qui conterra cards */}
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
+          {/* when we put the mouse on the card the color of the item change from white to black and the square from black to white */}
+          {[
+            ...ArraySvgComponents,
+            ...ArraySvgComponents,
+            ...ArraySvgComponents,
+            ...ArraySvgComponents,
+          ].map((Item, index) => (
+            <motion.div
+              animate={{ x: [0, -1500] }}
+              transition={{ duration: 35, ease: "linear", repeat: Infinity }}
+              key={index}
+            >
+              <SquareCards
+                shadow="shadow-lg"
+              
+                flex="flex"
+                items="items-center"
+                justify="justify-center"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                backgroundColor={
+                  hoveredCard === index ? "bg-white" : "bg-texteditor2CardsColor"
+                } 
+                width={hoveredCard === index ? "min-w-[120px]" : "min-w-[110px]"}
+                height={hoveredCard === index ? "min-h-[120px]" : "min-h-[110px]"}
+                style={{
+                  transition: "background-color 0.3s ease, min-width 0.3s ease, min-height 0.3s ease",
+                }}
+              >
+                <Item fill={hoveredCard === index ? "black" : "white"} width={hoveredCard === index ? "45" : "40"} height={hoveredCard === index ? "45" : "40"} style={{transition: "width 0.3s ease, height 0.3s ease, fill 0.3s ease"}}/>
+              </SquareCards>
+            </motion.div>
+          ))}
         </div>
       </div>
 
