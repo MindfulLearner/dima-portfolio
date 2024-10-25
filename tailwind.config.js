@@ -37,6 +37,9 @@ module.exports = {
         },
       },
     },
+    fontFamily: {
+      quicksand: ['Quicksand', 'sans-serif'],
+    },
   },
   variants: {},
   plugins: [

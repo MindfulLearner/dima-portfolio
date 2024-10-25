@@ -11,7 +11,7 @@ function TextEditorPanel4() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
@@ -21,7 +21,7 @@ function TextEditorPanel4() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>

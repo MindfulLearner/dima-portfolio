@@ -14,7 +14,7 @@ function Footer() {
           <div className="w-[15px] h-[15px]">
             <img src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
-          <div className="text-white text-center text-sm">
+          <div className="font-quicksand text-white text-center text-sm">
             SSH: 192.168.1.100
           </div>
         </div>
@@ -22,7 +22,7 @@ function Footer() {
           <div className="w-[15px] h-[15px]">
             <img src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
-          <div className="text-white text-center text-sm">master*</div>
+          <div className="font-quicksand text-white text-center text-sm">master*</div>
         </div>
         <div>
           <div className="w-[15px] h-[15px]">
@@ -30,7 +30,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex gap-5 items-center text-xs text-white pr-2">
+      <div className="font-quicksand flex gap-5 items-center text-xs text-white pr-2">
         <div>div {">"} div</div>
         <div>Spaces:2</div>
         <div>UTF-8</div>
