@@ -1,10 +1,20 @@
 //text editor panel 2
-import React from "react";
+import React, { useState } from "react";
 import { SquareCards } from "../PublicComponents/Components/squareCards";
 import { ArraySvgComponents } from "../data/ArraySvgComponents";
 import { motion } from "framer-motion";
 
+
 function TextEditorPanel2() {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  function handleMouseEnter(index: number) {
+    setHoveredCard(index);
+  }
+
+  function handleMouseLeave() {
+    setHoveredCard(null);
+  }
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-borderColor  ">
       <div className="w-full flex  bg-emptybarColor">
@@ -39,6 +49,7 @@ function TextEditorPanel2() {
         </div>
         <div className="overflow-x-auto no-scrollbar h-[250px] gap-5 items-center flex">
           {/* qui conterra cards */}
+          {/* when we put the mouse on the card the color of the item change from white to black and the square from black to white */}
           {[
             ...ArraySvgComponents,
             ...ArraySvgComponents,
@@ -53,12 +64,16 @@ function TextEditorPanel2() {
                 shadow="shadow-lg"
                 width="min-w-[120px]"
                 height="min-h-[120px]"
-                color="bg-texteditor2CardsColor"
                 flex="flex"
                 items="items-center"
                 justify="justify-center"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                backgroundColor={
+                  hoveredCard === index ? "bg-white" : "bg-texteditor2CardsColor"
+                }
               >
-                <Item fill="white" width="40" height="40" />
+                <Item fill={hoveredCard === index ? "black" : "white"} width="40" height="40" />
               </SquareCards>
             </motion.div>
           ))}
