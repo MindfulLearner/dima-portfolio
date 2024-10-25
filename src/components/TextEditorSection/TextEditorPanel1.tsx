@@ -1,3 +1,4 @@
+// ORA CERCHEREMO DI AGGIUNGERE FADE IN E FADE OUT DEI DUE PANEL 
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
@@ -47,9 +48,10 @@ function TextEditorPanel1() {
         </div>
       </div>
 
-      {/* applico logica, se hoovero su questa parte il testo sparisce e ne apparte un altra  */}
       {/* hidden if hoover true */}
 
+      {/* logica block and none funziona  */}
+      {/* ora cerco di aggiungere fade in e fade out  */}
       <div
         className="p-10 h-[calc(100%-31px)]"
         onMouseEnter={handleMouseOver}
