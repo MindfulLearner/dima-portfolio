@@ -10,4 +10,9 @@ export const ArraySvgComponents = [
   ItemGmailSvg,
   ItemTwitterSvg,
   ItemDiscordSvg,
+  ItemGithubSvg,
+  ItemLinkedinSvg,
+  ItemGmailSvg,
+  ItemTwitterSvg,
+  ItemDiscordSvg,
 ];

@@ -39,22 +39,25 @@ function TextEditorPanel2() {
         </div>
         <div className="overflow-x-auto no-scrollbar h-[250px] gap-5 items-center flex">
           {/* qui conterra cards */}
-          {/*  animazione dei componenti che si muovno a desinistra verso destra all'infinito*/}
-          {ArraySvgComponents.map((Item, index) => (
+          {[
+            ...ArraySvgComponents,
+            ...ArraySvgComponents,
+            ...ArraySvgComponents,
+          ].map((Item, index) => (
             <motion.div
-            animate={{ x: [0, -500] }}
-            transition={{ duration: 10, ease: "linear", repeat: Infinity }}
+              animate={{ x: [0, -500] }}
+              transition={{ duration: 15, ease: "linear", repeat: Infinity }}
+              key={index}
             >
-            <SquareCards
-            shadow="shadow-lg"
+              <SquareCards
+                shadow="shadow-lg"
                 width="min-w-[120px]"
                 height="min-h-[120px]"
                 color="bg-texteditor2CardsColor"
                 flex="flex"
                 items="items-center"
                 justify="justify-center"
-                key={index}
-            >
+              >
                 <Item fill="white" width="40" height="40" />
               </SquareCards>
             </motion.div>
