@@ -1,6 +1,9 @@
 //text editor panel 2
 import React from "react";
 import { SquareCards } from "../PublicComponents/Components/squareCards";
+import ItemGithubSvg from "../PublicComponents/svgtsx/component-github-svg";
+import ItemLinkedinSvg from "../PublicComponents/svgtsx/component-linkedin-svg";
+
 function TextEditorPanel2() {
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-borderColor  ">
@@ -32,16 +35,20 @@ function TextEditorPanel2() {
       <div className="h-[calc(100%-31px)]">
         <div className="h-[calc(100%-250px)]">
           {/* qui ci conterra titolo o messaggi */}
-          <div className="text-white text-lg font-bold pl-2 pr-2">
-            Reach me
-          </div>
+          <div className="text-white text-lg font-bold pl-2 pr-2">Reach me</div>
         </div>
         <div className="overflow-x-auto no-scrollbar h-[250px] gap-5 items-center flex">
           {/* qui conterra cards */}
-          <SquareCards shadow="shadow-lg" width="w-[120px]" height="h-[120px]" color="bg-texteditor2CardsColor" flex="flex" items="items-center" justify="justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
+          <SquareCards
+            shadow="shadow-lg"
+            width="max-w-[120px]"
+            height="max-h-[120px]"
+            color="bg-texteditor2CardsColor"
+            flex="flex"
+            items="items-center"
+            justify="justify-center"
+          >
+            <ItemGithubSvg fill="white" width="40" height="40" />
           </SquareCards>
         </div>
       </div>
