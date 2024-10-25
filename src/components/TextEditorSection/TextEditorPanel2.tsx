@@ -1,6 +1,6 @@
 //text editor panel 2
 import React from "react";
-
+import { SquareCards } from "../PublicComponents/Components/squareCards";
 function TextEditorPanel2() {
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-borderColor  ">
@@ -38,31 +38,11 @@ function TextEditorPanel2() {
         </div>
         <div className="overflow-x-auto no-scrollbar h-[250px] gap-5 items-center flex">
           {/* qui conterra cards */}
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
+          <SquareCards shadow="shadow-lg" width="w-[120px]" height="h-[120px]" color="bg-texteditor2CardsColor" flex="flex" items="items-center" justify="justify-center">
             <div className="w-[50px] h-[50px]">
               <img src="/icons/png-fungo-icon.png" alt="fungo" />
             </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
-          <div className="shadow-lg min-w-[130px] min-h-[130px] h-[130px] bg-texteditor2CardsColor flex items-center justify-center">
-            <div className="w-[50px] h-[50px]">
-              <img src="/icons/png-fungo-icon.png" alt="fungo" />
-            </div>
-          </div>
+          </SquareCards>
         </div>
       </div>
 
