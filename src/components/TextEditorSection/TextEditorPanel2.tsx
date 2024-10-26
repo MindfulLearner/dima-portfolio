@@ -72,12 +72,13 @@ function TextEditorPanel2() {
         <div className="h-[calc(100%-200px)] flex gap-2">
           {/* qui ci conterra titolo o messaggi */}
           <div className="font-quicksand flex justify-center items-center pt-10 text-white text-xl font-bold pl-2 pr-2 w-1/2">
+          {/* tempo di hover 0.2 */}
             <motion.div
               whileHover={{ scale: 1.1 }}
               onHoverStart={(e) => {}}
               onHoverEnd={(e) => {}}
               whileTap={{ scale: 1.3 }}
-              transition={{ type: "spring", stiffness: 50, damping: 10 }}
+              transition={{ type: "spring", stiffness: 500, damping: 80, bounce: 0.6 }}
             >
               <button
                 type="button"

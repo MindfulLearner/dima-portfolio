@@ -40,6 +40,7 @@ function TextEditorPanel4() {
       </div>
 
       {/* we first put everyting in the box and put a overflowy scroll, using an array of list of work experience, we will have clickablelist of work, then with framermotion and scroll to view scroll and scroll o reactscroll we will make it smoothc by we will show the clicked work in the box. */}
+      {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
       <div className="h-[calc(100%-31px)] flex">
         <div className="h-[100%] w-[50%] flex flex-col justify-center items-center">

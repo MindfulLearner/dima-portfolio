@@ -74,8 +74,8 @@ function TextEditorPanel3() {
       <div className="flex items-center h-[calc(100%-31px)] overflow-x-auto no-scrollbar gap-10">
         {[...arraySkill, ...arraySkill, ...arraySkill].map((item, index) => (
           <motion.div
-            animate={{ x: [0, -6000] }}
-            transition={{ duration: 50, ease: "linear", repeat: Infinity }}
+            animate={{ x: [0, -10000] }}
+            transition={{ duration: 100, ease: "linear", repeat: Infinity }}
             key={index}
           >
             <div
