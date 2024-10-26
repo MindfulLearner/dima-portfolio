@@ -57,7 +57,10 @@ function TextEditorPanel1() {
         onMouseEnter={handleMouseOver}
         onMouseLeave={handleMouseOut}
       >
+        {/* quando hoovero ci sara un effetto fadeout prima di attavarsi il display none */}
+
         <div style={{ display: isHovered ? "none" : "block" }}>
+
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -96,7 +99,7 @@ function TextEditorPanel1() {
         {/* in hoover */}
         {/* showing only if hoover true */}
 
-        <div style={{ opacity: isHovered ? 1 : 0 }} >
+        <div style={{ display: isHovered ? "block" : "none" }} >
           <div className="h-[200px] flex flex-col justify-center items-center gap-2">
           <p className="font-quicksand text-gray-300">
             Making good questions and answers is the key of human progress,
