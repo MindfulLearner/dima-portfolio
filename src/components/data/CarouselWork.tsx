@@ -30,9 +30,11 @@ export const arrayCarouselWork = [
     description: "Server Infrastructure",
     icon: "/icons/dimanet-icon.png",
     image: [
-      "/images/project2.jpg",
-      "/images/project2.jpg",
-      "/images/project2.jpg",
+      "/linux/debian.png",
+      "/linux/linux.png",
+      "/linux/ubuntu.png",
+      "/linux/arch.png",
+      "/linux/fedora.png",
     ],
     activeImage: false,
   },
@@ -73,3 +75,4 @@ export const arrayCarouselWork = [
     activeImage: false,
   },
 ];
+export default arrayCarouselWork;
