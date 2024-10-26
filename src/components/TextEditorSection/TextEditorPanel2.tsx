@@ -4,6 +4,7 @@ import { SquareCards } from "../PublicComponents/Components/squareCards";
 import { ArraySvgComponents } from "../data/ArraySvgComponents";
 import { motion } from "framer-motion";
 
+
 function TextEditorPanel2() {
   /**
    * this is the state that will handle the hovered card
@@ -48,7 +49,10 @@ function TextEditorPanel2() {
         </div>
       </div>
 
-      <div className="h-[calc(100%-31px)]">
+
+      {/* applico logica, se hoovero su questa parte il testo sparisce e ne apparte un altra  */}
+      <div className="h-[calc(100%-31px)]
+      ">
         <div className="h-[calc(100%-200px)] flex gap-2">
           {/* qui ci conterra titolo o messaggi */}
           <div className="font-quicksand flex justify-center items-center pt-10 text-white text-xl font-bold pl-2 pr-2 w-1/2">
@@ -85,7 +89,7 @@ function TextEditorPanel2() {
           ].map((Item, index) => (
             <motion.div
               animate={{ x: [0, -1500] }}
-              transition={{ duration: 35, ease: "linear", repeat: Infinity }}
+              transition={{ duration: 50, ease: "linear", repeat: Infinity }}
               key={index}
             >
               <SquareCards
@@ -125,6 +129,7 @@ function TextEditorPanel2() {
           ))}
         </div>
       </div>
+
     </div>
   );
 }
