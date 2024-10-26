@@ -63,7 +63,7 @@ function TextEditorPanel1() {
           <motion.div 
             initial={{ opacity: 1 }}
             animate={{ opacity: isHovered ? 0 : 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.3 }}
             onAnimationComplete={() => {
               if (!isHovered) {
                 setIsHovered(false);
@@ -117,7 +117,7 @@ function TextEditorPanel1() {
           className="absolute top-0 left-0 pl-10 h-[100%] w-[100%] flex justify-center items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.3 }}
             onAnimationComplete={() => {
               if (!isHovered) {
                 // Nascondi il contenuto dopo l'animazione

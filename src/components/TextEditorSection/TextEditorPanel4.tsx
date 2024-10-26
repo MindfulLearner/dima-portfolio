@@ -30,8 +30,8 @@ function TextEditorPanel4() {
    <div className="h-[calc(100%-31px)] flex">
         <div className="h-[100%] w-[50%] flex flex-col justify-center items-center">
           <div className="flex flex-col">
-            <h1 className="text-5xl font-bold text-gray-300">Unieuro</h1>
-            <h2 className="text-xl font-bold mt-2 text-gray-300">Manager</h2>
+            <h1 className="font-quicksand text-5xl font-bold text-gray-300">Unieuro</h1>
+            <h2 className="font-quicksand text-xl font-bold mt-2 text-gray-300">Manager</h2>
           </div>
         </div>
         <div className="h-[100%] w-[50%] flex flex-col justify-center items-start">
