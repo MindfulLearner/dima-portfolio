@@ -30,7 +30,7 @@ function Header() {
           <FontAwesomeIcon icon={faArrowLeft} />
           <FontAwesomeIcon icon={faArrowRight} />
         </div>
-        <div className="w-[400px] justify-center bg-searchbarColor rounded-md outline outline-1 outline-borderColor flex gap-3 items-center text-white">
+        <div className="w-[400px] justify-center bg-searchbarColor rounded-md outline outline-1 outline-gray-500 shadow-lg flex gap-3 items-center text-white">
           <FontAwesomeIcon icon={faSearch} />
           <p className="font-quicksand text-sm">dima-portfolio [SSH: dima@dima-portfolio]</p>
         </div>
