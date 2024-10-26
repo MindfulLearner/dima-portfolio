@@ -89,7 +89,7 @@ function TextEditorPanel2() {
           ].map((Item, index) => (
             <motion.div
               animate={{ x: [0, -1500] }}
-              transition={{ duration: 35, ease: "linear", repeat: Infinity }}
+              transition={{ duration: 50, ease: "linear", repeat: Infinity }}
               key={index}
             >
               <SquareCards

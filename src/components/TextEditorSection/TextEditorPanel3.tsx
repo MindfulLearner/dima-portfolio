@@ -1,5 +1,7 @@
 //text editor panel 3
 import React from "react";
+import { arraySkill } from "../data/arraySkill";
+import { motion } from "framer-motion";
 
 function TextEditorPanel3() {
   return (
@@ -8,10 +10,12 @@ function TextEditorPanel3() {
         {/* barra navigazione */}
         <div className="bg-backgroundTextEditor1 max-w-[200px] pl-2 pr-2 flex h-[31px] items-center gap-2">
           <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
+            <img className="p-1" src="/icons/skill-icon.png" alt="skill" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">
+              MySkills.tsx
+            </div>
             <div className="text-gray-300">U</div>
           </div>
         </div>
@@ -21,51 +25,52 @@ function TextEditorPanel3() {
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">
+              Presentation.tsx
+            </div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
         </div>
         <div className="bg-emptybarColor max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2">
           <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
+            <img className="p-1" src="/icons/work-icon.png" alt="work" />
           </div>
           <div className="flex items-center justify-center gap-2">
-            <div className="font-quicksand text-sm text-gray-300">Presentation.tsx</div>
+            <div className="font-quicksand text-sm text-gray-300">
+              Presentation.tsx
+            </div>
             <div className="text-gray-300">U</div>
             <div className="text-gray-300">x</div>
           </div>
         </div>
       </div>
 
-      <div className="p-10 h-[calc(100%-31px)]">
-        <h1 className="text-5xl font-bold text-gray-300">CAROSELLO</h1>
-        <h2 className="text-xl font-bold mt-2 text-gray-300">CAROSELLO</h2>
-        <div className="flex mt-2 text-gray-300">
-          <p>
-            CAROSELLO
-          </p>
-        </div>
-      </div>
 
-      {/* in hoover */}
-      {/* <div>
-        <p>
-          Making good questions and answers is the key of human progress,
-          grateful on learning new things.
-        </p>
-        <div className="flex gap-2 items-center">
-          <div className="rounded-full h-8 w-8">
-            <img
-              className="p-1"
-              src="/icons/png-fungo-icon.png"
-              alt="fungo"
-            />
+      {/* ciclero un array di parole che avranno un effetto di trasizione da destra a sinistra infinito */}
+      <div className="flex items-center h-[calc(100%-31px)] overflow-x-auto no-scrollbar gap-10">
+     
+      {[
+        ...arraySkill,
+        ...arraySkill,
+        ...arraySkill,
+      ].map((item, index) => (
+        <motion.div
+        animate={{ x: [0, -6000] }}
+        transition={{ duration: 50, ease: "linear", repeat: Infinity }}
+        key={index}
+        >
+        <div className={`text-gray-300 text-2xl flex items-center max-w-[400px] gap-4`}>
+          <div className="min-w-12 min-h-12 flex justify-center items-center">
+            <img src={item.png} alt={item.skill} className="w-[100%] h-[100%]" />
           </div>
-          <div>Joshua Dimaunahan</div>
-          <div>- Software Engineer</div>
-        </div>
-      </div> */}
+            <div className="font-quicksand font-bold text-7xl">
+            {item.skill}
+            </div>
+          </div>
+        </motion.div>
+        ))}
+      </div>
     </div>
   );
 }

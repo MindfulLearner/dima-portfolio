@@ -27,36 +27,28 @@ function TextEditorPanel4() {
           </div>
         </div>
       </div>
-
-      <div className="p-10 h-[calc(100%-31px)]">
-        <h1 className="text-5xl font-bold text-gray-300">Hello.</h1>
-        <h2 className="text-xl font-bold mt-2 text-gray-300">I'm Joshua</h2>
-        <div className="flex mt-2 text-gray-300">
-          <p>
-            I'm a software developer learner, based in Italy, Milan. This is my
-            portfolio and everything you see here is interactive.
-          </p>
+   <div className="h-[calc(100%-31px)] flex">
+        <div className="h-[100%] w-[50%] flex flex-col justify-center items-center">
+          <div className="flex flex-col">
+            <h1 className="text-5xl font-bold text-gray-300">Unieuro</h1>
+            <h2 className="text-xl font-bold mt-2 text-gray-300">Manager</h2>
+          </div>
         </div>
+        <div className="h-[100%] w-[50%] flex flex-col justify-center items-start">
+            <div className="flex flex-col text-gray-300 w-[80%]">
+              <p className="font-quicksand">
+                Manager, Unieuro Rinascente, Milano
+              </p>
+              <p className="font-quicksand">
+                I worked here as a manager for 4 months. My job was to manage the store,
+                most of the time i was had to make decisions and solve problems.
+                It helped me to learn how to manage a team and how to handle stressful situations, and so soft skills.
+              </p>
+            </div>
+        </div>
+
       </div>
 
-      {/* in hoover */}
-      {/* <div>
-        <p>
-          Making good questions and answers is the key of human progress,
-          grateful on learning new things.
-        </p>
-        <div className="flex gap-2 items-center">
-          <div className="rounded-full h-8 w-8">
-            <img
-              className="p-1"
-              src="/icons/png-fungo-icon.png"
-              alt="fungo"
-            />
-          </div>
-          <div>Joshua Dimaunahan</div>
-          <div>- Software Engineer</div>
-        </div>
-      </div> */}
     </div>
   );
 }
