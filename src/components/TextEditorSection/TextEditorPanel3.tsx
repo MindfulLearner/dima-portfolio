@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function TextEditorPanel3() {
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
-      <div className="w-full flex  bg-emptybarColor">
+      <div className="w-full flex  bg-emptybarColor shadow-lg">
         {/* barra navigazione */}
         <div className="bg-backgroundTextEditor1 max-w-[200px] pl-2 pr-2 flex h-[31px] items-center gap-2">
           <div className="h-6 w-6">
