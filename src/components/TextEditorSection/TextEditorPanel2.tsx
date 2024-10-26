@@ -18,6 +18,19 @@ function TextEditorPanel2() {
   function handleMouseLeave() {
     setHoveredCard(null);
   }
+
+
+  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
+
+  function handleMouseOverSelectTab() {
+    setIsHoveredSelectTab(true);
+    console.log("mouse entered");
+  }
+  function handleMouseOutSelectTab() {
+    setIsHoveredSelectTab(false);
+    console.log("mouse left");
+  }
+
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-borderColor  ">
       <div className="w-full flex  bg-emptybarColor shadow-lg">
@@ -35,7 +48,10 @@ function TextEditorPanel2() {
           </div>
         </div>
         {/* questa parte da sistemare  */}
-        <div className="bg-emptybarColor max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2">
+        <div className={`max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${isHoveredSelectTab ? 'bg-backgroundTextEditor1' : 'bg-emptybarColor'}`}
+        onMouseEnter={handleMouseOverSelectTab}
+        onMouseLeave={handleMouseOutSelectTab}
+        >
           <div className="h-6 w-6">
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
