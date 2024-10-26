@@ -38,7 +38,10 @@ function TextEditorPanel4() {
           </div>
         </div>
       </div>
-   <div className="h-[calc(100%-31px)] flex">
+
+      {/* we first put everyting in the box and put a overflowy scroll, using an array of list of work experience, we will have clickablelist of work, then with framermotion and scroll to view scroll and scroll o reactscroll we will make it smoothc by we will show the clicked work in the box. */}
+
+      <div className="h-[calc(100%-31px)] flex">
         <div className="h-[100%] w-[50%] flex flex-col justify-center items-center">
           <div className="flex flex-col">
             <h1 className="font-quicksand text-5xl font-bold text-gray-300">Unieuro</h1>
