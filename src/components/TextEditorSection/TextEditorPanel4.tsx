@@ -49,22 +49,60 @@ function TextEditorPanel4() {
       {/* we first put everyting in the box and put a overflowy scroll, using an array of list of work experience, we will have clickablelist of work, then with framermotion and scroll to view scroll and scroll o reactscroll we will make it smoothc by we will show the clicked work in the box. */}
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
-      <div className="h-[calc(100%-31px)] flex">
+      <div className="h-[calc(100%-31px)] w-full">
         {/* questo sara in position fixed */}
-        <div className="w-[50%]">
+        <div className="w-full fixed flex flex-col gap-2 pt-16 pl-32">
           {carouselWork.map((item: any, index: number) => (
-            <div className="">
+            <div className="font-quicksand text-gray-300 font-bold">
               {item.title}
             </div>
           ))}
         </div>
         {/* questi avranno diversi spazi in cui ci saranno delle foto per mostrare il lavoro */}
-        <div className="w-[50%]">
-          {carouselWork.map((item: any, index: number) => (
-            <div>
-              {item.title}
+        <div className="overflow-y-auto  h-[calc(100%)] w-full no-scrollbar">
+          {/* horizontal box */}
+          <div className="flex w-full h-full justify-center items-center">
+            <div className="w-[25%] flex justify-center items-center">
+              <div className="min-w-[60px] min-h-[60px] pb-2">
+                <img
+                  src={carouselWork[0].icon}
+                  alt={carouselWork[0].title}
+                  className="max-w-full max-h-full object-cover"
+                />
+              </div>
             </div>
-          ))}
+
+
+            <div className="w-[75%] flex items-center gap-4">
+              {/* 1 */}
+              <div className="h-40 w-60 shadow-lg">
+                <img
+                  className="w-full h-full object-cover"
+                  src={carouselWork[0].image[1]}
+                  alt={carouselWork[0].title}
+                />
+              </div>
+              {/* 2 */}
+                <div className="h-60 w-70 shadow-lg pt-10">
+                <img
+                  className="w-full h-full object-cover"
+                  src={carouselWork[0].image[3]}
+                  alt={carouselWork[0].title}
+                />
+              </div>
+              {/* 3 */}
+              <div className="h-40 w-60 shadow-lg">
+                <img
+                  className="w-full h-full object-cover"
+                  src={carouselWork[0].image[2]}
+                  alt={carouselWork[0].title}
+                />
+              </div>
+            </div>
+
+
+          </div>
+          {/* separatore   */}
         </div>
       </div>
     </div>
