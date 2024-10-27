@@ -74,21 +74,21 @@ function TextEditorPanel3() {
       <div className="flex items-center h-[calc(100%-31px)] overflow-x-auto no-scrollbar gap-10">
         {[...arraySkill, ...arraySkill, ...arraySkill].map((item, index) => (
           <motion.div
-            animate={{ x: [0, -6000] }}
-            transition={{ duration: 50, ease: "linear", repeat: Infinity }}
+            animate={{ x: [0, -10000] }}
+            transition={{ duration: 100, ease: "linear", repeat: Infinity }}
             key={index}
           >
             <div
-              className={`text-gray-300 text-2xl flex items-center max-w-[400px] gap-4`}
+              className={`text-gray-300 text-2xl flex items-center max-w-[650px] gap-4`}
             >
-              <div className="min-w-12 min-h-12 flex justify-center items-center">
+              <div className="min-w-20 min-h-20 flex justify-center items-center">
                 <img
                   src={item.png}
                   alt={item.skill}
                   className="w-[100%] h-[100%]"
                 />
               </div>
-              <div className="font-quicksand font-bold text-7xl">
+              <div className="font-quicksand font-bold text-8xl">
                 {item.skill}
               </div>
             </div>
