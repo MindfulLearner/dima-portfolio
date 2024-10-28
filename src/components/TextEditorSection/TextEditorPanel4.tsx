@@ -61,6 +61,8 @@ function TextEditorPanel4() {
         {/* questi avranno diversi spazi in cui ci saranno delle foto per mostrare il lavoro */}
         <div className="overflow-y-auto  h-[calc(100%)] w-full no-scrollbar">
           {/* horizontal box */}
+
+
           <div className="flex w-full h-full justify-center items-center">
             <div className="w-[25%] flex justify-center items-center">
               <div className="min-w-[60px] min-h-[60px] pb-2">
@@ -75,15 +77,14 @@ function TextEditorPanel4() {
 
             <div className="w-[75%] flex items-center gap-4">
               {/* 1 */}
-              <div className="h-40 w-60 shadow-lg">
-                <img
+              <div className="h-30 w-60 shadow-lg"> <img
                   className="w-full h-full object-cover"
                   src={carouselWork[0].image[1]}
                   alt={carouselWork[0].title}
                 />
               </div>
               {/* 2 */}
-                <div className="h-60 w-70 shadow-lg pt-10">
+                <div className="h-[240px] w-[150px] shadow-lg">
                 <img
                   className="w-full h-full object-cover"
                   src={carouselWork[0].image[3]}
@@ -91,7 +92,7 @@ function TextEditorPanel4() {
                 />
               </div>
               {/* 3 */}
-              <div className="h-40 w-60 shadow-lg">
+              <div className="h-30 w-60 shadow-lg">
                 <img
                   className="w-full h-full object-cover"
                   src={carouselWork[0].image[2]}
