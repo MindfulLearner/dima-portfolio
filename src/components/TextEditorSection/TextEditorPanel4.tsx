@@ -49,62 +49,45 @@ function TextEditorPanel4() {
       {/* we first put everyting in the box and put a overflowy scroll, using an array of list of work experience, we will have clickablelist of work, then with framermotion and scroll to view scroll and scroll o reactscroll we will make it smoothc by we will show the clicked work in the box. */}
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
-      <div className="h-[calc(100%-31px)] w-full">
+      <div className="h-[calc(100%-31px)] w-full overflow-y-scroll no-scrollbar">
         {/* questo sara in position fixed */}
-        <div className="w-full fixed flex flex-col gap-2 pt-16 pl-32">
-          {carouselWork.map((item: any, index: number) => (
-            <div className="font-quicksand text-gray-300 font-bold">
-              {item.title}
-            </div>
+        {/* da sistemare con GRID */}
+          <div className="fixed grid grid-cols-12 pt-16 w-full">
+            {carouselWork.map((item: any, index: number) => (
+              <div key={index} className="font-quicksand text-gray-300 font-bold col-start-2">
+                {item.title}
+              </div>
           ))}
         </div>
-        {/* questi avranno diversi spazi in cui ci saranno delle foto per mostrare il lavoro */}
-        <div className="overflow-y-auto  h-[calc(100%)] w-full no-scrollbar">
-          {/* horizontal box */}
 
-
-          <div className="flex w-full h-full justify-center items-center">
-            <div className="w-[25%] flex justify-center items-center">
-              <div className="min-w-[60px] min-h-[60px] pb-2">
-                <img
-                  src={carouselWork[0].icon}
-                  alt={carouselWork[0].title}
-                  className="max-w-full max-h-full object-cover"
-                />
-              </div>
+          <div className="h-[300px] grid grid-cols-12 gap-4 mr-10 pt-16">
+            <div className="col-start-5 col-end-8">
+              <img src={carouselWork[0].image[1]} alt={carouselWork[0].title} />
             </div>
-
-
-            <div className="w-[75%] flex items-center gap-4">
-              {/* 1 */}
-              <div className="h-30 w-60 shadow-lg"> <img
-                  className="w-full h-full object-cover"
-                  src={carouselWork[0].image[1]}
-                  alt={carouselWork[0].title}
-                />
-              </div>
-              {/* 2 */}
-                <div className="h-[240px] w-[150px] shadow-lg">
-                <img
-                  className="w-full h-full object-cover"
-                  src={carouselWork[0].image[3]}
-                  alt={carouselWork[0].title}
-                />
-              </div>
-              {/* 3 */}
-              <div className="h-30 w-60 shadow-lg">
-                <img
-                  className="w-full h-full object-cover"
-                  src={carouselWork[0].image[2]}
-                  alt={carouselWork[0].title}
-                />
-              </div>
+            <div className="col-start-8 col-end-10">
+              <img src={carouselWork[0].image[3]} alt={carouselWork[0].title} />
             </div>
-
-
+            <div className="col-start-10 col-end-13">
+              <img src={carouselWork[0].image[2]} alt={carouselWork[0].title} />
+            </div>
           </div>
-          {/* separatore   */}
-        </div>
+
+          <div className="h-[300px] grid grid-cols-12 gap-4 mr-10 pt-16">
+            <div className="col-start-5 col-end-8">
+              <img src={carouselWork[0].image[1]} alt={carouselWork[0].title} />
+            </div>
+            <div className="col-start-8 col-end-10">
+              <img src={carouselWork[0].image[3]} alt={carouselWork[0].title} />
+            </div>
+            <div className="col-start-10 col-end-13">
+              <img src={carouselWork[0].image[2]} alt={carouselWork[0].title} />
+            </div>
+          </div>
+
+
+        {/* usero grid per farelo  */}
+
+
       </div>
     </div>
   );
