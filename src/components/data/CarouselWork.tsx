@@ -16,9 +16,9 @@ export const arrayCarouselWork = [
   },
   {
     id: 2,
-    title: "KeyCombo",
-    description: "Full Stack Developer",
-    icon: "/icons/keycombo-icon.png",
+    title: "DimaNet",
+    description: "Server Infrastructure",
+    icon: "icons/proxmox-icon.png",
     image: [
     "/prometheusmaterial/contactus.jpeg",
       "/prometheusmaterial/fullwork.jpeg",
