@@ -96,10 +96,10 @@ const handleClickScrollTo = (index: number) => {
               <img className="rounded-xl bg-gray-100" src={carouselWork[1].icon} alt={carouselWork[1].title} />
             </div>
             <div className="col-start-5 col-end-8">
-              <img className="shadow-xl" src={carouselWork[1].image[1]} alt={carouselWork[1].title} />
+              <img className="shadow-xl" src={carouselWork[1].image[0]} alt={carouselWork[1].title} />
             </div>
             <div className="col-start-8 col-end-10">
-              <img className="shadow-xl" src={carouselWork[1].image[3]} alt={carouselWork[1].title} />
+              <img className="shadow-xl" src={carouselWork[1].image[1]} alt={carouselWork[1].title} />
             </div>
             <div className="col-start-10 col-end-13">
               <img className="shadow-xl" src={carouselWork[1].image[2]} alt={carouselWork[1].title} />
