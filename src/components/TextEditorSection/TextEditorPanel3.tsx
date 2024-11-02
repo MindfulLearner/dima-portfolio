@@ -72,6 +72,9 @@ function TextEditorPanel3() {
 
       {/* ciclero un array di parole che avranno un effetto di trasizione da destra a sinistra infinito */}
       <div className="flex items-center h-[calc(100%-31px)] overflow-x-auto no-scrollbar gap-10">
+        <div className="h-[100px] w-[100px]  bg-black">
+
+        </div>
         {[...arraySkill, ...arraySkill, ...arraySkill].map((item, index) => (
           <motion.div
             animate={{ x: [0, -10000] }}
