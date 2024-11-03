@@ -50,7 +50,7 @@ export const arrayCarouselWork = [
     activeImage: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "McDonald",
     description: "Crew Member",
     icon: "/icons/mcdonald-icon.png",

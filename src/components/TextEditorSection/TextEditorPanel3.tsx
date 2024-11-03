@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { arraySkill } from "../data/arraySkill";
 import { motion } from "framer-motion";
 
+
 function TextEditorPanel3() {
   const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
   const [activeTab, setActiveTab] = useState(1);
@@ -71,8 +72,8 @@ function TextEditorPanel3() {
       </div>
 
       {/* ciclero un array di parole che avranno un effetto di trasizione da destra a sinistra infinito */}
-      <div className="flex items-center h-[calc(100%-31px)] overflow-x-auto no-scrollbar gap-10">
-        {[...arraySkill, ...arraySkill, ...arraySkill].map((item, index) => (
+      <div className="flex items-center h-[calc(100%-31px)] overflow-x-hidden no-scrollbar gap-10 mask-gradient test">
+        {[...arraySkill, ...arraySkill].map((item, index) => (
           <motion.div
             animate={{ x: [0, -10000] }}
             transition={{ duration: 100, ease: "linear", repeat: Infinity }}

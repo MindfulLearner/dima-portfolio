@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 import carouselWork from "../data/CarouselWork";
 
-
-
 function TextEditorPanel4() {
   const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
 
@@ -14,15 +12,13 @@ function TextEditorPanel4() {
     setIsHoveredSelectTab(false);
   }
 
-
-const handleClickScrollTo = (index: number) => {
-  const section = document.getElementById(`${index}`);
-  console.log(section);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
+  const handleClickScrollTo = (index: number) => {
+    const section = document.getElementById(`${index}`);
+    console.log(section);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
@@ -66,50 +62,133 @@ const handleClickScrollTo = (index: number) => {
       <div className="h-[calc(100%-31px)] w-full overflow-y-scroll no-scrollbar">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
-          <div className="fixed grid grid-cols-12 pt-16 w-full ml-10">
-            {carouselWork.map((item: any, index: number) => (
-              <div key={index} className="font-quicksand text-gray-300 font-bold col-start-1">
-                <a className="hover:text-gray-500 cursor-pointer" onClick={() => handleClickScrollTo(index)}>{item.title}</a>
-              </div>
+        <div className="fixed grid grid-cols-12 pt-16 w-full ml-10">
+          {carouselWork.map((item: any, index: number) => (
+            <div
+              key={index}
+              className="font-quicksand text-gray-300 font-bold col-start-1"
+            >
+              <a
+                className="hover:text-gray-500 cursor-pointer"
+                onClick={() => handleClickScrollTo(index)}
+              >
+                {item.title}
+              </a>
+            </div>
           ))}
         </div>
         {/* section of works */}
-          <div className="h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16" id="0">
-            <div className="col-start-3 col-end-5">
-              <div className="font-quicksand text-gray-300 font-bold">
-               <img src={carouselWork[0].icon} alt={carouselWork[0].title} />
+        {/* Prometheus */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="0">
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5">
+              <div>
+                <img
+                  className="w-20"
+                  src="/prometheusmaterial/icon.svg"
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">Prometheus</div>
+                <div>A website portfolio for a team</div>
               </div>
             </div>
-            <div className="col-start-5 col-end-8">
-              <img className="shadow-xl" src={carouselWork[0].image[1]} alt={carouselWork[0].title} />
-            </div>
-            <div className="col-start-8 col-end-10">
-              <img className="shadow-xl" src={carouselWork[0].image[3]} alt={carouselWork[0].title} />
-            </div>
-            <div className="col-start-10 col-end-13">
-              <img className="shadow-xl" src={carouselWork[0].image[2]} alt={carouselWork[0].title} />
+            <div>
+              <button className="bg-gray-100 rounded-md p-1">
+                <p>showSite</p>
+              </button>
             </div>
           </div>
+        </div>
 
-          <div className="h-[300px] grid grid-cols-12 gap-4 mr-10 pt-16" id="1">
-            <div className="col-start-3 col-end-5">
-              <img className="rounded-xl bg-gray-100" src={carouselWork[1].icon} alt={carouselWork[1].title} />
-            </div>
-            <div className="col-start-5 col-end-8">
-              <img className="shadow-xl" src={carouselWork[1].image[0]} alt={carouselWork[1].title} />
-            </div>
-            <div className="col-start-8 col-end-10">
-              <img className="shadow-xl" src={carouselWork[1].image[1]} alt={carouselWork[1].title} />
-            </div>
-            <div className="col-start-10 col-end-13">
-              <img className="shadow-xl" src={carouselWork[1].image[2]} alt={carouselWork[1].title} />
+        <div className="h-[300px] grid grid-cols-10 gap-4 mr-5 pt-16 relative">
+          <div className="col-start-3 col-end-5"></div>
+          <div className="col-start-3 col-end-6">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[1]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-6 col-end-8">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[3]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-8 col-end-11">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[2]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="absolute bottom-[10px] left-[182px]">
+            <div className="flex gap-2 flex-wrap w-[262px]">
+              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                Default
+            </span>
+            <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+              Dark
+            </span>
+            <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+              Red
+            </span>
+            <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+              Green
+            </span>
+            <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+              Yellow
+            </span>
+            <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+              Indigo
+            </span>
+            <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+              Pink
+            </span>
             </div>
           </div>
+        </div>
 
+        {/* separo */}
+        <div className="h-[300px] grid grid-cols-12 gap-4 mr-10 pt-16" id="1">
+          <div className="col-start-3 col-end-5">
+            <img
+              className="rounded-xl bg-gray-100"
+              src={carouselWork[1].icon}
+              alt={carouselWork[1].title}
+            />
+          </div>
+          <div className="col-start-5 col-end-8">
+            <img
+              className="shadow-xl"
+              src={carouselWork[1].image[0]}
+              alt={carouselWork[1].title}
+            />
+          </div>
+          <div className="col-start-8 col-end-10">
+            <img
+              className="shadow-xl"
+              src={carouselWork[1].image[1]}
+              alt={carouselWork[1].title}
+            />
+          </div>
+          <div className="col-start-10 col-end-13">
+            <img
+              className="shadow-xl"
+              src={carouselWork[1].image[2]}
+              alt={carouselWork[1].title}
+            />
+          </div>
+        </div>
 
         {/* usero grid per farelo  */}
-
-
       </div>
     </div>
   );

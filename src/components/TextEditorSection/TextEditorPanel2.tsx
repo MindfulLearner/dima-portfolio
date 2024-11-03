@@ -67,8 +67,7 @@ function TextEditorPanel2() {
 
 
       {/* applico logica, se hoovero su questa parte il testo sparisce e ne apparte un altra  */}
-      <div className="h-[calc(100%-31px)]
-      ">
+      <div className="h-[calc(100%-31px)] mask-gradient">
         <div className="h-[calc(100%-200px)] flex gap-2">
           {/* qui ci conterra titolo o messaggi */}
           <div className="font-quicksand flex justify-center items-center pt-10 text-white text-xl font-bold pl-2 pr-2 w-1/2">
@@ -95,7 +94,7 @@ function TextEditorPanel2() {
             </p>
           </div>
         </div>
-        <div className="overflow-x-auto no-scrollbar h-[200px] gap-5 items-center flex">
+        <div className="overflow-x-auto no-scrollbar h-[200px] gap-5 items-center flex mask-gradient">
           {/* qui conterra cards */}
           {/* when we put the mouse on the card the color of the item change from white to black and the square from black to white */}
           {[
