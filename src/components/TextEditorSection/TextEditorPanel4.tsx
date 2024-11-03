@@ -59,7 +59,7 @@ function TextEditorPanel4() {
       {/* we first put everyting in the box and put a overflowy scroll, using an array of list of work experience, we will have clickablelist of work, then with framermotion and scroll to view scroll and scroll o reactscroll we will make it smoothc by we will show the clicked work in the box. */}
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
-      <div className="h-[calc(100%-31px)] w-full overflow-y-scroll no-scrollbar">
+      <div className="h-[calc(100%-31px)] w-full overflow-y-auto no-scrollbar">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
         <div className="fixed grid grid-cols-12 pt-16 w-full ml-10">
@@ -106,52 +106,51 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        <div className="h-[300px] grid grid-cols-10 gap-4 mr-5 pt-16 relative">
-          <div className="col-start-3 col-end-5"></div>
-          <div className="col-start-3 col-end-6">
+        <div className="h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 relative">
+          <div className="col-start-3 col-end-7">
             <img
               className="shadow-xl"
               src={carouselWork[0].image[1]}
               alt={carouselWork[0].title}
             />
           </div>
-          <div className="col-start-6 col-end-8">
+          <div className="col-start-7 col-end-9">
             <img
               className="shadow-xl"
               src={carouselWork[0].image[3]}
               alt={carouselWork[0].title}
             />
           </div>
-          <div className="col-start-8 col-end-11">
+          <div className="col-start-9 col-end-13">
             <img
               className="shadow-xl"
               src={carouselWork[0].image[2]}
               alt={carouselWork[0].title}
             />
           </div>
-          <div className="absolute bottom-[10px] left-[182px]">
-            <div className="flex gap-2 flex-wrap w-[262px]">
+          <div className="absolute bottom-[-20px] left-[182px]">
+            <div className="flex gap-2 flex-wrap max-w-[262px]">
+              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
+                Tailwind
+              </span>
               <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                Default
-            </span>
-            <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
-              Dark
-            </span>
-            <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-              Red
-            </span>
-            <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-              Green
-            </span>
-            <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
-              Yellow
-            </span>
-            <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
-              Indigo
-            </span>
-            <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-              Pink
-            </span>
+                React
+              </span>
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                HTML
+              </span>
+              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                CSS
+              </span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                Figma
+              </span>
+              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                Git
+              </span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                Teamwork
+              </span>
             </div>
           </div>
         </div>
