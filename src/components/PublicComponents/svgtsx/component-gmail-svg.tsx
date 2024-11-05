@@ -1,6 +1,10 @@
 import React from "react";
 import { SvgInterface } from "../../../interfaces/svgInterface";
 
+/**
+ * 
+ * this component will render the gmail svg
+ */
 const ItemGmailSvg: React.FC<SvgInterface> = ({ fill, width, height, style }) => {
   return (
     <svg

@@ -62,7 +62,7 @@ function TextEditorPanel4() {
       <div className="h-[calc(100%-31px)] w-full overflow-y-auto no-scrollbar">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
-        <div className="fixed grid grid-cols-12 pt-16 w-full ml-10">
+        <div className="z-10 fixed grid grid-cols-12 pt-16 w-full ml-10">
           {carouselWork.map((item: any, index: number) => (
             <div
               key={index}
@@ -81,11 +81,11 @@ function TextEditorPanel4() {
         {/* Prometheus */}
         <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="0">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
-            <div className="flex gap-5">
+            <div className="flex gap-5 items-center">
               <div>
                 <img
                   className="w-20"
-                  src="/prometheusmaterial/icon.svg"
+                  src={carouselWork[0].icon}
                   alt="fungo"
                 />
               </div>
@@ -94,8 +94,10 @@ function TextEditorPanel4() {
                   <div>Self-taught</div>
                   <div>2024</div>
                 </div>
-                <div className="font-bold text-5xl">Prometheus</div>
-                <div>A website portfolio for a team</div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[0].title}
+                </div>
+                <div>{carouselWork[0].description}</div>
               </div>
             </div>
             <div>
@@ -106,30 +108,23 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        <div className="h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 relative">
-          <div className="col-start-3 col-end-7">
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
               src={carouselWork[0].image[1]}
               alt={carouselWork[0].title}
             />
           </div>
-          <div className="col-start-7 col-end-9">
+          <div className="col-start-7 col-end-13">
             <img
-              className="shadow-xl"
-              src={carouselWork[0].image[3]}
-              alt={carouselWork[0].title}
-            />
-          </div>
-          <div className="col-start-9 col-end-13">
-            <img
-              className="shadow-xl"
+              className="shadow-xl max-h-[254px]"
               src={carouselWork[0].image[2]}
               alt={carouselWork[0].title}
             />
           </div>
-          <div className="absolute bottom-[-20px] left-[182px]">
-            <div className="flex gap-2 flex-wrap max-w-[262px]">
+          <div className="flex">
+            <div className="flex gap-2 flex-wrap min-w-[262px]">
               <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
                 Tailwind
               </span>
@@ -155,35 +150,363 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        {/* separo */}
-        <div className="h-[300px] grid grid-cols-12 gap-4 mr-10 pt-16" id="1">
-          <div className="col-start-3 col-end-5">
-            <img
-              className="rounded-xl bg-gray-100"
-              src={carouselWork[1].icon}
-              alt={carouselWork[1].title}
-            />
+        {/* Dimanet */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="1">
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[1].icon}
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[1].title}
+                </div>
+                <div>{carouselWork[1].description}</div>
+              </div>
+            </div>
+            <div>
+              <button className="bg-gray-100 rounded-md p-1">
+                <p>showSite</p>
+              </button>
+            </div>
           </div>
-          <div className="col-start-5 col-end-8">
-            <img
-              className="shadow-xl"
-              src={carouselWork[1].image[0]}
-              alt={carouselWork[1].title}
-            />
-          </div>
-          <div className="col-start-8 col-end-10">
+        </div>
+
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
               src={carouselWork[1].image[1]}
               alt={carouselWork[1].title}
             />
           </div>
-          <div className="col-start-10 col-end-13">
+          <div className="col-start-7 col-end-13">
             <img
-              className="shadow-xl"
+              className="shadow-xl max-h-[254px]"
               src={carouselWork[1].image[2]}
               alt={carouselWork[1].title}
             />
+          </div>
+          <div className="flex">
+            <div className="flex gap-2 flex-wrap min-w-[262px]">
+              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
+                Tailwind
+              </span>
+              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                React
+              </span>
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                HTML
+              </span>
+              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                CSS
+              </span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                Figma
+              </span>
+              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                Git
+              </span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                Teamwork
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* dima-portfolio */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="2">
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[2].icon}
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[2].title}
+                </div>
+                <div>{carouselWork[2].description}</div>
+              </div>
+            </div>
+            <div>
+              <button className="bg-gray-100 rounded-md p-1">
+                <p>showSite</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[1]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-7 col-end-13">
+            <img
+              className="shadow-xl max-h-[254px]"
+              src={carouselWork[0].image[2]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="flex">
+            <div className="flex gap-2 flex-wrap min-w-[262px]">
+              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
+                Tailwind
+              </span>
+              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                React
+              </span>
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                HTML
+              </span>
+              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                CSS
+              </span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                Figma
+              </span>
+              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                Git
+              </span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                Teamwork
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Boolean */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="3">
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[3].icon}
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[3].title}
+                </div>
+                <div>{carouselWork[3].description}</div>
+              </div>
+            </div>
+            <div>
+              <button className="bg-gray-100 rounded-md p-1">
+                <p>showSite</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[1]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-7 col-end-13">
+            <img
+              className="shadow-xl max-h-[254px]"
+              src={carouselWork[0].image[2]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="flex">
+            <div className="flex gap-2 flex-wrap min-w-[262px]">
+              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
+                Tailwind
+              </span>
+              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                React
+              </span>
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                HTML
+              </span>
+              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                CSS
+              </span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                Figma
+              </span>
+              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                Git
+              </span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                Teamwork
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Unieuro */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="4">
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[4].icon}
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[4].title}
+                </div>
+                <div>{carouselWork[4].description}</div>
+              </div>
+            </div>
+            <div>
+              <button className="bg-gray-100 rounded-md p-1">
+                <p>showSite</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[1]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-7 col-end-13">
+            <img
+              className="shadow-xl max-h-[254px]"
+              src={carouselWork[0].image[2]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="flex">
+            <div className="flex gap-2 flex-wrap min-w-[262px]">
+              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
+                Tailwind
+              </span>
+              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                React
+              </span>
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                HTML
+              </span>
+              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                CSS
+              </span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                Figma
+              </span>
+              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                Git
+              </span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                Teamwork
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Mc Donald */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="5">
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[5].icon}
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[5].title}
+                </div>
+                <div>{carouselWork[5].description}</div>
+              </div>
+            </div>
+            <div>
+              <button className="bg-gray-100 rounded-md p-1">
+                <p>showSite</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[1]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-7 col-end-13">
+            <img
+              className="shadow-xl max-h-[254px]"
+              src={carouselWork[0].image[2]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="flex">
+            <div className="flex gap-2 flex-wrap min-w-[262px]">
+              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
+                Tailwind
+              </span>
+              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                React
+              </span>
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                HTML
+              </span>
+              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                CSS
+              </span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                Figma
+              </span>
+              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                Git
+              </span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                Teamwork
+              </span>
+            </div>
           </div>
         </div>
 
