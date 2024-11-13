@@ -16,7 +16,7 @@ export const arrayCarouselWork = [
   },
   {
     id: 2,
-    title: "DimaNet",
+    title: "swag",
     description: "Server Infrastructure",
     icon: "icons/proxmox-icon.png",
     image: [
