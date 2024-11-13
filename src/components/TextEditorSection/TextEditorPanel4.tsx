@@ -78,7 +78,8 @@ function TextEditorPanel4() {
           ))}
         </div>
         {/* section of works */}
-        {/* Prometheus */}
+
+        {/* svgestor */}
         <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="0">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
@@ -150,7 +151,8 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        {/* Dimanet */}
+
+        {/* prometheus */}
         <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="1">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
@@ -222,7 +224,7 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        {/* dima-portfolio */}
+        {/* dimanet */}
         <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="2">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
@@ -294,7 +296,7 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        {/* Boolean */}
+        {/* dimafolio */}
         <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="3">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
@@ -366,7 +368,7 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        {/* Unieuro */}
+        {/* boolean */}
         <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="4">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
@@ -438,8 +440,80 @@ function TextEditorPanel4() {
           </div>
         </div>
 
-        {/* Mc Donald */}
+        {/* unieuro */}
         <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="5">
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[5].icon}
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[5].title}
+                </div>
+                <div>{carouselWork[5].description}</div>
+              </div>
+            </div>
+            <div>
+              <button className="bg-gray-100 rounded-md p-1">
+                <p>showSite</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[1]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-7 col-end-13">
+            <img
+              className="shadow-xl max-h-[254px]"
+              src={carouselWork[0].image[2]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="flex">
+            <div className="flex gap-2 flex-wrap min-w-[262px]">
+              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
+                Tailwind
+              </span>
+              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                React
+              </span>
+              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                HTML
+              </span>
+              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                CSS
+              </span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                Figma
+              </span>
+              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                Git
+              </span>
+              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
+                Teamwork
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        {/* mcdonald */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="6">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
