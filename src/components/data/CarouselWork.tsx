@@ -6,6 +6,7 @@ export const arrayCarouselWork = [
     title: "Svgestor",
     description: "React Library",
     icon: "/svgestormaterial/svgestor-icon.png",
+    link: "https://github.com/MindfulLearner/svgestor",
     image: [
       "/svgestormaterial/logofull.png",
       "/svgestormaterial/SVG-iconexampl.png",
@@ -17,6 +18,7 @@ export const arrayCarouselWork = [
     title: "Prometheus",
     description: "Full Stack Developer",
     icon: "/prometheusmaterial/icon.svg",
+    link: "https://github.com/prometheus-coding",
     image: [
       "/prometheusmaterial/Header.jpeg",
       "/prometheusmaterial/workwithus.jpeg",
@@ -28,6 +30,7 @@ export const arrayCarouselWork = [
     title: "DimaNet",
     description: "Server Infrastructure",
     icon: "icons/proxmox-icon.png",
+    link: "https://github.com/MindfulLearner/dimaNet-homeLabServer",
     image: [
     "/proxmoxmaterial/archlinuxdesk.png",
       "/proxmoxmaterial/Docker.png",
@@ -43,6 +46,7 @@ export const arrayCarouselWork = [
     title: "DimaFolio",
     description: "Portfolio",
     icon: "icons/react-icon.png",
+    link: "https://github.com/MindfulLearner/dima-portfolio",
     image: [
       "/dimafoliomaterial/asd.png",
       "/dimafoliomaterial/port.png",
@@ -53,6 +57,7 @@ export const arrayCarouselWork = [
     title: "Boolean",
     description: "Full Stack Developer",
     icon: "/icons/boolean-icon.png",
+    link: "https://github.com/MindfulLearner/php-oop-2",
     image: [
       "/booleanmaterial/dropbox.png",
       "/booleanmaterial/layout.png",
@@ -69,6 +74,7 @@ export const arrayCarouselWork = [
     title: "Unieuro",
     description: "Manager",
     icon: "/icons/unieuro-icon.png",
+    link: "https://www.unieuro.it/online/",
     image: [
       "/unieuromaterial/Unieuro-nuova-sede-e1637591871788.jpg",
       "/unieuromaterial/uneiruorinasce.jpeg",
@@ -80,6 +86,7 @@ export const arrayCarouselWork = [
     title: "McDonald",
     description: "Crew Member",
     icon: "/icons/mcdonald-icon.png",
+    link: "https://www.mcdonalds.it/",
     image: [
       "/macdonaldmaterial/greendon.jpg",
       "/macdonaldmaterial/mcpata.jpg",

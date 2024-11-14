@@ -82,16 +82,14 @@ function TextEditorPanel2() {
           <div className="font-quicksand flex justify-center items-center pt-10 text-white text-xl font-bold pl-2 pr-2 w-1/2">
           {/* tempo di hover 0.2 */}
             <motion.div
-              whileHover={{ scale: 1.1 }}
-              onHoverStart={(e) => {}}
-              onHoverEnd={(e) => {}}
-              whileTap={{ scale: 1.3 }}
-              transition={{ type: "spring", stiffness: 500, damping: 80, bounce: 0.6 }}
-            >
-              <button
-                type="button"
-                className="text-white bg-gradient-to-r from-black to-emptybarColor 0 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
+                <button
+                  type="button"
+                  className="text-white bg-gradient-to-r from-black to-emptybarColor 0 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >
                 Reach me
               </button>
             </motion.div>

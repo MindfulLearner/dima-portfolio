@@ -1,6 +1,7 @@
 //text editor panel 4
 import React, { useState } from "react";
 import carouselWork from "../data/CarouselWork";
+import { motion } from "framer-motion";
 
 function TextEditorPanel4() {
   const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
@@ -79,7 +80,7 @@ function TextEditorPanel4() {
         {/* section of works */}
 
         {/* svgestor */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="0">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="0">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -101,9 +102,15 @@ function TextEditorPanel4() {
               </div>
             </div>
             <div>
-              <button className="bg-gray-100 rounded-md p-1">
-                <p>showSite</p>
+              <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+              <button className="bg-purple-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
+                <a>Link to Github Doc(ENG)</a>
               </button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -155,7 +162,7 @@ function TextEditorPanel4() {
 
 
         {/* prometheus */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="1">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="1">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -177,9 +184,15 @@ function TextEditorPanel4() {
               </div>
             </div>
             <div>
-              <button className="bg-gray-100 rounded-md p-1">
-                <p>showSite</p>
+              <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+              <button className="bg-blue-400 text-black rounded-md p-1 " onClick={() => window.open(carouselWork[1].link, "_blank")}>
+                <p>Link to Organization Github</p>
               </button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -227,7 +240,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* dimanet */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="2">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="2">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -249,9 +262,15 @@ function TextEditorPanel4() {
               </div>
             </div>
             <div>
-              <button className="bg-gray-100 rounded-md p-1">
-                <p>showSite</p>
+              <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+              <button className="bg-orange-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[2].link, "_blank")}>
+                <p>Link to Documentation(IT)</p>
               </button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -333,7 +352,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* dimafolio */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="3">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="3">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -355,9 +374,15 @@ function TextEditorPanel4() {
               </div>
             </div>
             <div>
-              <button className="bg-gray-100 rounded-md p-1">
-                <p>showSite</p>
+              <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+              <button className="bg-blue-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[3].link, "_blank")}>
+                <p>View the project!</p>
               </button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -405,7 +430,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* boolean */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="4">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="4">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -427,9 +452,15 @@ function TextEditorPanel4() {
               </div>
             </div>
             <div>
-              <button className="bg-gray-100 rounded-md p-1">
-                <p>showSite</p>
+              <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+              <button className="bg-green-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[4].link, "_blank")}>
+                <p>Link to my favorite project!</p>
               </button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -505,7 +536,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* unieuro */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="5">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="5">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -527,9 +558,15 @@ function TextEditorPanel4() {
               </div>
             </div>
             <div>
-              <button className="bg-gray-100 rounded-md p-1">
-                <p>showSite</p>
+              <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+              <button className="bg-orange-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[5].link, "_blank")}>
+                <p>Unieuro Website Shop!</p>
               </button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -551,33 +588,33 @@ function TextEditorPanel4() {
           </div>
           <div className="flex">
             <div className="flex gap-2 flex-wrap min-w-[262px]">
-              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
-                Tailwind
+              <span className="bg-green-200 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                Communication
               </span>
-              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                React
+              <span className="bg-orange-200 text-orange-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                Adaptability
               </span>
-              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
-                HTML
+              <span className="bg-yellow-300 text-yellow-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-800 dark:text-yellow-300">
+                Problem-solving
               </span>
-              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
-                CSS
+              <span className="bg-blue-300 text-blue-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-800 dark:text-blue-300">
+                Collaboration
               </span>
-              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-                Figma
+              <span className="bg-purple-300 text-purple-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-800 dark:text-purple-300">
+                Time Management
               </span>
-              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                Git
+              <span className="bg-red-300 text-red-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-800 dark:text-red-300">
+                Leadership
               </span>
-              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
-                Teamwork
+              <span className="bg-teal-300 text-teal-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-800 dark:text-teal-300">
+                Attention to Detail
               </span>
             </div>
           </div>
         </div>
         
         {/* mcdonald */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10" id="6">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="6">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -599,9 +636,15 @@ function TextEditorPanel4() {
               </div>
             </div>
             <div>
-              <button className="bg-gray-100 rounded-md p-1">
-                <p>showSite</p>
+              <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+              <button className="bg-yellow-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[6].link, "_blank")}>
+                <p>McDonald Website</p>
               </button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -623,26 +666,26 @@ function TextEditorPanel4() {
           </div>
           <div className="flex">
             <div className="flex gap-2 flex-wrap min-w-[262px]">
-              <span className="bg-teal-100 text-teal-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">
-                Tailwind
+              <span className="bg-red-200 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                Communication
               </span>
-              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                React
+              <span className="bg-orange-200 text-orange-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                Adaptability
               </span>
-              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
-                HTML
+              <span className="bg-green-200 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                Problem-solving
               </span>
-              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
-                CSS
+              <span className="bg-cyan-200 text-cyan-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-cyan-900 dark:text-cyan-300">
+                Collaboration
               </span>
-              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-                Figma
+              <span className="bg-purple-300 text-purple-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-800 dark:text-purple-300">
+                Time Management
               </span>
-              <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                Git
+              <span className="bg-yellow-300 text-yellow-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-800 dark:text-yellow-300">
+                Attention to Detail
               </span>
-              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
-                Teamwork
+              <span className="bg-blue-300 text-blue-900 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-800 dark:text-blue-300">
+                Leadership
               </span>
             </div>
           </div>
