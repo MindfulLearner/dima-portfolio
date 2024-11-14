@@ -38,9 +38,8 @@ function TextEditorPanel4() {
           </div>
         </div>
         <div
-          className={`max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
-            isHoveredSelectTab ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
-          }`}
+          className={`max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${isHoveredSelectTab ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
+            }`}
           onMouseEnter={handleMouseOverSelectTab}
           onMouseLeave={handleMouseOutSelectTab}
         >
@@ -80,7 +79,7 @@ function TextEditorPanel4() {
         {/* section of works */}
 
         {/* svgestor */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="0">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="0">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -103,13 +102,13 @@ function TextEditorPanel4() {
             </div>
             <div>
               <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-              <button className="bg-purple-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
-                <a>Link to Github Doc(ENG)</a>
-              </button>
+                <button className="bg-purple-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
+                  <a>Link to Github Doc(ENG)</a>
+                </button>
               </motion.div>
             </div>
           </div>
@@ -162,7 +161,7 @@ function TextEditorPanel4() {
 
 
         {/* prometheus */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="1">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="1">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -185,13 +184,13 @@ function TextEditorPanel4() {
             </div>
             <div>
               <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-              <button className="bg-blue-400 text-black rounded-md p-1 " onClick={() => window.open(carouselWork[1].link, "_blank")}>
-                <p>Link to Organization Github</p>
-              </button>
+                <button className="bg-blue-400 text-black rounded-md p-1 " onClick={() => window.open(carouselWork[1].link, "_blank")}>
+                  <p>Link to Organization Github</p>
+                </button>
               </motion.div>
             </div>
           </div>
@@ -240,7 +239,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* dimanet */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="2">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="2">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -263,13 +262,13 @@ function TextEditorPanel4() {
             </div>
             <div>
               <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-              <button className="bg-orange-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[2].link, "_blank")}>
-                <p>Link to Documentation(IT)</p>
-              </button>
+                <button className="bg-orange-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[2].link, "_blank")}>
+                  <p>Link to Documentation(IT)</p>
+                </button>
               </motion.div>
             </div>
           </div>
@@ -289,7 +288,7 @@ function TextEditorPanel4() {
               src={carouselWork[2].image[2]}
               alt={carouselWork[2].title}
             />
-          </div> 
+          </div>
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
@@ -304,7 +303,7 @@ function TextEditorPanel4() {
               alt={carouselWork[2].title}
             />
           </div>
-<div className="col-start-1 col-end-7">
+          <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
               src={carouselWork[2].image[5]}
@@ -352,7 +351,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* dimafolio */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="3">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="3">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -375,13 +374,13 @@ function TextEditorPanel4() {
             </div>
             <div>
               <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-              <button className="bg-blue-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[3].link, "_blank")}>
-                <p>View the project!</p>
-              </button>
+                <button className="bg-blue-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[3].link, "_blank")}>
+                  <p>View the project!</p>
+                </button>
               </motion.div>
             </div>
           </div>
@@ -430,7 +429,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* boolean */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="4">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="4">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -453,13 +452,13 @@ function TextEditorPanel4() {
             </div>
             <div>
               <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-              <button className="bg-green-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[4].link, "_blank")}>
-                <p>Link to my favorite project!</p>
-              </button>
+                <button className="bg-green-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[4].link, "_blank")}>
+                  <p>Link to my favorite project!</p>
+                </button>
               </motion.div>
             </div>
           </div>
@@ -479,7 +478,7 @@ function TextEditorPanel4() {
               src={carouselWork[4].image[1]}
               alt={carouselWork[4].title}
             />
-          </div> 
+          </div>
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
@@ -536,7 +535,7 @@ function TextEditorPanel4() {
         </div>
 
         {/* unieuro */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="5">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="5">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -559,13 +558,13 @@ function TextEditorPanel4() {
             </div>
             <div>
               <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-              <button className="bg-orange-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[5].link, "_blank")}>
-                <p>Unieuro Website Shop!</p>
-              </button>
+                <button className="bg-orange-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[5].link, "_blank")}>
+                  <p>Unieuro Website Shop!</p>
+                </button>
               </motion.div>
             </div>
           </div>
@@ -612,9 +611,9 @@ function TextEditorPanel4() {
             </div>
           </div>
         </div>
-        
+
         {/* mcdonald */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-10 relative" id="6">
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="6">
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -637,13 +636,13 @@ function TextEditorPanel4() {
             </div>
             <div>
               <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-              <button className="bg-yellow-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[6].link, "_blank")}>
-                <p>McDonald Website</p>
-              </button>
+                <button className="bg-yellow-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[6].link, "_blank")}>
+                  <p>McDonald Website</p>
+                </button>
               </motion.div>
             </div>
           </div>
