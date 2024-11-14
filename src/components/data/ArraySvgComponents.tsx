@@ -5,14 +5,24 @@ import ItemTwitterSvg from "../PublicComponents/svgtsx/component-twitter-svg";
 import ItemLinkedinSvg from "../PublicComponents/svgtsx/component-linkedin-svg";
 
 export const ArraySvgComponents = [
-  ItemGithubSvg,
-  ItemLinkedinSvg,
-  ItemGmailSvg,
-  ItemTwitterSvg,
-  ItemDiscordSvg,
-  ItemGithubSvg,
-  ItemLinkedinSvg,
-  ItemGmailSvg,
-  ItemTwitterSvg,
-  ItemDiscordSvg,
+  {
+    link: "https://github.com/MindfulLearner",
+    svg: ItemGithubSvg,
+  },
+  {
+    link: "https://www.linkedin.com/in/joshua-dimaunahan-473977195/",
+    svg: ItemLinkedinSvg,
+  },
+  {
+    link: "mailto:dimajosh1009@gmail.com",
+    svg: ItemGmailSvg,
+  },
+  {
+    link: "https://twitter.com/fungo93",
+    svg: ItemTwitterSvg,
+  },
+  {
+    link: "https://github.com/MindfulLearner",
+    svg: ItemDiscordSvg,
+  },
 ];

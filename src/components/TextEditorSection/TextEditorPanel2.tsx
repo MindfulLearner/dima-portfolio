@@ -31,6 +31,15 @@ function TextEditorPanel2() {
     console.log("mouse left");
   }
 
+  //click on the select square
+   function handleClick(index: number) {
+    console.log("clicked", index);
+    //open the link
+    // il numero deve restituire sempre un numero da 0 a 5
+    const number = index % 5;
+    window.open(ArraySvgComponents[number].link, "_blank");
+  }
+
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-borderColor  ">
       <div className="w-full flex  bg-emptybarColor shadow-lg">
@@ -115,6 +124,7 @@ function TextEditorPanel2() {
                 justify="justify-center"
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleClick(index)}
                 backgroundColor={
                   hoveredCard === index
                     ? "bg-white"
@@ -127,11 +137,12 @@ function TextEditorPanel2() {
                   hoveredCard === index ? "min-h-[120px]" : "min-h-[110px]"
                 }
                 style={{
+                  cursor: "pointer",
                   transition:
                     "background-color 0.3s ease, min-width 0.3s ease, min-height 0.3s ease",
                 }}
               >
-                <Item
+                <Item.svg
                   fill={hoveredCard === index ? "black" : "white"}
                   width={hoveredCard === index ? "45" : "40"}
                   height={hoveredCard === index ? "45" : "40"}

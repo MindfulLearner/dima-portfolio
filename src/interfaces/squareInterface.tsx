@@ -7,13 +7,14 @@ export interface SquareInterface {
     width?: string;
     height?: string;
     shadow?: string;
-    backgroundColor?: string;
-    flex?: string;
-    items?: string;
-    justify?: string;
-    children?: ReactNode; 
-    /**
-     * hoover mouse enter and leave for activating hoovering
+  backgroundColor?: string;
+  flex?: string;
+  items?: string;
+  justify?: string;
+  children?: ReactNode;
+  onClick?: () => void;
+  /**
+   * hoover mouse enter and leave for activating hoovering
      */
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
