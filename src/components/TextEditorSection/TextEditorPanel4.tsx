@@ -100,7 +100,7 @@ function TextEditorPanel4() {
                 <div>{carouselWork[0].description}</div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
@@ -182,7 +182,7 @@ function TextEditorPanel4() {
                 <div>{carouselWork[1].description}</div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
@@ -260,7 +260,7 @@ function TextEditorPanel4() {
                 <div>{carouselWork[2].description}</div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
@@ -372,7 +372,7 @@ function TextEditorPanel4() {
                 <div>{carouselWork[3].description}</div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
@@ -450,7 +450,7 @@ function TextEditorPanel4() {
                 <div>{carouselWork[4].description}</div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
@@ -556,7 +556,7 @@ function TextEditorPanel4() {
                 <div>{carouselWork[5].description}</div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
@@ -634,7 +634,7 @@ function TextEditorPanel4() {
                 <div>{carouselWork[6].description}</div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
