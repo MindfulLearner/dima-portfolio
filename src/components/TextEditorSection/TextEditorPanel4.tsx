@@ -1,10 +1,10 @@
-//text editor panel 4
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import carouselWork from "../data/CarouselWork";
 import { motion } from "framer-motion";
 
 function TextEditorPanel4() {
   const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   function handleMouseOverSelectTab() {
     setIsHoveredSelectTab(true);
@@ -13,13 +13,14 @@ function TextEditorPanel4() {
     setIsHoveredSelectTab(false);
   }
 
+  //TODO: da fare react native e non DOM 
   const handleClickScrollTo = (index: number) => {
-    const section = document.getElementById(`${index}`);
-    console.log(section);
+    const section = sectionRefs.current[index];
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }
+
 
   return (
     <div className="h-1/2 bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
@@ -76,10 +77,14 @@ function TextEditorPanel4() {
             </div>
           ))}
         </div>
+
         {/* section of works */}
 
         {/* svgestor */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="0">
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[0] = element}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -161,7 +166,10 @@ function TextEditorPanel4() {
 
 
         {/* prometheus */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="1">
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[1] = element}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -239,7 +247,10 @@ function TextEditorPanel4() {
         </div>
 
         {/* dimanet */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="2">
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[2] = element}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -351,7 +362,10 @@ function TextEditorPanel4() {
         </div>
 
         {/* dimafolio */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="3">
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[3] = element}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -429,7 +443,10 @@ function TextEditorPanel4() {
         </div>
 
         {/* boolean */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="4">
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[4] = element}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -535,7 +552,10 @@ function TextEditorPanel4() {
         </div>
 
         {/* unieuro */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="5">
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[5] = element}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -613,7 +633,10 @@ function TextEditorPanel4() {
         </div>
 
         {/* mcdonald */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" id="6">
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[6] = element}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
