@@ -289,7 +289,7 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[2].image[1]}
+              src={carouselWork[2].image[0]}
               alt={carouselWork[2].title}
             />
           </div>

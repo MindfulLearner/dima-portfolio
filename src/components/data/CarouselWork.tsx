@@ -32,9 +32,9 @@ export const arrayCarouselWork = [
     icon: "icons/proxmox-icon.png",
     link: "https://github.com/MindfulLearner/dimaNet-homeLabServer",
     image: [
-    "/proxmoxmaterial/archlinuxdesk.png",
-      "/proxmoxmaterial/Docker.png",
       "/proxmoxmaterial/Grub.png",
+      "/proxmoxmaterial/DockerDontuse.png",
+    "/proxmoxmaterial/archlinuxdesk.png",
       "/proxmoxmaterial/Server.png",
       "/proxmoxmaterial/VerticalScaling.png",
       "/proxmoxmaterial/VMARCH.png",
