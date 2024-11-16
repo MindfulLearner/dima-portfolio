@@ -1,11 +1,31 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { TerminaleListOfCommands } from "../data/TerminalsArray";
 
 function Terminal1() {
-  // Defining the ref for the command input
+  // list of commands that the user can type in the terminal
+  const listOfCommands = TerminaleListOfCommands;
+
+
+  // defining the ref for the command input
   const commandInputRef = useRef<HTMLInputElement>(null);
 
   // Define the terminal output state
   const [terminalOutput, setTerminalOutput] = useState<JSX.Element[]>([]);
+
+  /**
+   * this scrolls to the bottom of the terminal
+   */
+  const scrollToBottom = () => {
+    commandInputRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  /**
+   * this will scroll to the bottom of the terminal when the terminal output is updated
+   */
+  useEffect(() => {
+    scrollToBottom();
+  }, [terminalOutput]);
 
 
   /**
@@ -30,24 +50,81 @@ function Terminal1() {
             <div className="text-white">at</div>
             <div className="text-green-500">dimorega-net-ct</div>
             <div className="text-white">on</div>
-            <div className="text-red-500">feat/workingonit</div>
+            <div className="text-orange-400">feat/workingonit</div>
             <div className="text-white">~</div>
           </div>
           <div className="text-white">{previousCommand}</div>
         </div>
       );
 
+
       setTerminalOutput((prevOutput) => [...prevOutput, newCommandLine]);
 
       if (commandInputRef.current) {
         commandInputRef.current.value = "";
       }
+
+      inputCommandHandler(previousCommand);
     }
   };
 
+
+  const inputCommandHandler = (string: string) => {
+    // this will handle the input command
+    console.log(string);
+    console.log(listOfCommands);
+    if (listOfCommands.find((command) => command.command === string)) {
+      switch (string) {
+        case "ls":
+          console.log('ls command found');
+          break;
+        case "cd":
+          console.log('cd command found');
+          break;
+        case "help":
+          console.log('help command found');
+          setTerminalOutput((prevOutput) => [
+            ...prevOutput, 
+            <div className="text-white font-mono text-sm flex gap-3">
+              {listOfCommands.map((command) => (
+                <div className="font-bold">{command.command}</div>
+              ))}
+            </div>
+          ]);
+          break;
+        // Case help <command>
+        case "help ls":
+          setTerminalOutput((prevOutput) => [
+            ...prevOutput, 
+            <div className="text-white font-mono text-sm flex gap-3">
+              {listOfCommands.find((command) => command.command === string)?.output?.map((output) => (
+                <div className="font-bold">{output.helpCommand}</div>
+              ))}
+            </div>
+          ]);
+          break;
+
+
+
+        default:
+          console.log('command not found');
+          break;
+      }
+    } else {
+      setTerminalOutput((prevOutput) => [
+        ...prevOutput, 
+        <div className="text-red-500 font-mono text-sm">
+          Error: Command not found: "{string}"
+          ReferenceError: {string} is not defined
+        </div>
+      ]);
+    }
+  };
+
+
   return (
     <div className="w-full h-[calc(100%-2px)] overflow-y-auto">
-      <div>
+      <div className="font-mono text-sm">
         {/* Terminal output */}
         {terminalOutput.map((line, index) => (
           <div key={index}>{line}</div>
@@ -65,7 +142,7 @@ function Terminal1() {
           <div className="text-white">at</div>
           <div className="text-green-500">dimorega-net-ct</div>
           <div className="text-white">on</div>
-          <div className="text-red-500">feat/workingonit</div>
+          <div className="text-orange-400">feat/workingonit</div>
           <div className="text-white">~</div>
         </div>
         <input
