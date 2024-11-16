@@ -76,7 +76,7 @@ function TextEditorPanel4() {
 
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
-      <div className="h-[calc(100%-31px)] w-full overflow-y-auto">
+      <div className="h-[calc(100%-31px)] w-full overflow-y-auto no-scrollbar">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
         <div className="flex items-center z-10 h-[302px] fixed">
@@ -84,11 +84,12 @@ function TextEditorPanel4() {
             {carouselWork.map((item: any, index: number) => (
             <div
               key={index}
-              className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 ${isSelectedWork === index ? "bg-gray-500 rounded-sm" : ""} `}
+              className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 cursor-pointer ${isSelectedWork === index ? "bg-gray-500 rounded-sm" : ""} transition-all duration-300 ease-in-out`}
+              onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
             >
               <a
                 className={`hover:text-gray-200 cursor-pointer ${isSelectedWork === index ? "text-white underline " : "text-gray-500"} `}
-                onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
+              
               >
                 {item.title}
               </a>
