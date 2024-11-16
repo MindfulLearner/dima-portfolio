@@ -3,15 +3,32 @@ import carouselWork from "../data/CarouselWork";
 import { motion } from "framer-motion";
 
 function TextEditorPanel4() {
-  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
+  /**
+   * handle the mouse over of the select tab
+   */
   function handleMouseOverSelectTab() {
     setIsHoveredSelectTab(true);
   }
+  /**
+   * handle the mouse out of the select tab
+   */
   function handleMouseOutSelectTab() {
     setIsHoveredSelectTab(false);
   }
+
+
+  const [isSelectedWork, setIsSelectedWork] = useState<number | undefined>(0);
+  /**
+   * handle the selected work
+   */
+  function handleSelectedWork(index: number) {
+    console.log("index", index);
+    setIsSelectedWork(index);
+  }
+
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   //TODO: da fare react native e non DOM 
   const handleClickScrollTo = (index: number) => {
@@ -69,8 +86,8 @@ function TextEditorPanel4() {
               className="font-quicksand text-gray-300 font-bold col-start-1"
             >
               <a
-                className="hover:text-gray-500 cursor-pointer"
-                onClick={() => handleClickScrollTo(index)}
+                className={`hover:text-gray-500 cursor-pointer ${isSelectedWork === index ? "text-gray-500 underline" : "text-gray-300"} `}
+                onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
               >
                 {item.title}
               </a>
