@@ -62,7 +62,7 @@ function Terminal1() {
 
 
   return (
-    <div className=" w-full h-[calc(100%-2px)] overflow-y-auto">
+    <div className="outline outline-1 outline-red-500 w-full h-[calc(100%-2px)] overflow-y-auto">
       <div>
         {/* this will be the terminal output */}
         {terminalOutput?.map((line, index) => (

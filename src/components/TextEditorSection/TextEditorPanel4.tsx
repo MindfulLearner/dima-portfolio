@@ -79,20 +79,22 @@ function TextEditorPanel4() {
       <div className="h-[calc(100%-31px)] w-full overflow-y-auto">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
-        <div className="z-10 fixed grid grid-cols-1 pt-16 w-[100px] ml-10">
-          {carouselWork.map((item: any, index: number) => (
+        <div className="flex items-center z-10 h-[302px] fixed">
+          <div className="grid grid-cols-1 w-[100px] ml-10">
+            {carouselWork.map((item: any, index: number) => (
             <div
               key={index}
-              className="font-quicksand text-gray-300 font-bold col-start-1"
+              className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 ${isSelectedWork === index ? "bg-gray-500 rounded-sm" : ""} `}
             >
               <a
-                className={`hover:text-gray-500 cursor-pointer ${isSelectedWork === index ? "text-gray-500 underline" : "text-gray-300"} `}
+                className={`hover:text-gray-200 cursor-pointer ${isSelectedWork === index ? "text-white underline " : "text-gray-500"} `}
                 onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
               >
                 {item.title}
               </a>
             </div>
           ))}
+        </div>
         </div>
 
         {/* section of works */}
