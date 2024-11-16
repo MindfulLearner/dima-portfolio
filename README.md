@@ -16,6 +16,11 @@ I'm using React, Typescript, Framer Motion, Tailwind CSS.
 - I've divided the website into 4 sections, each section has a different idea of who i am. 
 ### Terminal Idea:
 - You can type help and you can get list of my works, in array, a minigame with vimmotion and diff features.
+API used: 
+- quotes: https://api.quotable.io/random
+- music: https://developer.spotify.com/documentation/web-api
+
+
 ### Right Tab Idea:
 - you can click to point at the section selected.
 ### header and footer idea:
