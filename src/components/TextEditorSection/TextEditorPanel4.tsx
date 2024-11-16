@@ -3,15 +3,32 @@ import carouselWork from "../data/CarouselWork";
 import { motion } from "framer-motion";
 
 function TextEditorPanel4() {
-  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
+  /**
+   * handle the mouse over of the select tab
+   */
   function handleMouseOverSelectTab() {
     setIsHoveredSelectTab(true);
   }
+  /**
+   * handle the mouse out of the select tab
+   */
   function handleMouseOutSelectTab() {
     setIsHoveredSelectTab(false);
   }
+
+
+  const [isSelectedWork, setIsSelectedWork] = useState<number | undefined>(0);
+  /**
+   * handle the selected work
+   */
+  function handleSelectedWork(index: number) {
+    console.log("index", index);
+    setIsSelectedWork(index);
+  }
+
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   //TODO: da fare react native e non DOM 
   const handleClickScrollTo = (index: number) => {
@@ -59,23 +76,26 @@ function TextEditorPanel4() {
 
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
-      <div className="h-[calc(100%-31px)] w-full overflow-y-auto">
+      <div className="h-[calc(100%-31px)] w-full overflow-y-auto no-scrollbar">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
-        <div className="z-10 fixed grid grid-cols-1 pt-16 w-[100px] ml-10">
-          {carouselWork.map((item: any, index: number) => (
+        <div className="flex items-center z-10 h-[302px] fixed">
+          <div className="grid grid-cols-1 w-[100px] ml-10">
+            {carouselWork.map((item: any, index: number) => (
             <div
               key={index}
-              className="font-quicksand text-gray-300 font-bold col-start-1"
+              className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 cursor-pointer ${isSelectedWork === index ? "bg-gray-500 rounded-sm" : ""} transition-all duration-300 ease-in-out`}
+              onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
             >
               <a
-                className="hover:text-gray-500 cursor-pointer"
-                onClick={() => handleClickScrollTo(index)}
+                className={`hover:text-gray-200 cursor-pointer ${isSelectedWork === index ? "text-white underline " : "text-gray-500"} `}
+              
               >
                 {item.title}
               </a>
             </div>
           ))}
+        </div>
         </div>
 
         {/* section of works */}
