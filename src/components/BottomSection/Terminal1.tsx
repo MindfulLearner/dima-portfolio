@@ -1,13 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { TerminaleListOfCommands, TerminalArray } from "../data/TerminalsArray";
 
 function Terminal1() {
 
   // faccio una copia di array per non modificare il file originale
   const Terminale1ListOfCommands = [...TerminaleListOfCommands];
-  let Terminal1Array = TerminalArray;
 
 
+  // we define the terminal output state
+  const [terminalOutput, setTerminalOutput] = useState<string[] | undefined>(undefined);
 
 //defining the ref for the command input
   const commandInputRef = useRef<HTMLInputElement>(null);
@@ -19,7 +20,12 @@ function Terminal1() {
   const handleCommandSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log('you write:', commandInputRef.current?.value);
-    if (commandInputRef.current) {
+    // we get the value of the command input
+    const previousCommand = commandInputRef.current?.value;
+    // we set the terminal output with the new value
+    setTerminalOutput([...terminalOutput || [], previousCommand || ""]);
+    // we clear the command input
+    if (previousCommand) {
         commandInputRef.current.value = "";
     }
   };
@@ -56,11 +62,20 @@ function Terminal1() {
 
 
   return (
-    <div className="outline outline-1 outline-red-500 w-full h-[calc(100%-2px)]">
-      {/* questo deve rimanere a ogni input */}
+    <div className="outline outline-1 outline-red-500 w-full h-[calc(100%-2px)] overflow-y-auto">
+      <div>
+        {/* this will be the terminal output */}
+        {terminalOutput?.map((line, index) => (
+          <div key={index}>{line}</div>
+        ))}
+      </div>
       {printBaseCommandsLine()}
     </div>
   );
 }
 
 export default Terminal1;
+
+
+// dovremmo pushare dentro array 
+// linea normale e il comando che ho inserito in precedenza o dovra rimanere stampato nel terminale
