@@ -1,8 +1,7 @@
 // empty array for terminal 1
 // this array will be used to store the commands that the user can type in the terminal
-export const Terminal1Arr = [];
+export const TerminalArray = [];
 
-export const Terminal2Arr = [];
 
 // list of commands that the user can type in the terminal
 /**
@@ -40,3 +39,6 @@ export const TerminaleListOfCommands = [
   { command: "credits", description: "show the credits of the project" },
   { command: "info", description: "show more information about the project" },
 ];
+
+// la chiamata API per per la musica e' un casino ahha
+// https://developer.spotify.com/documentation/web-api/tutorials/getting-started
