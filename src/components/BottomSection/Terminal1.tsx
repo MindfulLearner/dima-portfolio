@@ -143,7 +143,7 @@ function Terminal1() {
           <div className="text-gray-300">...</div>
         </div>
         <div className="flex gap-2">
-          <div>~</div>
+          <div>➔</div>
           <div className="text-blue-300 font-mono text-sm">
             This is a simple terminal, I wanted to make it because part of my coding journey is thanks to linux and the terminal. I explored different OS and distros, my favorite one is Arch Linux you can see with neofetch.
             To see all the commands that you can use, type "help"
