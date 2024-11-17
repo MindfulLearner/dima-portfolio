@@ -51,9 +51,12 @@ function Terminal1() {
             <div className="text-green-500">dimorega-net-ct</div>
             <div className="text-white">on</div>
             <div className="text-orange-400">feat/workingonit</div>
-            <div className="text-white">~</div>
+            <div className="text-white">...</div>
           </div>
-          <div className="text-white">{previousCommand}</div>
+          <div className="flex gap-2">
+            <div>~</div>
+            <div className="text-white">{previousCommand}</div>
+          </div>
         </div>
       );
 
@@ -115,7 +118,7 @@ function Terminal1() {
         ...prevOutput, 
         <div className="text-red-500 font-mono text-sm">
           Error: Command not found: "{string}"
-          ReferenceError: {string} is not defined
+          ReferenceError: {string} is not defined Type "help" to see all the commands that you can use.
         </div>
       ]);
     }
@@ -124,6 +127,32 @@ function Terminal1() {
 
   return (
     <div className="w-full h-[calc(100%-2px)] overflow-y-auto">
+      {/* sezione per riempire un pochino il terminal */}
+      <form
+        className=" w-full font-mono text-sm h-textsm"
+        onSubmit={handleCommandSubmit}
+      >
+        <div className="flex gap-2">
+          <div className="text-red-500">learner</div>
+          <div className="text-gray-300">in</div>
+          <div className="text-purple-500">dima-portfolio</div>
+          <div className="text-gray-300">at</div>
+          <div className="text-teal-500">dimorega-net-ct</div>
+          <div className="text-gray-300">on</div>
+          <div className="text-pink-400">feat/workingonit</div>
+          <div className="text-gray-300">...</div>
+        </div>
+        <div className="flex gap-2">
+          <div>~</div>
+          <div className="text-blue-300 font-mono text-sm">
+            This is a simple terminal, I wanted to make it because part of my coding journey is thanks to linux and the terminal. I explored different OS and distros, my favorite one is Arch Linux you can see with neofetch.
+            To see all the commands that you can use, type "help"
+          </div>
+        </div>
+      </form>
+
+
+      {/* parte da qui */}
       <div className="font-mono text-sm">
         {/* Terminal output */}
         {terminalOutput.map((line, index) => (
@@ -143,14 +172,17 @@ function Terminal1() {
           <div className="text-green-500">dimorega-net-ct</div>
           <div className="text-white">on</div>
           <div className="text-orange-400">feat/workingonit</div>
-          <div className="text-white">~</div>
+          <div className="text-white">...</div>
         </div>
-        <input
-          type="text"
+        <div className="flex gap-2">
+          <div>~</div>
+          <input
+            type="text"
           className="bg-transparent outline-none w-full"
           placeholder="Type your command..."
-          ref={commandInputRef}
-        />
+            ref={commandInputRef}
+          />
+        </div>
         <button type="submit" className="hidden"></button>
       </form>
     </div>

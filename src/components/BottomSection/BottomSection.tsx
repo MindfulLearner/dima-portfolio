@@ -56,7 +56,7 @@ function BottomSection() {
          <Terminal1 />
         </div>
         <div className="justify-between flex w-1/2 h-full bg-bottomSectionColor text-white pl-5">
-          <Terminal1 />
+          <Terminal2 />
           <div className="pl-2 border-l border-borderColor flex flex-col gap-2">
             <div>install dima portfolio</div>
             <div>node dima</div>
