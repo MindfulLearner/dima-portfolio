@@ -136,7 +136,7 @@ function Terminal2() {
           <div className="text-white">...</div>
         </div>
         <div className="flex gap-2">
-          <div>~</div>
+          <div>➔</div>
           <div className="text-green-300 font-mono text-sm">
           I explored different technologies, I really appreciate learning and
           admiring creativity and curiosity.
@@ -160,7 +160,7 @@ function Terminal2() {
           <div className="text-white">...</div>
         </div>
         <div className="flex gap-2">
-          <div>~</div>
+          <div>➔</div>
           <div className="text-red-300 font-mono text-sm">
             I also enjoy collaborating with others to solve complex problems and
             share knowledge, which fuels my passion for continuous improvement
