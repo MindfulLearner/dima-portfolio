@@ -84,7 +84,7 @@ function TextEditorPanel4() {
             {carouselWork.map((item: any, index: number) => (
             <div
               key={index}
-              className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 cursor-pointer ${isSelectedWork === index ? "bg-gray-500 rounded-sm" : ""} transition-all duration-300 ease-in-out`}
+              className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 cursor-pointer ${isSelectedWork === index ? "bg-gray-500 bg-opacity-20 rounded-sm" : ""} transition-all duration-300 ease-in-out`}
               onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
             >
               <a
