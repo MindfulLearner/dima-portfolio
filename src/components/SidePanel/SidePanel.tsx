@@ -123,8 +123,9 @@ function SidePanel() {
     
     switch(extension) {
       case 'tsx':
-      case 'ts':
         return "/icons/react-icon.png";
+      case 'ts':
+        return "/icons/typescript-icon.png";
       case 'js':
       case 'jsx':
         return "/icons/node-icon.png";
@@ -144,6 +145,52 @@ function SidePanel() {
     }
   };
 
+  const getFolderIcon = (folderName: string) => {
+    switch(folderName.toLowerCase()) {
+      case 'components':
+        return "📦"; // Package folder
+      case 'public':
+        return "🌐"; // Public assets
+      case 'src':
+        return "📂"; // Source folder
+      case 'data':
+        return "📊"; // Data folder
+      case 'interfaces':
+        return "📋"; // Type definitions
+      case 'publiccomponents':
+        return "🔧"; // Utils/Tools
+      case 'bottomsection':
+        return "⚡"; // Terminal/Console
+      case 'texteditorsection':
+        return "📝"; // Editor
+      default:
+        return "📁"; // Default folder
+    }
+  };
+
+  const getFileStatus = (fileName: string, isFolder: boolean) => {
+    // Simuliamo file modificati/nuovi
+    const modifiedFiles = [
+      "Terminal1.tsx", 
+      "TextEditorPanel4.tsx", 
+      "src",  // Aggiungiamo src come cartella modificata
+      "components"
+    ];
+    const newFiles = ["TerminalTabs.tsx"];
+    
+    if (modifiedFiles.includes(fileName)) {
+      return (
+        <span className={`text-yellow-500 ${isFolder ? 'ml-2' : 'mr-2'}`}>●</span>
+      );
+    }
+    if (newFiles.includes(fileName)) {
+      return (
+        <span className={`text-green-500 ${isFolder ? 'ml-2' : 'mr-2'}`}>●</span>
+      );
+    }
+    return null;
+  };
+
   const renderFileTree = (items: FileItem[], path: string = "") => {
     return items.map((item) => {
       const currentPath = path ? `${path}/${item.name}` : item.name;
@@ -160,11 +207,18 @@ function SidePanel() {
             )}
             <span className="flex items-center gap-1 text-sm">
               {item.type === "folder" ? (
-                <span>📁</span>
+                <>
+                  <span>{getFolderIcon(item.name)}</span>
+                  {item.name}
+                  {getFileStatus(item.name, true)}
+                </>
               ) : (
-                <img src={getFileIcon(item.name)} alt="file" className="w-4 h-4" />
+                <>
+                  <img src={getFileIcon(item.name)} alt="file" className="w-4 h-4" />
+                  {item.name}
+                  {getFileStatus(item.name, false)}
+                </>
               )}
-              {item.name}
             </span>
           </div>
           {item.type === "folder" && isExpanded && item.children && (
@@ -176,7 +230,7 @@ function SidePanel() {
   };
 
   return (
-    <div className="w-[250px] h-[calc(100vh-34px-21px)] bg-sidePanelColor overflow-y-auto">
+    <div className="w-[250px] h-[calc(100vh-34px-21px)] bg-sidePanelColor overflow-y-auto terminal-scroll">
       <div className="p-2 text-gray-400 text-sm font-semibold">EXPLORER</div>
       {renderFileTree(fileStructure)}
     </div>
