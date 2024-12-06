@@ -119,7 +119,9 @@ function Terminal2() {
   };
 
   return (
-    <div className="w-full h-[calc(100%-2px)] overflow-y-auto">
+    <div 
+      className="w-full h-[calc(100%-2px)] overflow-y-auto terminal-scroll"
+    >
       {/* sezione per riempire un pochino il terminal */}
       <form
         className=" w-full font-mono text-sm h-textsm"

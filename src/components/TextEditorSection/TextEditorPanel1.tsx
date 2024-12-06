@@ -68,7 +68,7 @@ function TextEditorPanel1() {
       {/* logica block and none funziona  */}
       {/* ora cerco di aggiungere fade in e fade out  */}
       <div
-        className="p-10 h-[calc(100%-31px)] w-[100%] relative overflow-auto"
+        className="p-10 h-[calc(100%-31px)] w-[100%] relative overflow-auto terminal-scroll"
         onMouseEnter={handleMouseOver}
         onMouseLeave={handleMouseOut}
       >

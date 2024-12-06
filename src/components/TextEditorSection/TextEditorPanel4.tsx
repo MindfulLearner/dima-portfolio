@@ -76,7 +76,7 @@ function TextEditorPanel4() {
 
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
-      <div className="h-[calc(100%-31px)] w-full overflow-y-auto no-scrollbar">
+      <div className="h-[calc(100%-31px)] w-full overflow-y-auto terminal-scroll">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
         <div className="flex items-center z-10 h-[302px] fixed">
