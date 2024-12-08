@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { arraySkill } from "../data/arraySkill";
+import { useTab } from '../../context/TabContext';
 
 interface FileItem {
   name: string;
@@ -8,7 +9,22 @@ interface FileItem {
 }
 
 function SidePanel() {
-  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(["src"]));
+  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set([
+    "src",
+    "src/components",
+    "src/components/TextEditorSection",
+    "src/components/ResponsivePages",
+    "src/components/ResponsivePages/LaptopResponsive",
+    "src/components/ResponsivePages/LaptopResponsive/components",
+    "src/components/ResponsivePages/LaptopResponsive/components/EditorSection",
+    "src/components/data"
+  ]));
+
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
+  
+  const selectedElementRef = useRef<HTMLDivElement>(null);
+
+  const { addTab } = useTab();
 
   const fileStructure: FileItem[] = [
     {
@@ -85,6 +101,51 @@ function SidePanel() {
                 { name: "TerminalsArray.tsx", type: "file" },
                 { name: "arraySkill.tsx", type: "file" }
               ]
+            },
+            {
+              name: "ResponsivePages",
+              type: "folder",
+              children: [
+                {
+                  name: "CellphoneResponsive",
+                  type: "folder",
+                  children: [
+                    { name: "ResponsiveCellphonePage.tsx", type: "file" }
+                  ]
+                },
+                {
+                  name: "LaptopResponsive",
+                  type: "folder",
+                  children: [
+                    { name: "ResponsiveLaptopPage.tsx", type: "file" },
+                    {
+                      name: "components",
+                      type: "folder",
+                      children: [
+                        {
+                          name: "EditorSection",
+                          type: "folder",
+                          children: [
+                            { name: "AboutMePanel.tsx", type: "file" },
+                            { name: "ContactMePanel.tsx", type: "file" },
+                            { name: "SkillCarouselPanel.tsx", type: "file" },
+                            { name: "WorkHistoryPanel.tsx", type: "file" }
+                          ]
+                        },
+                        { name: "Maincontainer.tsx", type: "file" },
+                        {
+                          name: "TerminalBottom",
+                          type: "folder",
+                          children: [
+                            { name: "SideServerSection.tsx", type: "file" },
+                            { name: "TerminalLaptop.tsx", type: "file" }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -148,32 +209,42 @@ function SidePanel() {
   const getFolderIcon = (folderName: string) => {
     switch(folderName.toLowerCase()) {
       case 'components':
-        return "📦"; // Package folder
+        return "📦";
       case 'public':
-        return "🌐"; // Public assets
+        return "🌐";
       case 'src':
-        return "📂"; // Source folder
+        return "📂";
       case 'data':
-        return "📊"; // Data folder
+        return "📊";
       case 'interfaces':
-        return "📋"; // Type definitions
+        return "📋";
       case 'publiccomponents':
-        return "🔧"; // Utils/Tools
+        return "🔧";
       case 'bottomsection':
-        return "⚡"; // Terminal/Console
+        return "⚡";
       case 'texteditorsection':
-        return "📝"; // Editor
+        return "📝";
+      case 'responsivepages':
+        return "📱";
+      case 'editorsection':
+        return "✏️";
+      case 'terminalbottom':
+        return "💻";
+      case 'cellphoneresponsive':
+        return "📱";
+      case 'laptopresponsive':
+        return "💻";
       default:
-        return "📁"; // Default folder
+        return "📁";
     }
   };
 
   const getFileStatus = (fileName: string, isFolder: boolean) => {
-    // Simuliamo file modificati/nuovi
+   
     const modifiedFiles = [
       "Terminal1.tsx", 
       "TextEditorPanel4.tsx", 
-      "src",  // Aggiungiamo src come cartella modificata
+      "src",  
       "components"
     ];
     const newFiles = ["TerminalTabs.tsx"];
@@ -191,16 +262,38 @@ function SidePanel() {
     return null;
   };
 
-  const renderFileTree = (items: FileItem[], path: string = "") => {
-    return items.map((item) => {
+  const renderFileTree = (items: FileItem[], path: string = "", level: number = 0) => {
+    return items.map((item, index) => {
       const currentPath = path ? `${path}/${item.name}` : item.name;
       const isExpanded = expandedFolders.has(currentPath);
+      const isSelected = selectedFile === currentPath;
+      const isLastItem = index === items.length - 1;
 
       return (
-        <div key={currentPath} className="ml-4">
+        <div key={currentPath} className="ml-4 relative">
+          {/* inea verticale */}
           <div 
-            className="flex items-center gap-1 hover:bg-gray-700 px-2 py-0.5 cursor-pointer text-gray-300"
-            onClick={() => item.type === "folder" && toggleFolder(currentPath)}
+            className={`absolute left-[-16px] top-0 h-full border-l border-gray-600 opacity-25
+              ${isLastItem ? 'h-[16px]' : ''}`}
+          />
+          
+          {/* linea orizzontale */}
+          <div 
+            className={`absolute left-[-16px] top-[15px] w-[12px] border-t border-gray-600 opacity-25`}
+          />
+
+          <div 
+            ref={isSelected ? selectedElementRef : null}
+            className={`flex items-center gap-1 px-2 py-0.5 cursor-pointer text-gray-300 relative z-10
+              ${isSelected ? 'bg-blue-800' : 'hover:bg-gray-700'}`}
+            onClick={(e) => {
+              if (item.type === "folder") {
+                toggleFolder(currentPath);
+              } else {
+                setSelectedFile(currentPath);
+                addTab(currentPath);
+              }
+            }}
           >
             {item.type === "folder" && (
               <span className="text-xs">{isExpanded ? "▼" : "▶"}</span>
@@ -222,12 +315,23 @@ function SidePanel() {
             </span>
           </div>
           {item.type === "folder" && isExpanded && item.children && (
-            <div>{renderFileTree(item.children, currentPath)}</div>
+            <div className="relative">
+              {renderFileTree(item.children, currentPath, level + 1)}
+            </div>
           )}
         </div>
       );
     });
   };
+
+  React.useEffect(() => {
+    if (selectedElementRef.current) {
+      selectedElementRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
+  }, [selectedFile]);
 
   return (
     <div className="w-[250px] h-[calc(100vh-34px-21px)] bg-sidePanelColor overflow-y-auto terminal-scroll">
