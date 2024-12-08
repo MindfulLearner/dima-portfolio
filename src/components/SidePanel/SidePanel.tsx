@@ -240,11 +240,11 @@ function SidePanel() {
   };
 
   const getFileStatus = (fileName: string, isFolder: boolean) => {
-    // Simuliamo file modificati/nuovi
+   
     const modifiedFiles = [
       "Terminal1.tsx", 
       "TextEditorPanel4.tsx", 
-      "src",  // Aggiungiamo src come cartella modificata
+      "src",  
       "components"
     ];
     const newFiles = ["TerminalTabs.tsx"];
@@ -262,17 +262,29 @@ function SidePanel() {
     return null;
   };
 
-  const renderFileTree = (items: FileItem[], path: string = "") => {
-    return items.map((item) => {
+  const renderFileTree = (items: FileItem[], path: string = "", level: number = 0) => {
+    return items.map((item, index) => {
       const currentPath = path ? `${path}/${item.name}` : item.name;
       const isExpanded = expandedFolders.has(currentPath);
       const isSelected = selectedFile === currentPath;
+      const isLastItem = index === items.length - 1;
 
       return (
-        <div key={currentPath} className="ml-4">
+        <div key={currentPath} className="ml-4 relative">
+          {/* inea verticale */}
+          <div 
+            className={`absolute left-[-16px] top-0 h-full border-l border-gray-600 opacity-25
+              ${isLastItem ? 'h-[16px]' : ''}`}
+          />
+          
+          {/* linea orizzontale */}
+          <div 
+            className={`absolute left-[-16px] top-[15px] w-[12px] border-t border-gray-600 opacity-25`}
+          />
+
           <div 
             ref={isSelected ? selectedElementRef : null}
-            className={`flex items-center gap-1 px-2 py-0.5 cursor-pointer text-gray-300
+            className={`flex items-center gap-1 px-2 py-0.5 cursor-pointer text-gray-300 relative z-10
               ${isSelected ? 'bg-blue-800' : 'hover:bg-gray-700'}`}
             onClick={(e) => {
               if (item.type === "folder") {
@@ -303,7 +315,9 @@ function SidePanel() {
             </span>
           </div>
           {item.type === "folder" && isExpanded && item.children && (
-            <div>{renderFileTree(item.children, currentPath)}</div>
+            <div className="relative">
+              {renderFileTree(item.children, currentPath, level + 1)}
+            </div>
           )}
         </div>
       );
