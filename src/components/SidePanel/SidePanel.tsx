@@ -13,6 +13,10 @@ function SidePanel() {
     "src",
     "src/components",
     "src/components/TextEditorSection",
+    "src/components/ResponsivePages",
+    "src/components/ResponsivePages/LaptopResponsive",
+    "src/components/ResponsivePages/LaptopResponsive/components",
+    "src/components/ResponsivePages/LaptopResponsive/components/EditorSection",
     "src/components/data"
   ]));
 
@@ -97,6 +101,51 @@ function SidePanel() {
                 { name: "TerminalsArray.tsx", type: "file" },
                 { name: "arraySkill.tsx", type: "file" }
               ]
+            },
+            {
+              name: "ResponsivePages",
+              type: "folder",
+              children: [
+                {
+                  name: "CellphoneResponsive",
+                  type: "folder",
+                  children: [
+                    { name: "ResponsiveCellphonePage.tsx", type: "file" }
+                  ]
+                },
+                {
+                  name: "LaptopResponsive",
+                  type: "folder",
+                  children: [
+                    { name: "ResponsiveLaptopPage.tsx", type: "file" },
+                    {
+                      name: "components",
+                      type: "folder",
+                      children: [
+                        {
+                          name: "EditorSection",
+                          type: "folder",
+                          children: [
+                            { name: "AboutMePanel.tsx", type: "file" },
+                            { name: "ContactMePanel.tsx", type: "file" },
+                            { name: "SkillCarouselPanel.tsx", type: "file" },
+                            { name: "WorkHistoryPanel.tsx", type: "file" }
+                          ]
+                        },
+                        { name: "Maincontainer.tsx", type: "file" },
+                        {
+                          name: "TerminalBottom",
+                          type: "folder",
+                          children: [
+                            { name: "SideServerSection.tsx", type: "file" },
+                            { name: "TerminalLaptop.tsx", type: "file" }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -160,23 +209,33 @@ function SidePanel() {
   const getFolderIcon = (folderName: string) => {
     switch(folderName.toLowerCase()) {
       case 'components':
-        return "📦"; // Package folder
+        return "📦";
       case 'public':
-        return "🌐"; // Public assets
+        return "🌐";
       case 'src':
-        return "📂"; // Source folder
+        return "📂";
       case 'data':
-        return "📊"; // Data folder
+        return "📊";
       case 'interfaces':
-        return "📋"; // Type definitions
+        return "📋";
       case 'publiccomponents':
-        return "🔧"; // Utils/Tools
+        return "🔧";
       case 'bottomsection':
-        return "⚡"; // Terminal/Console
+        return "⚡";
       case 'texteditorsection':
-        return "📝"; // Editor
+        return "📝";
+      case 'responsivepages':
+        return "📱";
+      case 'editorsection':
+        return "✏️";
+      case 'terminalbottom':
+        return "💻";
+      case 'cellphoneresponsive':
+        return "📱";
+      case 'laptopresponsive':
+        return "💻";
       default:
-        return "📁"; // Default folder
+        return "📁";
     }
   };
 
