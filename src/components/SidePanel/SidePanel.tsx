@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { arraySkill } from "../data/arraySkill";
+import { useTab } from '../../context/TabContext';
 
 interface FileItem {
   name: string;
@@ -8,7 +9,18 @@ interface FileItem {
 }
 
 function SidePanel() {
-  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(["src"]));
+  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set([
+    "src",
+    "src/components",
+    "src/components/TextEditorSection",
+    "src/components/data"
+  ]));
+
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
+  
+  const selectedElementRef = useRef<HTMLDivElement>(null);
+
+  const { addTab } = useTab();
 
   const fileStructure: FileItem[] = [
     {
@@ -195,12 +207,22 @@ function SidePanel() {
     return items.map((item) => {
       const currentPath = path ? `${path}/${item.name}` : item.name;
       const isExpanded = expandedFolders.has(currentPath);
+      const isSelected = selectedFile === currentPath;
 
       return (
         <div key={currentPath} className="ml-4">
           <div 
-            className="flex items-center gap-1 hover:bg-gray-700 px-2 py-0.5 cursor-pointer text-gray-300"
-            onClick={() => item.type === "folder" && toggleFolder(currentPath)}
+            ref={isSelected ? selectedElementRef : null}
+            className={`flex items-center gap-1 px-2 py-0.5 cursor-pointer text-gray-300
+              ${isSelected ? 'bg-blue-800' : 'hover:bg-gray-700'}`}
+            onClick={(e) => {
+              if (item.type === "folder") {
+                toggleFolder(currentPath);
+              } else {
+                setSelectedFile(currentPath);
+                addTab(currentPath);
+              }
+            }}
           >
             {item.type === "folder" && (
               <span className="text-xs">{isExpanded ? "▼" : "▶"}</span>
@@ -228,6 +250,15 @@ function SidePanel() {
       );
     });
   };
+
+  React.useEffect(() => {
+    if (selectedElementRef.current) {
+      selectedElementRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
+  }, [selectedFile]);
 
   return (
     <div className="w-[250px] h-[calc(100vh-34px-21px)] bg-sidePanelColor overflow-y-auto terminal-scroll">

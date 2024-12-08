@@ -5,6 +5,7 @@ import MainContainer from "./components/MainContainer";
 import Footer from "./components/Footer";
 import SidePanel from "./components/SidePanel/SidePanel";
 import ResponsiveLaptopPage from "./components/ResponsivePages/LaptopResponsive/ResponsiveLaptopPage";
+import { TabProvider } from './context/TabContext';
 
 export const App = () => {
   const [isLaptop, setIsLaptop] = useState(false);
@@ -18,14 +19,16 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <div className="w-full h-screen bg-red-500">
-        {isLaptop ? <ResponsiveLaptopPage /> : <>
-          <Header />
-          <MainContainer />
-          <Footer />
-        </>}
+    <TabProvider>
+      <div className="App">
+        <div className="w-full h-screen bg-red-500">
+          {isLaptop ? <ResponsiveLaptopPage /> : <>
+            <Header />
+            <MainContainer />
+            <Footer />
+          </>}
+        </div>
       </div>
-    </div>
+    </TabProvider>
   );
 }
