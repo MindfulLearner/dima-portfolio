@@ -100,23 +100,20 @@ function TextEditorPanel4() {
 
         {/* section of works */}
 
-        {/* svgestor */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[0] = element}
-        >
+        {/* lombbnb */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" ref={element => sectionRefs.current[0] = element}>
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
                 <img
                   className="w-20"
                   src={carouselWork[0].icon}
-                  alt="fungo"
+                  alt="LombBnB logo"
                 />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
-                  <div>Self-taught</div>
+                  <div>Full Stack Developer</div>
                   <div>2024</div>
                 </div>
                 <div className="font-bold text-5xl">
@@ -131,7 +128,77 @@ function TextEditorPanel4() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-purple-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
+                <button className="bg-orange-200 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
+                  <a>Link to Github Doc(ITA)</a>
+                </button>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
+          <div className="col-start-1 col-end-7">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[0]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-7 col-end-13">
+            <img
+              className="shadow-xl max-h-[254px]"
+              src={carouselWork[0].image[1]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-1 col-end-7">
+            <img
+              className="shadow-xl"
+              src={carouselWork[0].image[2]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+          <div className="col-start-7 col-end-13">
+            <img
+              className="shadow-xl max-h-[254px]"
+              src={carouselWork[0].image[3]}
+              alt={carouselWork[0].title}
+            />
+          </div>
+        </div>
+
+        {/* svgestor */}
+        <div 
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
+          ref={element => sectionRefs.current[1] = element}
+        >
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[1].icon}
+                  alt="fungo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Self-taught</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[1].title}
+                </div>
+                <div>{carouselWork[1].description}</div>
+              </div>
+            </div>
+            <div className="z-10">
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <button className="bg-purple-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[1].link, "_blank")}>
                   <a>Link to Github Doc(ENG)</a>
                 </button>
               </motion.div>
@@ -143,15 +210,15 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[0].image[1]}
-              alt={carouselWork[0].title}
+              src={carouselWork[1].image[1]}
+              alt={carouselWork[1].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[0].image[2]}
-              alt={carouselWork[0].title}
+              src={carouselWork[1].image[2]}
+              alt={carouselWork[1].title}
             />
           </div>
           <div className="flex">
@@ -188,14 +255,14 @@ function TextEditorPanel4() {
         {/* prometheus */}
         <div 
           className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[1] = element}
+          ref={element => sectionRefs.current[2] = element}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
                 <img
                   className="w-20"
-                  src={carouselWork[1].icon}
+                  src={carouselWork[2].icon}
                   alt="fungo"
                 />
               </div>
@@ -205,9 +272,9 @@ function TextEditorPanel4() {
                   <div>2024</div>
                 </div>
                 <div className="font-bold text-5xl">
-                  {carouselWork[1].title}
+                  {carouselWork[2].title}
                 </div>
-                <div>{carouselWork[1].description}</div>
+                <div>{carouselWork[2].description}</div>
               </div>
             </div>
             <div className="z-10">
@@ -216,7 +283,7 @@ function TextEditorPanel4() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-blue-400 text-black rounded-md p-1 " onClick={() => window.open(carouselWork[1].link, "_blank")}>
+                <button className="bg-blue-400 text-black rounded-md p-1 " onClick={() => window.open(carouselWork[2].link, "_blank")}>
                   <p>Link to Organization Github</p>
                 </button>
               </motion.div>
@@ -228,15 +295,15 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[1].image[0]}
-              alt={carouselWork[1].title}
+              src={carouselWork[2].image[0]}
+              alt={carouselWork[2].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[1].image[1]}
-              alt={carouselWork[1].title}
+              src={carouselWork[2].image[1]}
+              alt={carouselWork[2].title}
             />
           </div>
           <div className="flex">
@@ -269,14 +336,14 @@ function TextEditorPanel4() {
         {/* dimanet */}
         <div 
           className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[2] = element}
+          ref={element => sectionRefs.current[3] = element}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
                 <img
                   className="w-20"
-                  src={carouselWork[2].icon}
+                  src={carouselWork[3].icon}
                   alt="fungo"
                 />
               </div>
@@ -286,9 +353,9 @@ function TextEditorPanel4() {
                   <div>2024</div>
                 </div>
                 <div className="font-bold text-5xl">
-                  {carouselWork[2].title}
+                  {carouselWork[3].title}
                 </div>
-                <div>{carouselWork[2].description}</div>
+                <div>{carouselWork[3].description}</div>
               </div>
             </div>
             <div className="z-10">
@@ -297,7 +364,7 @@ function TextEditorPanel4() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-orange-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[2].link, "_blank")}>
+                <button className="bg-orange-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[3].link, "_blank")}>
                   <p>Link to Documentation(IT)</p>
                 </button>
               </motion.div>
@@ -309,43 +376,43 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[2].image[0]}
-              alt={carouselWork[2].title}
+              src={carouselWork[3].image[0]}
+              alt={carouselWork[3].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[2].image[2]}
-              alt={carouselWork[2].title}
+              src={carouselWork[3].image[2]}
+              alt={carouselWork[3].title}
             />
           </div>
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[2].image[3]}
-              alt={carouselWork[2].title}
+              src={carouselWork[3].image[3]}
+              alt={carouselWork[3].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[2].image[4]}
-              alt={carouselWork[2].title}
+              src={carouselWork[3].image[4]}
+              alt={carouselWork[3].title}
             />
           </div>
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[2].image[5]}
-              alt={carouselWork[2].title}
+              src={carouselWork[3].image[5]}
+              alt={carouselWork[3].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[2].image[6]}
-              alt={carouselWork[2].title}
+              src={carouselWork[3].image[6]}
+              alt={carouselWork[3].title}
             />
           </div>
           <div className="flex">
@@ -384,14 +451,14 @@ function TextEditorPanel4() {
         {/* dimafolio */}
         <div 
           className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[3] = element}
+          ref={element => sectionRefs.current[4] = element}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
                 <img
                   className="w-20"
-                  src={carouselWork[3].icon}
+                  src={carouselWork[4].icon}
                   alt="fungo"
                 />
               </div>
@@ -401,9 +468,9 @@ function TextEditorPanel4() {
                   <div>2024</div>
                 </div>
                 <div className="font-bold text-5xl">
-                  {carouselWork[3].title}
+                  {carouselWork[4].title}
                 </div>
-                <div>{carouselWork[3].description}</div>
+                <div>{carouselWork[4].description}</div>
               </div>
             </div>
             <div className="z-10">
@@ -412,7 +479,7 @@ function TextEditorPanel4() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-blue-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[3].link, "_blank")}>
+                <button className="bg-blue-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[4].link, "_blank")}>
                   <p>View the project!</p>
                 </button>
               </motion.div>
@@ -424,15 +491,15 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[3].image[0]}
-              alt={carouselWork[3].title}
+              src={carouselWork[4].image[0]}
+              alt={carouselWork[4].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[3].image[1]}
-              alt={carouselWork[3].title}
+              src={carouselWork[4].image[1]}
+              alt={carouselWork[4].title}
             />
           </div>
           <div className="flex">
@@ -465,7 +532,7 @@ function TextEditorPanel4() {
         {/* boolean */}
         <div 
           className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[4] = element}
+          ref={element => sectionRefs.current[5] = element}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
@@ -505,43 +572,43 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[4].image[0]}
-              alt={carouselWork[4].title}
+              src={carouselWork[5].image[0]}
+              alt={carouselWork[5].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[4].image[1]}
-              alt={carouselWork[4].title}
+              src={carouselWork[5].image[1]}
+              alt={carouselWork[5].title}
             />
           </div>
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[4].image[2]}
-              alt={carouselWork[4].title}
+              src={carouselWork[5].image[2]}
+              alt={carouselWork[5].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[4].image[3]}
-              alt={carouselWork[4].title}
+              src={carouselWork[5].image[3]}
+              alt={carouselWork[5].title}
             />
           </div>
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[4].image[4]}
-              alt={carouselWork[4].title}
+              src={carouselWork[5].image[4]}
+              alt={carouselWork[5].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[4].image[5]}
-              alt={carouselWork[4].title}
+              src={carouselWork[5].image[5]}
+              alt={carouselWork[5].title}
             />
           </div>
           <div className="flex">
@@ -574,14 +641,14 @@ function TextEditorPanel4() {
         {/* unieuro */}
         <div 
           className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[5] = element}
+          ref={element => sectionRefs.current[6] = element}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
                 <img
                   className="w-20"
-                  src={carouselWork[5].icon}
+                  src={carouselWork[6].icon}
                   alt="fungo"
                 />
               </div>
@@ -591,9 +658,9 @@ function TextEditorPanel4() {
                   <div>2024</div>
                 </div>
                 <div className="font-bold text-5xl">
-                  {carouselWork[5].title}
+                  {carouselWork[6].title}
                 </div>
-                <div>{carouselWork[5].description}</div>
+                <div>{carouselWork[6].description}</div>
               </div>
             </div>
             <div className="z-10">
@@ -602,7 +669,7 @@ function TextEditorPanel4() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-orange-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[5].link, "_blank")}>
+                <button className="bg-orange-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[6].link, "_blank")}>
                   <p>Unieuro Website Shop!</p>
                 </button>
               </motion.div>
@@ -614,15 +681,15 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[5].image[0]}
-              alt={carouselWork[5].title}
+              src={carouselWork[6].image[0]}
+              alt={carouselWork[6].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[5].image[1]}
-              alt={carouselWork[5].title}
+              src={carouselWork[6].image[1]}
+              alt={carouselWork[6].title}
             />
           </div>
           <div className="flex">
@@ -655,14 +722,14 @@ function TextEditorPanel4() {
         {/* mcdonald */}
         <div 
           className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[6] = element}
+          ref={element => sectionRefs.current[7] = element}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
                 <img
                   className="w-20"
-                  src={carouselWork[6].icon}
+                  src={carouselWork[7].icon}
                   alt="fungo"
                 />
               </div>
@@ -672,9 +739,9 @@ function TextEditorPanel4() {
                   <div>2024</div>
                 </div>
                 <div className="font-bold text-5xl">
-                  {carouselWork[6].title}
+                  {carouselWork[7].title}
                 </div>
-                <div>{carouselWork[6].description}</div>
+                <div>{carouselWork[7].description}</div>
               </div>
             </div>
             <div className="z-10">
@@ -683,7 +750,7 @@ function TextEditorPanel4() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-yellow-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[6].link, "_blank")}>
+                <button className="bg-yellow-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[7].link, "_blank")}>
                   <p>McDonald Website</p>
                 </button>
               </motion.div>
@@ -695,15 +762,15 @@ function TextEditorPanel4() {
           <div className="col-start-1 col-end-7">
             <img
               className="shadow-xl"
-              src={carouselWork[6].image[0]}
-              alt={carouselWork[6].title}
+              src={carouselWork[7].image[0]}
+              alt={carouselWork[7].title}
             />
           </div>
           <div className="col-start-7 col-end-13">
             <img
               className="shadow-xl max-h-[254px]"
-              src={carouselWork[6].image[1]}
-              alt={carouselWork[6].title}
+              src={carouselWork[7].image[1]}
+              alt={carouselWork[7].title}
             />
           </div>
           <div className="flex">
