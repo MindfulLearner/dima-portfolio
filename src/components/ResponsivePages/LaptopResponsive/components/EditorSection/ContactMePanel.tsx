@@ -41,39 +41,8 @@ function ContactMePanel() {
   }
 
   return (
-    <div className="h-1/2 bg-backgroundTextEditor1 border-b border-borderColor  ">
-      <div className="w-full flex  bg-emptybarColor shadow-lg">
-        {/* barra navigazione */}
-        <div className="bg-backgroundTextEditor1 max-w-[200px] pl-2 pr-2 flex h-[31px] items-center gap-2">
-          <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
-          </div>
-          <div className="flex items-center justify-center gap-2">
-            <div className="font-quicksand text-sm text-gray-300">
-              AboutMe.tsx
-            </div>
-            <div className="text-gray-300">U</div>
-            <div className="text-gray-300">x</div>
-          </div>
-        </div>
-        {/* questa parte da sistemare  */}
-        <div className={`max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${isHoveredSelectTab ? 'bg-backgroundTextEditor1' : 'bg-emptybarColor'}`}
-        onMouseEnter={handleMouseOverSelectTab}
-        onMouseLeave={handleMouseOutSelectTab}
-        >
-          <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
-          </div>
-          <div className="flex items-center justify-center gap-2">
-            <div className="font-quicksand text-sm text-gray-300">
-              ContactMe.tsx
-            </div>
-            <div className="text-gray-300">U</div>
-            <div className="text-gray-300">x</div>
-          </div>
-        </div>
-      </div>
-
+    <div className="h-[calc(100vh-34px-251px)] bg-backgroundTextEditor1 border-b border-borderColor  ">
+      
 
       {/* applico logica, se hoovero su questa parte il testo sparisce e ne apparte un altra  */}
       <div className="h-[calc(100%-31px)] mask-gradient terminal-scroll">
