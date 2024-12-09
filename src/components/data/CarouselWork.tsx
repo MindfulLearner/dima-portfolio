@@ -3,6 +3,20 @@ import React from "react";
 export const arrayCarouselWork = [
   {
     id: 1,
+    title: "LombBnB",
+    description: "Project Manager",
+    icon: "/lombnb/logo.png",
+    link: "https://github.com/project-bnb/project-bnb-reports",
+    image: [
+      "/lombnb/primo.png",
+      "/lombnb/secondo.png",
+      "/lombnb/terzo.png",
+      "/lombnb/quarto.png",
+      "/lombnb/quinto.png",
+    ],
+  },
+  {
+    id: 2,
     title: "Svgestor",
     description: "React Library",
     icon: "/svgestormaterial/svgestor-icon.png",
@@ -14,7 +28,7 @@ export const arrayCarouselWork = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Prometheus",
     description: "Full Stack Developer",
     icon: "/prometheusmaterial/icon.svg",
@@ -26,7 +40,7 @@ export const arrayCarouselWork = [
     activeImage: false,
   },
   {
-    id: 3,
+    id: 4,
     title: "DimaNet",
     description: "Server Infrastructure",
     icon: "icons/proxmox-icon.png",
@@ -42,7 +56,7 @@ export const arrayCarouselWork = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "DimaFolio",
     description: "Portfolio",
     icon: "icons/react-icon.png",
@@ -53,7 +67,7 @@ export const arrayCarouselWork = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Boolean",
     description: "Full Stack Developer",
     icon: "/icons/boolean-icon.png",
@@ -70,7 +84,7 @@ export const arrayCarouselWork = [
     activeImage: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "Unieuro",
     description: "Manager",
     icon: "/icons/unieuro-icon.png",
@@ -82,7 +96,7 @@ export const arrayCarouselWork = [
     activeImage: false,
   },
   {
-    id: 7,
+    id: 8,
     title: "McDonald",
     description: "Crew Member",
     icon: "/icons/mcdonald-icon.png",
