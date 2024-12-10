@@ -1,8 +1,7 @@
 # Dima Portfolio
 
-# OPEN SOURCE IDEA
-
-i would like to give feat where you can git push from my website like a message and will be showed there
+# OPEN SOURCE IDEA / Developer Program Member
+i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
 
 ## Project Description
 
