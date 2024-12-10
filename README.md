@@ -3,7 +3,7 @@
 # OPEN SOURCE IDEA / Developer Program Member
 i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
 
-![image](https://github.com/user-attachments/assets/b01ccc69-eab5-4149-940c-e39ae110d052)
+![image](https://github.com/user-attachments/assets/4acd01d9-6f5e-4fe3-9cc9-ea987fefc3ce)
 
 
 ## Project Description
