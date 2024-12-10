@@ -1,5 +1,9 @@
 # Dima Portfolio
 
+# OPEN SOURCE IDEA
+
+i would like to give feat where you can git push from my website like a message and will be showed there
+
 ## Project Description
 
 This is a portfolio website for myself, I've made it in VSCode theme.
