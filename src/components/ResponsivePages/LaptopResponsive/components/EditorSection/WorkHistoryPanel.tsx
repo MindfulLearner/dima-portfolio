@@ -41,8 +41,7 @@ function WorkHistoryPanel() {
 
   return (
     <div className="h-[calc(100vh-34px-251px)] bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
-      
-
+    
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
       <div className="h-[calc(100%-31px)] w-full overflow-y-auto terminal-scroll">
@@ -68,7 +67,43 @@ function WorkHistoryPanel() {
         </div>
 
         {/* section of works */}
-        { /* bnb */}
+
+        {/* lombbnb */}
+        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" ref={element => sectionRefs.current[0] = element}>
+          <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
+            <div className="flex gap-5 items-center">
+              <div>
+                <img
+                  className="w-20"
+                  src={carouselWork[0].icon}
+                  alt="LombBnB logo"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-2">
+                  <div>Full Stack Developer</div>
+                  <div>2024</div>
+                </div>
+                <div className="font-bold text-5xl">
+                  {carouselWork[0].title}
+                </div>
+                <div>{carouselWork[0].description}</div>
+              </div>
+            </div>
+            <div className="z-10">
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <button className="bg-orange-200 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
+                  <a>Link to Github Doc(ITA)</a>
+                </button>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+{ /* bnb */}
         <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
           <div className="col-start-1 col-end-7">
             <img

@@ -135,7 +135,7 @@ function TextEditorPanel4() {
             </div>
           </div>
         </div>
-
+{ /* bnb */}
         <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
           <div className="col-start-1 col-end-7">
             <img
