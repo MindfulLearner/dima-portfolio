@@ -17,13 +17,13 @@ function TextEditorPanel1() {
   }
 
   return (
-    <div className="h-[calc(100vh-34px-251px)] bg-backgroundTextEditor1 border-b border-borderColor">
+    <div className="h-[calc(100vh-34px-271px)] bg-backgroundTextEditor1 border-b border-borderColor">
       {/* hidden if hoover true */}
 
       {/* logica block and none funziona  */}
       {/* ora cerco di aggiungere fade in e fade out  */}
       <div
-        className="p-10 h-[calc(100%-31px)] w-[100%] relative overflow-auto terminal-scroll"
+        className="h-[calc(100%-31px)] flex justify-center items-center relative overflow-auto terminal-scroll"
         onMouseEnter={handleMouseOver}
         onMouseLeave={handleMouseOut}
       >

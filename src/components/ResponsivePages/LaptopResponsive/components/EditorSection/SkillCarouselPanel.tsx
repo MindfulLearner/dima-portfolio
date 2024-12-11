@@ -17,7 +17,7 @@ function SkillCarouselPanel() {
     setActiveTab(tab);
   }
   return (
-    <div className="h-[calc(100vh-34px-251px)] bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
+    <div className="h-[calc(100vh-34px-271px)] bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
      
 
       {/* ciclero un array di parole che avranno un effetto di trasizione da destra a sinistra infinito */}

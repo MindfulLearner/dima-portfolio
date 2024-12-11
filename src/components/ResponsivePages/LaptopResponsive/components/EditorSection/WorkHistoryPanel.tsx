@@ -40,36 +40,48 @@ function WorkHistoryPanel() {
 
 
   return (
-    <div className="h-[calc(100vh-34px-251px)] bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
-    
+    <div className="h-[calc(100vh-34px-271px)] bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
       {/* array parametro activeImage logic: quando clicco un elemento activeimagediventa true e il colore del testo cambiera, eventualmente se ci metto hover prendera quel colore nel mentre */}
 
       <div className="h-[calc(100%-31px)] w-full overflow-y-auto terminal-scroll">
         {/* questo sara in position fixed */}
         {/* da sistemare con GRID */}
-        <div className="flex items-center z-10 h-[302px] fixed">
+        <div className="flex items-center z-10 h-[calc(100vh-34px-271px)] fixed">
           <div className="grid grid-cols-1 w-[100px] ml-10">
             {carouselWork.map((item: any, index: number) => (
-            <div
-              key={index}
-              className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 cursor-pointer ${isSelectedWork === index ? "bg-gray-500 bg-opacity-20 rounded-sm" : ""} transition-all duration-300 ease-in-out`}
-              onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
-            >
-              <a
-                className={`hover:text-gray-200 cursor-pointer ${isSelectedWork === index ? "text-white underline " : "text-gray-500"} `}
-              
+              <div
+                key={index}
+                className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 cursor-pointer ${
+                  isSelectedWork === index
+                    ? "bg-gray-500 bg-opacity-20 rounded-sm"
+                    : ""
+                } transition-all duration-300 ease-in-out`}
+                onClick={() => {
+                  handleClickScrollTo(index);
+                  handleSelectedWork(index);
+                }}
               >
-                {item.title}
-              </a>
-            </div>
-          ))}
-        </div>
+                <a
+                  className={`hover:text-gray-200 cursor-pointer ${
+                    isSelectedWork === index
+                      ? "text-white underline "
+                      : "text-gray-500"
+                  } `}
+                >
+                  {item.title}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* section of works */}
 
         {/* lombbnb */}
-        <div className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" ref={element => sectionRefs.current[0] = element}>
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[0] = element)}
+        >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
@@ -96,14 +108,17 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-orange-200 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
+                <button
+                  className="bg-orange-200 text-black rounded-md p-1"
+                  onClick={() => window.open(carouselWork[0].link, "_blank")}
+                >
                   <a>Link to Github Doc(ITA)</a>
                 </button>
               </motion.div>
             </div>
           </div>
         </div>
-{ /* bnb */}
+        {/* bnb */}
         <div className="min-h-[300px] grid grid-cols-12 gap-4 mr-5 pt-16 pl-[180px] relative">
           <div className="col-start-1 col-end-7">
             <img
@@ -136,18 +151,14 @@ function WorkHistoryPanel() {
         </div>
 
         {/* svgestor */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[1] = element}
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[1] = element)}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
-                <img
-                  className="w-20"
-                  src={carouselWork[1].icon}
-                  alt="fungo"
-                />
+                <img className="w-20" src={carouselWork[1].icon} alt="fungo" />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
@@ -166,7 +177,10 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-purple-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[1].link, "_blank")}>
+                <button
+                  className="bg-purple-400 text-black rounded-md p-1"
+                  onClick={() => window.open(carouselWork[1].link, "_blank")}
+                >
                   <a>Link to Github Doc(ENG)</a>
                 </button>
               </motion.div>
@@ -219,20 +233,15 @@ function WorkHistoryPanel() {
           </div>
         </div>
 
-
         {/* prometheus */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[2] = element}
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[2] = element)}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
-                <img
-                  className="w-20"
-                  src={carouselWork[2].icon}
-                  alt="fungo"
-                />
+                <img className="w-20" src={carouselWork[2].icon} alt="fungo" />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
@@ -251,7 +260,10 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-blue-400 text-black rounded-md p-1 " onClick={() => window.open(carouselWork[2].link, "_blank")}>
+                <button
+                  className="bg-blue-400 text-black rounded-md p-1 "
+                  onClick={() => window.open(carouselWork[2].link, "_blank")}
+                >
                   <p>Link to Organization Github</p>
                 </button>
               </motion.div>
@@ -302,18 +314,14 @@ function WorkHistoryPanel() {
         </div>
 
         {/* dimanet */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[3] = element}
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[3] = element)}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
-                <img
-                  className="w-20"
-                  src={carouselWork[3].icon}
-                  alt="fungo"
-                />
+                <img className="w-20" src={carouselWork[3].icon} alt="fungo" />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
@@ -332,7 +340,10 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-orange-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[3].link, "_blank")}>
+                <button
+                  className="bg-orange-400 text-black rounded-md p-1"
+                  onClick={() => window.open(carouselWork[3].link, "_blank")}
+                >
                   <p>Link to Documentation(IT)</p>
                 </button>
               </motion.div>
@@ -417,18 +428,14 @@ function WorkHistoryPanel() {
         </div>
 
         {/* dimafolio */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[4] = element}
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[4] = element)}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
-                <img
-                  className="w-20"
-                  src={carouselWork[4].icon}
-                  alt="fungo"
-                />
+                <img className="w-20" src={carouselWork[4].icon} alt="fungo" />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
@@ -447,7 +454,10 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-blue-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[4].link, "_blank")}>
+                <button
+                  className="bg-blue-500 text-black rounded-md p-1"
+                  onClick={() => window.open(carouselWork[4].link, "_blank")}
+                >
                   <p>View the project!</p>
                 </button>
               </motion.div>
@@ -498,18 +508,14 @@ function WorkHistoryPanel() {
         </div>
 
         {/* boolean */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[5] = element}
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[5] = element)}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
-                <img
-                  className="w-20"
-                  src={carouselWork[4].icon}
-                  alt="fungo"
-                />
+                <img className="w-20" src={carouselWork[4].icon} alt="fungo" />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
@@ -528,7 +534,10 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-green-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[4].link, "_blank")}>
+                <button
+                  className="bg-green-500 text-black rounded-md p-1"
+                  onClick={() => window.open(carouselWork[4].link, "_blank")}
+                >
                   <p>Link to my favorite project!</p>
                 </button>
               </motion.div>
@@ -607,18 +616,14 @@ function WorkHistoryPanel() {
         </div>
 
         {/* unieuro */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[6] = element}
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[6] = element)}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
-                <img
-                  className="w-20"
-                  src={carouselWork[6].icon}
-                  alt="fungo"
-                />
+                <img className="w-20" src={carouselWork[6].icon} alt="fungo" />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
@@ -637,7 +642,10 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-orange-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[6].link, "_blank")}>
+                <button
+                  className="bg-orange-500 text-black rounded-md p-1"
+                  onClick={() => window.open(carouselWork[6].link, "_blank")}
+                >
                   <p>Unieuro Website Shop!</p>
                 </button>
               </motion.div>
@@ -688,18 +696,14 @@ function WorkHistoryPanel() {
         </div>
 
         {/* mcdonald */}
-        <div 
-          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative" 
-          ref={element => sectionRefs.current[7] = element}
+        <div
+          className="h-[100px] pl-[180px] w-full pt-16 pr-10 z-8 relative"
+          ref={(element) => (sectionRefs.current[7] = element)}
         >
           <div className="flex justify-between gap-2 items-center text-gray-300 font-quicksand">
             <div className="flex gap-5 items-center">
               <div>
-                <img
-                  className="w-20"
-                  src={carouselWork[7].icon}
-                  alt="fungo"
-                />
+                <img className="w-20" src={carouselWork[7].icon} alt="fungo" />
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-2">
@@ -718,7 +722,10 @@ function WorkHistoryPanel() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <button className="bg-yellow-500 text-black rounded-md p-1" onClick={() => window.open(carouselWork[7].link, "_blank")}>
+                <button
+                  className="bg-yellow-500 text-black rounded-md p-1"
+                  onClick={() => window.open(carouselWork[7].link, "_blank")}
+                >
                   <p>McDonald Website</p>
                 </button>
               </motion.div>

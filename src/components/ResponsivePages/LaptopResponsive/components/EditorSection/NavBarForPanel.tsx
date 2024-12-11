@@ -35,7 +35,7 @@ export const NavBarForPanel = () => {
         onMouseLeave={handleMouseOutSelectTab}
         onClick={() => handleTabClick(0)}
         >
-          <div className="h-6 w-6">
+        <div className="h-6 w-6">
             <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
           </div>
           <div className="flex items-center justify-center gap-2">

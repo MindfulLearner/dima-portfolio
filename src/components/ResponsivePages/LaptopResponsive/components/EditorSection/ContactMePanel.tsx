@@ -41,7 +41,7 @@ function ContactMePanel() {
   }
 
   return (
-    <div className="h-[calc(100vh-34px-251px)] bg-backgroundTextEditor1 border-b border-borderColor  ">
+    <div className="h-[calc(100vh-34px-271px)] bg-backgroundTextEditor1 border-b border-borderColor  ">
       
 
       {/* applico logica, se hoovero su questa parte il testo sparisce e ne apparte un altra  */}
@@ -63,7 +63,7 @@ function ContactMePanel() {
               </button>
             </motion.div>
           </div>
-          <div className="font-quicksand flex justify-start items-end h-full text-white text-sm pl-2 pr-2 w-1/2">
+          <div className="font-quicksand flex justify-center items-center h-full text-white text-sm pl-2 pr-2 w-1/2">
             <p>
               I'm available in these platforms, you can contact me for any
               project or job opportunity.
