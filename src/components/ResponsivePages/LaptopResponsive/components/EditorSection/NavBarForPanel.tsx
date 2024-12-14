@@ -4,10 +4,7 @@ import ContactMePanel from "./ContactMePanel";
 import SkillCarouselPanel from "./SkillCarouselPanel";
 import WorkHistoryPanel from "./WorkHistoryPanel";
 
-
-
 export const NavBarForPanel = () => {
-
   const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
 
   function handleMouseOverSelectTab() {
@@ -30,13 +27,16 @@ export const NavBarForPanel = () => {
     <>
       <div className="w-full flex bg-emptybarColor shadow-lg">
         {/* barra navigazione */}
-        <div className={`cursor-pointer bg-backgroundTextEditor1 max-w-[200px] pl-2 pr-2 flex h-[31px] items-center gap-2 ${activeTab === 0 ? 'bg-backgroundTextEditor1' : 'bg-emptybarColor'}`}
-        onMouseEnter={handleMouseOverSelectTab}
-        onMouseLeave={handleMouseOutSelectTab}
-        onClick={() => handleTabClick(0)}
+        <div
+          className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
+            activeTab === 0 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
+          }`}
+          onMouseEnter={handleMouseOverSelectTab}
+          onMouseLeave={handleMouseOutSelectTab}
+          onClick={() => handleTabClick(0)}
         >
-        <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
+          <div className="h-6 w-6 flex-shrink-0">
+            <img className="p-1 w-full h-full object-contain" src="/icons/react-icon.png" alt="react icon" />
           </div>
           <div className="flex items-center justify-center gap-2">
             <div className="font-quicksand text-sm text-gray-300">
@@ -46,15 +46,16 @@ export const NavBarForPanel = () => {
             <div className="text-gray-300">x</div>
           </div>
         </div>
-        {/* questo ha un border a sinistra e sotto .. ? come sistemare  anche bg di questo */}
-        {/* if hoover bg-backgroundTextEditor1 */}
-        <div className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${activeTab === 1 ? 'bg-backgroundTextEditor1' : 'bg-emptybarColor'}`}
-        onMouseEnter={handleMouseOverSelectTab}
-        onMouseLeave={handleMouseOutSelectTab}
-        onClick={() => handleTabClick(1)}
+        <div
+          className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
+            activeTab === 1 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
+          }`}
+          onMouseEnter={handleMouseOverSelectTab}
+          onMouseLeave={handleMouseOutSelectTab}
+          onClick={() => handleTabClick(1)}
         >
-          <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
+          <div className="h-6 w-6 flex-shrink-0">
+            <img className="p-1 w-full h-full object-contain" src="/icons/react-icon.png" alt="react icon" />
           </div>
           <div className="flex items-center justify-center gap-2">
             <div className="font-quicksand text-sm text-gray-300">
@@ -64,13 +65,16 @@ export const NavBarForPanel = () => {
             <div className="text-gray-300">x</div>
           </div>
         </div>
-        <div className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${activeTab === 2 ? 'bg-backgroundTextEditor1' : 'bg-emptybarColor'}`}
-        onMouseEnter={handleMouseOverSelectTab}
-        onMouseLeave={handleMouseOutSelectTab}
-        onClick={() => handleTabClick(2)}
+        <div
+          className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
+            activeTab === 2 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
+          }`}
+          onMouseEnter={handleMouseOverSelectTab}
+          onMouseLeave={handleMouseOutSelectTab}
+          onClick={() => handleTabClick(2)}
         >
-          <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
+          <div className="h-6 w-6 flex-shrink-0">
+            <img className="p-1 w-full h-full object-contain" src="/icons/react-icon.png" alt="react icon" />
           </div>
           <div className="flex items-center justify-center gap-2">
             <div className="font-quicksand text-sm text-gray-300">
@@ -80,13 +84,16 @@ export const NavBarForPanel = () => {
             <div className="text-gray-300">x</div>
           </div>
         </div>
-        <div className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${activeTab === 3 ? 'bg-backgroundTextEditor1' : 'bg-emptybarColor'}`}
-        onMouseEnter={handleMouseOverSelectTab}
-        onMouseLeave={handleMouseOutSelectTab}
-        onClick={() => handleTabClick(3)}
+        <div
+          className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
+            activeTab === 3 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
+          }`}
+          onMouseEnter={handleMouseOverSelectTab}
+          onMouseLeave={handleMouseOutSelectTab}
+          onClick={() => handleTabClick(3)}
         >
-          <div className="h-6 w-6">
-            <img className="p-1" src="/icons/png-fungo-icon.png" alt="fungo" />
+          <div className="h-6 w-6 flex-shrink-0">
+            <img className="p-1 w-full h-full object-contain" src="/icons/react-icon.png" alt="react icon" />
           </div>
           <div className="flex items-center justify-center gap-2">
             <div className="font-quicksand text-sm text-gray-300">
@@ -103,5 +110,4 @@ export const NavBarForPanel = () => {
       {activeTab === 3 && <WorkHistoryPanel />}
     </>
   );
-
 };
