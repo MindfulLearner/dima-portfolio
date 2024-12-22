@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import { NavBarForPanel } from "./components/EditorSection/NavBarForPanel";
+import SideServerSection from "../../BottomSection/Terminal1";
 
-const ResponsivePage: React.FC = () => {
+const MainContainer: React.FC = () => {
     return (
-        <div>
-            <h1>Questa è la pagina per cellulari</h1>
-        </div>
+      <div className="flex h-[calc(100vh-34px-21px)]">
+      <div className="w-[calc(100%-250px)] border-r border-borderColor">
+        <NavBarForPanel />
+        <SideServerSection />
+      </div>
+    </div>
     );
 };
 
-export default ResponsivePage;
+export default MainContainer;
