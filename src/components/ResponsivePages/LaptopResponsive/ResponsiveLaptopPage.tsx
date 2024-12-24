@@ -17,7 +17,13 @@ const ResponsivePage: React.FC = () => {
 
     return (
         <div>
-            {isCellphone ? <CellphoneResponsivePage /> : <>
+            {isCellphone ? 
+            <>
+            <Header />
+            <CellphoneResponsivePage />
+            <Footer />
+            </>
+            : <>
                 <Header />
                 <MainContainer />
                 <Footer />
