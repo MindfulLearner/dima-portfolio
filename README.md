@@ -1,5 +1,7 @@
 # Dima Portfolio
 
+/ git push {{ name }} con limite -> da sanitizzare - > server in ascolto con git attivato il mio account o un account -> nome pr Pr -> verra' accettato in un attimo "controlli" di nomi non offensivi controllo codice -> accettazione
+
 # OPEN SOURCE IDEA / Developer Program Member
 i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
 
