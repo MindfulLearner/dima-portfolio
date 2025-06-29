@@ -41,17 +41,6 @@ jobs:
       - name: "Checkout Github Action"
         uses: actions/checkout@v4
 
-      - name: restore api-dist
-        uses: actions/cache@v4
-        with:
-          path: |
-            api/dist
-            api/test/dist
-          key: ${{ runner.os }}-api-dist-${{ env.CACHE_BUSTER }}-${{ env.NAMESPACE }}-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-api-dist-${{ env.CACHE_BUSTER }}-${{ env.NAMESPACE }}-
-            ${{ runner.os }}-api-dist-${{ env.CACHE_BUSTER }}-master-
-
       - name: "Install Node.js"
         uses: actions/setup-node@v4
         with:
