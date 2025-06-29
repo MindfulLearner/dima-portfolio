@@ -7,12 +7,10 @@ function TextEditorPanel1() {
 
   function handleMouseOver() {
     setIsHovered(true);
-    console.log("mouse entered");
   }
 
   function handleMouseOut() {
     setIsHovered(false);
-    console.log("mouse left");
   }
 
   return (

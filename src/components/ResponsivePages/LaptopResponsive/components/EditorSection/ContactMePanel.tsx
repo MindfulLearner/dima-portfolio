@@ -21,7 +21,6 @@ function ContactMePanel() {
 
   //click on the select square
    function handleClick(index: number) {
-    console.log("clicked", index);
     //open the link
     // il numero deve restituire sempre un numero da 0 a 5
     const number = index % 5;

@@ -9,7 +9,6 @@ function WorkHistoryPanel() {
    * handle the selected work
    */
   function handleSelectedWork(index: number) {
-    console.log("index", index);
     setIsSelectedWork(index);
   }
 

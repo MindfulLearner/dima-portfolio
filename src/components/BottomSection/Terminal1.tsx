@@ -4,7 +4,7 @@ import { TerminaleListOfCommands } from "../data/TerminalsArray";
 function Terminal1() {
 
   // email state
-  const [email, setEmail] = useState("");
+  const [, setEmail] = useState("");
 
   // list of commands that the user can type in the terminal
   const listOfCommands = TerminaleListOfCommands;
