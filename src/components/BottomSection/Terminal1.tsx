@@ -2,6 +2,11 @@ import React, { useRef, useState, useEffect } from "react";
 import { TerminaleListOfCommands } from "../data/TerminalsArray";
 
 function Terminal1() {
+
+  // kunai jump 2 swag logic code
+  // email state
+  const [email, setEmail] = useState("");
+
   // list of commands that the user can type in the terminal
   const listOfCommands = TerminaleListOfCommands;
 
@@ -297,6 +302,25 @@ function Terminal1() {
                   "Thank you for visiting my portfolio. Feel free to explore and get in touch!"
                 </div>
               </div>
+            </div>
+          ]);
+          break;
+        //           As a User
+        // WHEN I'm in the port folio in one of the terminal
+        // AND I write a valid commit
+        // THEN I receive a success message like git
+
+        // As a User
+        // WHEN I'm in the github repo of dima-portfolio
+        // AND I look at the ReadME
+        // THEN I expect to see my github pfp and name as contributor
+        // kunai jump 1 swag git case
+        case "git commit -m {email}":
+          setEmail(string);
+          setTerminalOutput((prevOutput) => [
+            ...prevOutput, 
+            <div className="text-white font-mono text-sm">
+              <div className="text-blue-300 font-bold mb-2">Push your contribution!</div>
             </div>
           ]);
           break;
