@@ -75,7 +75,13 @@ function Terminal1() {
     }
   };
 
-  const isFetched = async (email: string) => {
+  /**
+   * this will check if the email is valid
+   * @param email the email to check
+   * @returns true if the email is valid, false otherwise
+   */
+  // TODO: use push after commit
+  const isFetchedGitCommit = async (email: string) => {
     const response = await fetch(`api/test/vps`, {
       method: "POST",
     });
@@ -95,7 +101,7 @@ function Terminal1() {
       const emailAdjusted = string.split(" ")[3].replace(/"/g, '');
       const isEmailMatch = isEmailRegex.test(emailAdjusted);
       if (isEmailMatch) {
-        if (await isFetched(emailAdjusted)) {
+        if (await isFetchedGitCommit(emailAdjusted)) {
           setEmail(emailAdjusted);
           setTerminalOutput((prevOutput) => [
             ...prevOutput,
