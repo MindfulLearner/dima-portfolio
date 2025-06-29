@@ -4,21 +4,6 @@ import { motion } from "framer-motion";
 
 function WorkHistoryPanel() {
 
-  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
-  /**
-   * handle the mouse over of the select tab
-   */
-  function handleMouseOverSelectTab() {
-    setIsHoveredSelectTab(true);
-  }
-  /**
-   * handle the mouse out of the select tab
-   */
-  function handleMouseOutSelectTab() {
-    setIsHoveredSelectTab(false);
-  }
-
-
   const [isSelectedWork, setIsSelectedWork] = useState<number | undefined>(0);
   /**
    * handle the selected work
@@ -61,7 +46,7 @@ function WorkHistoryPanel() {
                   handleSelectedWork(index);
                 }}
               >
-                <a
+                <div
                   className={`hover:text-gray-200 cursor-pointer ${
                     isSelectedWork === index
                       ? "text-white underline "
@@ -69,7 +54,7 @@ function WorkHistoryPanel() {
                   } `}
                 >
                   {item.title}
-                </a>
+                </div>
               </div>
             ))}
           </div>
@@ -112,7 +97,7 @@ function WorkHistoryPanel() {
                   className="bg-orange-200 text-black rounded-md p-1"
                   onClick={() => window.open(carouselWork[0].link, "_blank")}
                 >
-                  <a>Link to Github Doc(ITA)</a>
+                  Link to Github Doc(ITA)
                 </button>
               </motion.div>
             </div>
@@ -181,7 +166,7 @@ function WorkHistoryPanel() {
                   className="bg-purple-400 text-black rounded-md p-1"
                   onClick={() => window.open(carouselWork[1].link, "_blank")}
                 >
-                  <a>Link to Github Doc(ENG)</a>
+                  Link to Github Doc(ENG)
                 </button>
               </motion.div>
             </div>
@@ -264,7 +249,7 @@ function WorkHistoryPanel() {
                   className="bg-blue-400 text-black rounded-md p-1 "
                   onClick={() => window.open(carouselWork[2].link, "_blank")}
                 >
-                  <p>Link to Organization Github</p>
+                  Link to Organization Github
                 </button>
               </motion.div>
             </div>

@@ -1,7 +1,4 @@
 import React from "react";
-import Header from "../../Header";
-import Footer from "../../Footer";
-import { NavBarForPanel } from "./components/EditorSection/NavBarForPanel";
 
 const ResponsiveCellphonePage: React.FC = () => {
     return (

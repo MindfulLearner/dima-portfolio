@@ -1,23 +1,11 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import AboutMePanel from "./AboutMePanel";
 import ContactMePanel from "./ContactMePanel";
 import SkillCarouselPanel from "./SkillCarouselPanel";
 import WorkHistoryPanel from "./WorkHistoryPanel";
 
 export const NavBarForPanel = () => {
-  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
-
-  function handleMouseOverSelectTab() {
-    setIsHoveredSelectTab(true);
-    console.log("mouse entered");
-  }
-  function handleMouseOutSelectTab() {
-    setIsHoveredSelectTab(false);
-    console.log("mouse left");
-  }
-
   const [activeTab, setActiveTab] = useState(0);
-  const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   function handleTabClick(index: number) {
     setActiveTab(index);
@@ -31,8 +19,6 @@ export const NavBarForPanel = () => {
           className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
             activeTab === 0 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
           }`}
-          onMouseEnter={handleMouseOverSelectTab}
-          onMouseLeave={handleMouseOutSelectTab}
           onClick={() => handleTabClick(0)}
         >
           <div className="h-6 w-6 flex-shrink-0">
@@ -50,8 +36,6 @@ export const NavBarForPanel = () => {
           className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
             activeTab === 1 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
           }`}
-          onMouseEnter={handleMouseOverSelectTab}
-          onMouseLeave={handleMouseOutSelectTab}
           onClick={() => handleTabClick(1)}
         >
           <div className="h-6 w-6 flex-shrink-0">
@@ -69,8 +53,6 @@ export const NavBarForPanel = () => {
           className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
             activeTab === 2 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
           }`}
-          onMouseEnter={handleMouseOverSelectTab}
-          onMouseLeave={handleMouseOutSelectTab}
           onClick={() => handleTabClick(2)}
         >
           <div className="h-6 w-6 flex-shrink-0">
@@ -88,8 +70,6 @@ export const NavBarForPanel = () => {
           className={`cursor-pointer max-w-[200px] border-l border-r border-b border-borderColor pl-2 pr-2 flex h-[31px] items-center gap-2 ${
             activeTab === 3 ? "bg-backgroundTextEditor1" : "bg-emptybarColor"
           }`}
-          onMouseEnter={handleMouseOverSelectTab}
-          onMouseLeave={handleMouseOutSelectTab}
           onClick={() => handleTabClick(3)}
         >
           <div className="h-6 w-6 flex-shrink-0">
