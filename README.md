@@ -2,6 +2,11 @@
 
 /git commit -m "{{ name }}" con limite 20 caratteri -> da sanitizzare backend che riceve e controlla-> server in ascolto con git attivato il mio account o un account -> apre una pr con assigne la persona che ha pushato nome pr pr { n volte di pr aperti } -> verra' accettato in un attimo "controlli" di nomi non offensivi controllo codice -> accettazione PR
 
+- PROD
+- server / sanitizzazione e controllo parolacce.haha
+- github CLI 
+- github action
+
 # OPEN SOURCE IDEA / Developer Program Member
 i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
 
