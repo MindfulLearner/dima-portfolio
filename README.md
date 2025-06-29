@@ -5,7 +5,10 @@
 - PROD
 - server / sanitizzazione e controllo parolacce.haha
 - github CLI 
-- github action
+- github action 
+  - automerge problem could be?
+  - o si controlla da soli o si controlla con github action 
+- readme che si modifica e commit di qualcosa? tipo linea codice 
 
 # OPEN SOURCE IDEA / Developer Program Member
 i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
