@@ -1,0 +1,85 @@
+on:
+  workflow_call: 
+    inputs:
+        build-only:
+            required: false
+            default: false
+            type: boolean
+        image-id:
+            required: false
+            type: string
+            default: "master-latest"
+        namespace:
+            required: true
+            default: master
+            type: string
+
+name: _build
+env:
+  CACHE_BUSTER: 17
+  DOCKER_CACHE_BUSTER: 12
+  DOCKER_BUILDKIT: 1
+  NAMESPACE: ${{ inputs.namespace }}
+  FALLBACK_NAMESPACE: master
+
+  IMAGE_ID: ${{ inputs.image-id }}
+  BUILD_ONLY: ${{ inputs.build-only }}
+
+  TEST_USE_FULL_DIST: true
+
+  BUILD_ONLY_PR: ${{ inputs.build-only }}
+
+## dockerize by inputs
+
+## build api
+jobs:
+  build_api:
+    runs-on: ubuntu-latest
+
+    # adding build
+    steps:
+      - name: "Checkout Github Action"
+        uses: actions/checkout@v4
+
+      - name: restore api-dist
+        uses: actions/cache@v4
+        with:
+          path: |
+            api/dist
+            api/test/dist
+          key: ${{ runner.os }}-api-dist-${{ env.CACHE_BUSTER }}-${{ env.NAMESPACE }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-api-dist-${{ env.CACHE_BUSTER }}-${{ env.NAMESPACE }}-
+            ${{ runner.os }}-api-dist-${{ env.CACHE_BUSTER }}-master-
+
+      - name: "Install Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+
+      - uses: "pnpm/action-setup@v3"
+        name: Install pnpm
+        id: pnpm-install
+        with: 
+          version: 10
+          run_install: false
+
+      # needed for perf 
+      - name: Get pnpm store directory
+        id: pnpm-store
+        run: |
+          echo "::set-output name=pnpm_store::$(pnpm store path)"
+
+      - name: "install packages"
+        run: |
+          pnpm install
+        env: 
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "build frontend"
+        run: |
+          pnpm build
+
+      - name: Push
+        run: |
+          echo "IMAGE_ID: ${{ env.IMAGE_ID }}"
