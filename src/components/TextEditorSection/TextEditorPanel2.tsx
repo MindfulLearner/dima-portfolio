@@ -23,16 +23,13 @@ function TextEditorPanel2() {
 
   function handleMouseOverSelectTab() {
     setIsHoveredSelectTab(true);
-    console.log("mouse entered");
   }
   function handleMouseOutSelectTab() {
     setIsHoveredSelectTab(false);
-    console.log("mouse left");
   }
 
   //click on the select square
    function handleClick(index: number) {
-    console.log("clicked", index);
     //open the link
     // il numero deve restituire sempre un numero da 0 a 5
     const number = index % 5;
