@@ -3,7 +3,6 @@ import { TerminaleListOfCommands } from "../data/TerminalsArray";
 
 function Terminal1() {
 
-  // kunai jump 2 swag logic code
   // email state
   const [email, setEmail] = useState("");
 
