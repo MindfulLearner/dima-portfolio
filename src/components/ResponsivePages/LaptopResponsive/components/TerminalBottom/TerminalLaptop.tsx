@@ -2,6 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { TerminaleListOfCommands } from "../../../../data/TerminalsArray";
 
 function TerminalLaptop() {
+
+  // email state
+  const [, setEmail] = useState("");
+
   // list of commands that the user can type in the terminal
   const listOfCommands = TerminaleListOfCommands;
 
@@ -70,9 +74,68 @@ function TerminalLaptop() {
     }
   };
 
+  /**
+   * this will check if the email is valid
+   * @param email the email to check
+   * @returns true if the email is valid, false otherwise
+   */
+  // TODO: use push after commit
+  const isFetchedGitCommit = async (email: string) => {
+    const response = await fetch(`api/test/vps`, {
+      method: "POST",
+    });
+    return response.ok;
+  };
 
-  const inputCommandHandler = (string: string) => {
+  const inputCommandHandler = async (string: string) => {
     // this will handle the input command
+
+    const gitCommitRegex = /^git commit -m "(.+?)"$/;
+    const isEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // check if the string is a valid email
+    const isGitCommitMatch = gitCommitRegex.test(string)
+
+    if (isGitCommitMatch) {
+      const emailAdjusted = string.split(" ")[3].replace(/"/g, '');
+      const isEmailMatch = isEmailRegex.test(emailAdjusted);
+      if (isEmailMatch) {
+        if (await isFetchedGitCommit(emailAdjusted)) {
+          setEmail(emailAdjusted);
+          setTerminalOutput((prevOutput) => [
+            ...prevOutput,
+            <div className="text-white font-mono text-sm">
+              <div className="text-green-500 font-bold mb-2">✓ Commit successful!</div>
+              <div className="text-gray-300">Message: "{emailAdjusted}"</div>
+              <div className="text-blue-300 mt-2">Push your contribution!</div>
+            </div>
+          ]);
+
+          return;
+        } else {
+          setTerminalOutput((prevOutput) => [
+            ...prevOutput,
+            <div className="text-white font-mono text-sm">
+              <div className="text-red-500 font-bold mb-2">✗ VPS not found!</div>
+              <div className="text-gray-400">Please try again.</div>
+            </div>
+          ]);
+
+          return;
+        } 
+      } else {
+          setTerminalOutput((prevOutput) => [
+            ...prevOutput,
+            <div className="text-white font-mono text-sm">
+              <div className="text-red-500 font-bold mb-2">✗ Commit failed!</div>
+              <div className="text-gray-400">Please provide a valid email address.</div>
+            </div>
+          ]);
+
+          return;
+      }
+    }
+
     if (listOfCommands.find((command) => command.command === string)) {
       switch (string) {
         case "ls":
@@ -81,7 +144,7 @@ function TerminalLaptop() {
           break;
         case "help":
           setTerminalOutput((prevOutput) => [
-            ...prevOutput, 
+            ...prevOutput,
             <div className="text-white font-mono text-sm">
               <div className="text-blue-300 mb-2">Available commands:</div>
               <div className="grid grid-cols-2 gap-4">
@@ -98,7 +161,7 @@ function TerminalLaptop() {
         // Case help <command>
         case "help ls":
           setTerminalOutput((prevOutput) => [
-            ...prevOutput, 
+            ...prevOutput,
             <div className="text-white font-mono text-sm flex gap-3">
               {listOfCommands.find((command) => command.command === string)?.output?.map((output) => (
                 <div className="font-bold">{output.helpCommand}</div>
@@ -108,7 +171,7 @@ function TerminalLaptop() {
           break;
         case "info":
           setTerminalOutput((prevOutput) => [
-            ...prevOutput, 
+            ...prevOutput,
             <div className="text-white font-mono text-sm space-y-4">
               {/* Bio Section */}
               <div>
@@ -117,7 +180,7 @@ function TerminalLaptop() {
                   "I'm passionate about learning. I admire creative thinking."
                 </div>
               </div>
-              
+
               {/* Technologies Section */}
               <div>
                 <div className="text-blue-300 font-bold mb-2">Technologies:</div>
@@ -161,10 +224,10 @@ function TerminalLaptop() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-yellow-500">GitHub:</span>
-                    <a 
-                      href="https://github.com/MindfulLearner" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="https://github.com/MindfulLearner"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-300 hover:text-blue-400"
                     >
                       @MindfulLearner
@@ -188,29 +251,27 @@ function TerminalLaptop() {
           break;
         case "neofetch":
           setTerminalOutput((prevOutput) => [
-            ...prevOutput, 
+            ...prevOutput,
             <div className="text-white font-mono text-sm flex gap-8">
               {/* ASCII Art */}
-              <pre className="text-blue-400">
-                {`                   -\`
-                  .o+\`
-                 \`ooo/
-                \`+oooo:
-               \`+oooooo:
-               -+oooooo+:
-             \`/:-:++oooo+:
-            \`/++++/+++++++:
-           \`/++++++++++++++:
-          \`/+++ooooooooooooo/\`
-         ./ooosssso++osssssso+\`
-        .oossssso-\`\`\`\`/ossssss+\`
-       -osssssso.      :ssssssso.
-      :osssssss/        osssso+++.
-     /ossssssss/        +ssssooo/-
-   \`/ossssso+/:-        -:/+osssso+-
-  \`+sso+:-\`                 \`.-/+oso:
- \`++:.                           \`-/+/
- .\`                                 \`/`}
+              <pre className="text-blue-400 text-xs">
+                {`              -\`
+             .o+\`
+            \`ooo/
+           \`+oooo:
+          \`+oooooo:
+          -+oooooo+:
+        \`/:-:++oooo+:
+       \`/++++/+++++++:
+      \`/++++++++++++++:
+     \`/+++ooooooooooooo/\`
+    ./ooosssso++osssssso+\`
+   .oossssso-\`\`\`\`/ossssss+\`
+  -osssssso.      :ssssssso.
+ :osssssss/        osssso+++.
+/ossssssss/        +ssssooo/-
+\`/ossssso+        -:/+osssso+-`}
+
               </pre>
 
               {/* System Info */}
@@ -268,10 +329,10 @@ function TerminalLaptop() {
           break;
         case "credits":
           setTerminalOutput((prevOutput) => [
-            ...prevOutput, 
+            ...prevOutput,
             <div className="text-white font-mono text-sm space-y-4">
               <div className="text-blue-300 font-bold text-xl mb-4">Credits</div>
-              
+
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-yellow-500">Developer:</span>
@@ -296,13 +357,12 @@ function TerminalLaptop() {
             </div>
           ]);
           break;
-
         default:
           break;
       }
     } else {
       setTerminalOutput((prevOutput) => [
-        ...prevOutput, 
+        ...prevOutput,
         <div className="text-red-500 font-mono text-sm">
           <span className="font-bold">Error:</span> Command not found: "{string}"
           <div className="text-gray-400 mt-1">
@@ -319,7 +379,7 @@ function TerminalLaptop() {
   };
 
   return (
-    <div 
+    <div
       className="w-full h-[calc(100%-2px)] overflow-y-auto terminal-scroll"
       onClick={handleTerminalClick}
     >
@@ -374,8 +434,8 @@ function TerminalLaptop() {
           <div>~</div>
           <input
             type="text"
-          className="bg-transparent outline-none w-full"
-          placeholder="Type your command..."
+            className="bg-transparent outline-none w-full"
+            placeholder="Type your command..."
             ref={commandInputRef}
           />
         </div>
