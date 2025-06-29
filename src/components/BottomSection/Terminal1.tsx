@@ -197,26 +197,24 @@ function Terminal1() {
             ...prevOutput, 
             <div className="text-white font-mono text-sm flex gap-8">
               {/* ASCII Art */}
-              <pre className="text-blue-400">
-                {`                   -\`
-                  .o+\`
-                 \`ooo/
-                \`+oooo:
-               \`+oooooo:
-               -+oooooo+:
-             \`/:-:++oooo+:
-            \`/++++/+++++++:
-           \`/++++++++++++++:
-          \`/+++ooooooooooooo/\`
-         ./ooosssso++osssssso+\`
-        .oossssso-\`\`\`\`/ossssss+\`
-       -osssssso.      :ssssssso.
-      :osssssss/        osssso+++.
-     /ossssssss/        +ssssooo/-
-   \`/ossssso+/:-        -:/+osssso+-
-  \`+sso+:-\`                 \`.-/+oso:
- \`++:.                           \`-/+/
- .\`                                 \`/`}
+              <pre className="text-blue-400 text-xs">
+                {`              -\`
+             .o+\`
+            \`ooo/
+           \`+oooo:
+          \`+oooooo:
+          -+oooooo+:
+        \`/:-:++oooo+:
+       \`/++++/+++++++:
+      \`/++++++++++++++:
+     \`/+++ooooooooooooo/\`
+    ./ooosssso++osssssso+\`
+   .oossssso-\`\`\`\`/ossssss+\`
+  -osssssso.      :ssssssso.
+ :osssssss/        osssso+++.
+/ossssssss/        +ssssooo/-
+\`/ossssso+        -:/+osssso+-`}
+
               </pre>
 
               {/* System Info */}
