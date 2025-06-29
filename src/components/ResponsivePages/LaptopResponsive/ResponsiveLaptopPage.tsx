@@ -18,11 +18,7 @@ const ResponsivePage: React.FC = () => {
     return (
         <div>
             {isCellphone ? 
-            <>
-            <Header />
             <CellphoneResponsivePage />
-            <Footer />
-            </>
             : <>
                 <Header />
                 <MainContainer />
