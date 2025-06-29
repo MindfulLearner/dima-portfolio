@@ -24,7 +24,6 @@ function TextEditorPanel4() {
    * handle the selected work
    */
   function handleSelectedWork(index: number) {
-    console.log("index", index);
     setIsSelectedWork(index);
   }
 
@@ -87,12 +86,12 @@ function TextEditorPanel4() {
               className={`font-quicksand p-1 text-gray-300 font-bold col-start-1 cursor-pointer ${isSelectedWork === index ? "bg-gray-500 bg-opacity-20 rounded-sm" : ""} transition-all duration-300 ease-in-out`}
               onClick={() => {handleClickScrollTo(index); handleSelectedWork(index)}}
             >
-              <a
+              <div
                 className={`hover:text-gray-200 cursor-pointer ${isSelectedWork === index ? "text-white underline " : "text-gray-500"} `}
               
               >
                 {item.title}
-              </a>
+              </div>
             </div>
           ))}
         </div>
@@ -129,7 +128,7 @@ function TextEditorPanel4() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <button className="bg-orange-200 text-black rounded-md p-1" onClick={() => window.open(carouselWork[0].link, "_blank")}>
-                  <a>Link to Github Doc(ITA)</a>
+                  Link to Github Doc(ITA)
                 </button>
               </motion.div>
             </div>
@@ -199,7 +198,7 @@ function TextEditorPanel4() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <button className="bg-purple-400 text-black rounded-md p-1" onClick={() => window.open(carouselWork[1].link, "_blank")}>
-                  <a>Link to Github Doc(ENG)</a>
+                  Link to Github Doc(ENG)
                 </button>
               </motion.div>
             </div>
@@ -284,7 +283,7 @@ function TextEditorPanel4() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <button className="bg-blue-400 text-black rounded-md p-1 " onClick={() => window.open(carouselWork[2].link, "_blank")}>
-                  <p>Link to Organization Github</p>
+                  Link to Organization Github
                 </button>
               </motion.div>
             </div>

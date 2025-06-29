@@ -35,7 +35,6 @@ function Terminal2() {
     const previousCommand = commandInputRef.current?.value?.trim();
 
     if (previousCommand) {
-      console.log("you write:", previousCommand);
 
       const newCommandLine = (
         <div className=" font-mono text-sm items-center">
@@ -68,18 +67,13 @@ function Terminal2() {
 
   const inputCommandHandler = (string: string) => {
     // this will handle the input command
-    console.log(string);
-    console.log(listOfCommands);
     if (listOfCommands.find((command) => command.command === string)) {
       switch (string) {
         case "ls":
-          console.log("ls command found");
           break;
         case "cd":
-          console.log("cd command found");
           break;
         case "help":
-          console.log("help command found");
           setTerminalOutput((prevOutput) => [
             ...prevOutput,
             <div className="text-white font-mono text-sm flex gap-3">
@@ -104,7 +98,6 @@ function Terminal2() {
           break;
 
         default:
-          console.log("command not found");
           break;
       }
     } else {

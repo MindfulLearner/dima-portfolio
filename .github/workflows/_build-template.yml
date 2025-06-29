@@ -33,7 +33,7 @@ env:
 
 ## build api
 jobs:
-  build_api:
+  build_frontend:
     runs-on: ubuntu-latest
 
     # adding build

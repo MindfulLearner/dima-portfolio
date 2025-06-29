@@ -1,10 +1,5 @@
 //footer
 import React from "react";
-import {
-  faChevronDown,
-  faChevronUp,
-  faX,
-} from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   return (
