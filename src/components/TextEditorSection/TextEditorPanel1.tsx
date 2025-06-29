@@ -1,7 +1,5 @@
 // ORA CERCHEREMO DI AGGIUNGERE FADE IN E FADE OUT DEI DUE PANEL 
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 function TextEditorPanel1() {
@@ -9,23 +7,19 @@ function TextEditorPanel1() {
 
   function handleMouseOver() {
     setIsHovered(true);
-    console.log("mouse entered");
   }
 
   function handleMouseOut() {
     setIsHovered(false);
-    console.log("mouse left");
   }
 
   const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
 
   function handleMouseOverSelectTab() {
     setIsHoveredSelectTab(true);
-    console.log("mouse entered");
   }
   function handleMouseOutSelectTab() {
     setIsHoveredSelectTab(false);
-    console.log("mouse left");
   }
 
   return (

@@ -9,11 +9,9 @@ export const NavBarForPanel = () => {
 
   function handleMouseOverSelectTab() {
     setIsHoveredSelectTab(true);
-    console.log("mouse entered");
   }
   function handleMouseOutSelectTab() {
     setIsHoveredSelectTab(false);
-    console.log("mouse left");
   }
 
   const [activeTab, setActiveTab] = useState(0);

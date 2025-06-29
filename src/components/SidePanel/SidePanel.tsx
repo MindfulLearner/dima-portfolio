@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { arraySkill } from "../data/arraySkill";
 import { useTab } from '../../context/TabContext';
 
 interface FileItem {

@@ -1,21 +1,10 @@
 //skill carousel panel
-import React, { useState } from "react";
+import React from "react";
 import { arraySkill } from "../../../../data/arraySkill";
 import { motion } from "framer-motion";
 
 
 function SkillCarouselPanel() {
-  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
-  const [activeTab, setActiveTab] = useState(1);
-  // solo il tab dove ho hooverato il mouse non tutti
-  function handleMouseOverSelectTab(tab: number) {
-    setIsHoveredSelectTab(true);
-    setActiveTab(tab);
-  }
-  function handleMouseOutSelectTab(tab: number) {
-    setIsHoveredSelectTab(false);
-    setActiveTab(tab);
-  }
   return (
     <div className="h-[calc(100vh-34px-271px)] bg-backgroundTextEditor1 border-b border-l border-r border-borderColor">
      

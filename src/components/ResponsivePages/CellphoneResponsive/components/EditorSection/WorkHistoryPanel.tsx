@@ -24,7 +24,6 @@ function WorkHistoryPanel() {
    * handle the selected work
    */
   function handleSelectedWork(index: number) {
-    console.log("index", index);
     setIsSelectedWork(index);
   }
 
@@ -112,7 +111,7 @@ function WorkHistoryPanel() {
                   className="bg-orange-200 text-black rounded-md p-1"
                   onClick={() => window.open(carouselWork[0].link, "_blank")}
                 >
-                  <a>Link to Github Doc(ITA)</a>
+                  Link to Github Doc(ITA)
                 </button>
               </motion.div>
             </div>
@@ -181,7 +180,7 @@ function WorkHistoryPanel() {
                   className="bg-purple-400 text-black rounded-md p-1"
                   onClick={() => window.open(carouselWork[1].link, "_blank")}
                 >
-                  <a>Link to Github Doc(ENG)</a>
+                  Link to Github Doc(ENG)
                 </button>
               </motion.div>
             </div>

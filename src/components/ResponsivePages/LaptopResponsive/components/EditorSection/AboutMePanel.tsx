@@ -1,8 +1,7 @@
 // ORA CERCHEREMO DI AGGIUNGERE FADE IN E FADE OUT DEI DUE PANEL 
-import React, { useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+
 function TextEditorPanel1() {
   const [isHovered, setIsHovered] = useState(false);
 

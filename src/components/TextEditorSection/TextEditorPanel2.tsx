@@ -1,4 +1,3 @@
-//text editor panel 2
 import React, { useState } from "react";
 import { SquareCards } from "../PublicComponents/Components/squareCards";
 import { ArraySvgComponents } from "../data/ArraySvgComponents";
@@ -24,16 +23,13 @@ function TextEditorPanel2() {
 
   function handleMouseOverSelectTab() {
     setIsHoveredSelectTab(true);
-    console.log("mouse entered");
   }
   function handleMouseOutSelectTab() {
     setIsHoveredSelectTab(false);
-    console.log("mouse left");
   }
 
   //click on the select square
    function handleClick(index: number) {
-    console.log("clicked", index);
     //open the link
     // il numero deve restituire sempre un numero da 0 a 5
     const number = index % 5;
@@ -109,7 +105,9 @@ function TextEditorPanel2() {
             ...ArraySvgComponents,
             ...ArraySvgComponents,
             ...ArraySvgComponents,
-          ].map((Item, index) => (
+          ].map((Item, index) => {
+            const SvgComponent = Item.svg;
+            return (
             <motion.div
               animate={{ x: [0, -1500] }}
               transition={{ duration: 50, ease: "linear", repeat: Infinity }}
@@ -140,7 +138,7 @@ function TextEditorPanel2() {
                     "background-color 0.3s ease, min-width 0.3s ease, min-height 0.3s ease",
                 }}
               >
-                <Item.svg
+                <SvgComponent
                   fill={hoveredCard === index ? "black" : "white"}
                   width={hoveredCard === index ? "45" : "40"}
                   height={hoveredCard === index ? "45" : "40"}
@@ -151,7 +149,8 @@ function TextEditorPanel2() {
                 />
               </SquareCards>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

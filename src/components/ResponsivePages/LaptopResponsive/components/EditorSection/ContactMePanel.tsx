@@ -19,18 +19,6 @@ function ContactMePanel() {
     setHoveredCard(null);
   }
 
-
-  const [isHoveredSelectTab, setIsHoveredSelectTab] = useState(false);
-
-  function handleMouseOverSelectTab() {
-    setIsHoveredSelectTab(true);
-    console.log("mouse entered");
-  }
-  function handleMouseOutSelectTab() {
-    setIsHoveredSelectTab(false);
-    console.log("mouse left");
-  }
-
   //click on the select square
    function handleClick(index: number) {
     console.log("clicked", index);
@@ -78,7 +66,9 @@ function ContactMePanel() {
             ...ArraySvgComponents,
             ...ArraySvgComponents,
             ...ArraySvgComponents,
-          ].map((Item, index) => (
+          ].map((Item, index) => {
+            const SvgComponent = Item.svg;
+            return (
             <motion.div
               animate={{ x: [0, -1500] }}
               transition={{ duration: 50, ease: "linear", repeat: Infinity }}
@@ -109,7 +99,7 @@ function ContactMePanel() {
                     "background-color 0.3s ease, min-width 0.3s ease, min-height 0.3s ease",
                 }}
               >
-                <Item.svg
+                <SvgComponent
                   fill={hoveredCard === index ? "black" : "white"}
                   width={hoveredCard === index ? "45" : "40"}
                   height={hoveredCard === index ? "45" : "40"}
@@ -120,7 +110,8 @@ function ContactMePanel() {
                 />
               </SquareCards>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
