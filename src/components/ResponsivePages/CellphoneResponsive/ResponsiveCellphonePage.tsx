@@ -1,14 +1,16 @@
 import React from "react";
+import Header from "../../Header";
+import Footer from "../../Footer";
 import { NavBarForPanel } from "./components/EditorSection/NavBarForPanel";
 
-const MainContainer: React.FC = () => {
+const ResponsiveCellphonePage: React.FC = () => {
     return (
-      <div className="flex h-[calc(100vh-34px-21px)]">
-      <div className="w-[calc(100%-40px)] border-r border-borderColor">
-        <NavBarForPanel />
-      </div>
-    </div>
+        <div className="flex flex-col h-screen">
+            <main className="flex-1 overflow-auto">
+              swaW
+            </main>
+        </div>
     );
 };
 
-export default MainContainer;
+export default ResponsiveCellphonePage;

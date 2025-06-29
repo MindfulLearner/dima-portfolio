@@ -1,32 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "tailwindcss/tailwind.css";
 import Header from "./components/Header";
 import MainContainer from "./components/MainContainer";
 import Footer from "./components/Footer";
-import SidePanel from "./components/SidePanel/SidePanel";
 import ResponsiveLaptopPage from "./components/ResponsivePages/LaptopResponsive/ResponsiveLaptopPage";
 import { TabProvider } from './context/TabContext';
+import ResponsiveCellphonePage from "./components/ResponsivePages/CellphoneResponsive/ResponsiveCellphonePage";
+import { useResponsive } from './hooks/useResponsive';
+import { SCREEN_SIZES } from './config/breakpoints';
 
 export const App = () => {
-  const [isLaptop, setIsLaptop] = useState(false);
+  const { screenSize } = useResponsive();
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLaptop(window.innerWidth < 1485);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-  }, []);
+  const renderContent = () => {
+    switch (screenSize) {
+      case SCREEN_SIZES.mobile:
+        return <ResponsiveCellphonePage />;
+      case SCREEN_SIZES.laptop:
+        return <ResponsiveLaptopPage />;
+      case SCREEN_SIZES.desktop:
+      default:
+        return (
+          <>
+            <Header />
+            <MainContainer />
+            <Footer />
+          </>
+        );
+    }
+  };
 
   return (
     <TabProvider>
       <div className="App">
         <div className="w-full h-screen bg-red-500">
-          {isLaptop ? <ResponsiveLaptopPage /> : <>
-            <Header />
-            <MainContainer />
-            <Footer />
-          </>}
+          {renderContent()}
         </div>
       </div>
     </TabProvider>
