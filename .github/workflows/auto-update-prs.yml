@@ -2,14 +2,15 @@ name: Auto-Update & Merge PRs
 
 on:
     pull_request_target:
-      branches:
-        - 'contribution-**'
       types:
         - opened
         - synchronize
         - reopened
         - ready_for_review
         - converted_to_draft
+    push:
+      branches:
+        - 'contribution-**'
 
 jobs:
   update-pr:
