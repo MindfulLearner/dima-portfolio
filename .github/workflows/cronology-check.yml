@@ -1,0 +1,33 @@
+name: Cronology Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  cronology_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check modified files
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const files = await github.paginate(
+              github.pulls.listFiles,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.payload.pull_request.number,
+              }
+            );
+
+            const onlyCronology = files.every(f => f.filename === "cronology.md");
+
+            if (!onlyCronology) {
+              core.setFailed("The PR modifies files other than cronology.md. Merge not allowed.");
+            } else {
+              console.log("Only cronology.md modified: OK.");
+            }
