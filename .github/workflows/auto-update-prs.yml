@@ -1,16 +1,15 @@
-name: Auto-Update & Merge PRs
+name: Auto‑Update PR (union)
 
 on:
   pull_request_target:
+    branches:
+      - master          # branch di destinazione
     types:
       - opened
       - synchronize
       - reopened
       - ready_for_review
       - converted_to_draft
-  push:
-    branches:
-      - contribution-*
 
 jobs:
   update-pr:
@@ -18,22 +17,21 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        with: { fetch-depth: 0 }
 
       - name: Setup Git identity
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Fetch master and merge
+      # unione di master → branch della PR
+      - name: Merge master into PR
         run: |
-          git checkout ${{ github.head_ref }}
-          git pull
-          git merge origin/master --no-edit || true
+          git fetch origin master
+          git merge origin/master --no-edit
 
       - name: Push result
-        run: |
-          git push
+        run: git push origin HEAD:${{ github.event.pull_request.head.ref }}
