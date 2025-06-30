@@ -72,3 +72,12 @@ jobs:
       - name: Push
         run: |
           echo "IMAGE_ID: ${{ env.IMAGE_ID }}"
+
+
+  cronology_check:
+    runs-on: ubuntu-latest
+    needs: build_frontend
+    if: ${{ needs.build_frontend.outputs.cronology_check_success == 'true' }}
+    steps:
+      - name: Checkout code
+        uses: ./.github/workflows/cronology-check.yml
