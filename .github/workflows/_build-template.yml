@@ -77,10 +77,15 @@ jobs:
         run: |
           echo "IMAGE_ID: ${{ env.IMAGE_ID }}"
 
+      - name: Set cronology check output
+        id: cronology_check
+        run: |
+          echo "cronology_check_success=true" >> $GITHUB_OUTPUT
+
   cronology_check:
     runs-on: ubuntu-latest
     needs: build_frontend
-    if: ${{ needs.build_frontend.outputs.cronology_check_success == 'true' }}
+    if: ${{ needs.build_frontend.outputs.cronology_check_success == 'true' && inputs.cronology-check == true }}
     steps:
       - name: Check modified files
         uses: actions/github-script@v6
