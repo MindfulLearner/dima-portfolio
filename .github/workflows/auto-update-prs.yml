@@ -3,7 +3,7 @@ name: Auto-Update & Merge PRs
 on:
     pull_request_target:
       branches:
-        - master
+        - 'contribution-**'
       types:
         - opened
         - synchronize
