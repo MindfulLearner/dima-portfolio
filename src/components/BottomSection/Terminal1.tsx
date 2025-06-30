@@ -89,7 +89,6 @@ function Terminal1() {
       body: JSON.stringify({
         name: "Joshua Dimaunahan",
         email: email,
-        message: "Push your contribution!",
         date: new Date().toISOString(),
       }),
     });
