@@ -74,6 +74,8 @@ function Terminal1() {
     }
   };
 
+  const [prUrl, setPrUrl] = useState<string>("");
+
   /**
    * this will check if the email is valid
    * @param email the email to check
@@ -92,6 +94,8 @@ function Terminal1() {
         date: new Date().toISOString(),
       }),
     });
+    const data = await response.json();
+    setPrUrl(data.pr_url);
     return response.ok;
   };
 
@@ -115,7 +119,7 @@ function Terminal1() {
             <div className="text-white font-mono text-sm">
               <div className="text-green-500 font-bold mb-2">✓ Commit successful!</div>
               <div className="text-gray-300">Message: "{emailAdjusted}"</div>
-              <div className="text-blue-300 mt-2">Push your contribution!</div>
+            <div className="text-blue-300 mt-2">Thank you for your contribution! To confirm your contribution, please check comment the PR in the github repository. <a href={prUrl} target="_blank" rel="noopener noreferrer">PR URL</a></div>
             </div>
           ]);
 
