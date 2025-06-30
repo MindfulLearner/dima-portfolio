@@ -35,4 +35,4 @@ jobs:
 
       - name: Push result
         run: |
-          git push origin HEAD:${{ github.event.pull_request.head.ref }} || true
+          git push
