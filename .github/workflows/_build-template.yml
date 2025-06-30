@@ -61,7 +61,7 @@ jobs:
       - name: Get pnpm store directory
         id: pnpm-store
         run: |
-          echo "::set-output name=pnpm_store::$(pnpm store path)"
+          echo "pnpm_store=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: "install packages"
         run: |
@@ -80,10 +80,11 @@ jobs:
   cronology_check:
     runs-on: ubuntu-latest
     needs: build_frontend
+    if: ${{ inputs.cronology-check }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.head_ref || github.ref_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup git
@@ -93,7 +94,7 @@ jobs:
 
       - name: Merge master branch
         run: |
-          git checkout ${{ github.head_ref }}
+          git checkout ${{ github.head_ref || github.ref_name }}
           git pull origin master
           git merge origin/master || true
 
@@ -111,6 +112,6 @@ jobs:
 
       - name: Push changes if any
         run: |
-          git push origin HEAD:${{ github.head_ref }}
+          git push origin HEAD:${{ github.head_ref || github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
