@@ -89,7 +89,7 @@ function Terminal1() {
       },
       method: "POST",
       body: JSON.stringify({
-        name: email,
+        name: email.split("@")[0],
         email: email,
         date: new Date().toISOString(),
       }),
