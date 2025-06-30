@@ -25,4 +25,5 @@ jobs:
       build-only: true
       namespace: "pr"
       image-id: "pr-${{ github.event.pull_request.number }}"
+      cronology-check: true
     secrets: inherit
