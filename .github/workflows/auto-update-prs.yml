@@ -3,7 +3,7 @@ name: Auto‑Update PR (union)
 on:
   pull_request_target:
     branches:
-      - master          # branch di destinazione
+      - contribution-*
     types:
       - opened
       - synchronize
