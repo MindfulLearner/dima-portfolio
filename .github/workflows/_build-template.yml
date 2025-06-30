@@ -81,7 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_frontend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -93,7 +93,8 @@ jobs:
 
       - name: Merge master branch
         run: |
-          git fetch origin master
+          git checkout ${{ github.head_ref }}
+          git pull 
           git merge origin/master || true
 
       - name: Auto-resolve cronology.md conflict
@@ -110,43 +111,6 @@ jobs:
 
       - name: Push changes if any
         run: |
-          git push origin HEAD:${{ github.head_ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  cronology_check_2:
-    runs-on: ubuntu-latest
-    needs: cronology_check
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup git
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-
-      - name: Merge master branch
-        run: |
-          git fetch origin master
-          git merge origin/master || true
-
-      - name: Auto-resolve cronology.md conflict
-        run: |
-          if git ls-files -u | grep -q 'cronology.md'; then
-            git show :1:cronology.md > cronology.md.ours
-            git show :2:cronology.md > cronology.md.theirs
-
-            cat cronology.md.ours cronology.md.theirs | sort | uniq > cronology.md
-
-            git add cronology.md
-            git commit -m "Auto merge cronology.md"
-          fi
-
-      - name: Push changes if any
-        run: |
-          git push origin HEAD:${{ github.head_ref }}
+          git push 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
