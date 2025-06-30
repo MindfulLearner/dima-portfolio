@@ -81,9 +81,18 @@ function TerminalLaptop() {
    */
   // TODO: use push after commit
   const isFetchedGitCommit = async (email: string) => {
-    const response = await fetch(`api/test/vps`, {
+    const response = await fetch(process.env.AWS_API_URL!, {
       method: "POST",
+      body: JSON.stringify({
+        name: email,
+        email: email,
+        orarioDiArrivo: new Date().toISOString(),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
+    console.log(response);
     return response.ok;
   };
 
