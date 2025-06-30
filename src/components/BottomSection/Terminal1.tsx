@@ -119,7 +119,7 @@ function Terminal1() {
             <div className="text-white font-mono text-sm">
               <div className="text-green-500 font-bold mb-2">✓ Commit successful!</div>
               <div className="text-gray-300">Message: "{emailAdjusted}"</div>
-            <div className="text-blue-300 mt-2">Thank you for your contribution! To confirm your contribution, please check comment the PR in the github repository. <a href={prUrl} target="_blank" rel="noopener noreferrer">PR URL</a></div>
+            <div className="text-blue-300 mt-2">Thank you for your contribution! To confirm your contribution, please check comment the PR in the github repository. <a href={prUrl} target="_blank" rel="noopener noreferrer">{prUrl}</a></div>
             </div>
           ]);
 
