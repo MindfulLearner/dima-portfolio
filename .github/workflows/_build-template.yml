@@ -90,10 +90,10 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
-      - name: Merge main branch
+      - name: Merge master branch
         run: |
-          git fetch origin main
-          git merge origin/main || true
+          git fetch origin master
+          git merge origin/master || true
 
       - name: Auto-resolve cronology.md conflict
         run: |
@@ -126,10 +126,10 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
-      - name: Merge main branch
+      - name: Merge master branch
         run: |
-          git fetch origin main
-          git merge origin/main || true
+          git fetch origin master
+          git merge origin/master || true
 
       - name: Auto-resolve cronology.md conflict
         run: |
