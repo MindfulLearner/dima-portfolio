@@ -99,11 +99,9 @@ jobs:
       - name: Auto-resolve cronology.md conflict
         run: |
           if git ls-files -u | grep -q 'cronology.md'; then
-            # estrai versioni ours e theirs
             git show :1:cronology.md > cronology.md.ours
             git show :2:cronology.md > cronology.md.theirs
 
-            # unisci ed elimina duplicati
             cat cronology.md.ours cronology.md.theirs | sort | uniq > cronology.md
 
             git add cronology.md
@@ -138,11 +136,9 @@ jobs:
       - name: Auto-resolve cronology.md conflict
         run: |
           if git ls-files -u | grep -q 'cronology.md'; then
-            # estrai versioni ours e theirs
             git show :1:cronology.md > cronology.md.ours
             git show :2:cronology.md > cronology.md.theirs
 
-            # unisci ed elimina duplicati
             cat cronology.md.ours cronology.md.theirs | sort | uniq > cronology.md
 
             git add cronology.md
