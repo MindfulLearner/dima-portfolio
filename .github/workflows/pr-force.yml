@@ -14,3 +14,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           UPDATE_METHOD: rebase
           MERGE_METHOD: merge
+
+          #test
