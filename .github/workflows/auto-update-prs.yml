@@ -10,7 +10,8 @@ on:
         - converted_to_draft
     push:
       branches:
-        - 'contribution-tesfsejfesojesfejsw'
+        - contribution-*
+
 
 jobs:
   update-pr:
