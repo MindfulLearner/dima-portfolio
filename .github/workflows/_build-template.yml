@@ -94,7 +94,7 @@ jobs:
       - name: Merge master branch
         run: |
           git checkout ${{ github.head_ref }}
-          git pull 
+          git pull origin master
           git merge origin/master || true
 
       - name: Auto-resolve cronology.md conflict
@@ -111,4 +111,6 @@ jobs:
 
       - name: Push changes if any
         run: |
-          git push 
+          git push origin HEAD:${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
