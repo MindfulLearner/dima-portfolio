@@ -93,7 +93,7 @@ function Terminal1() {
     const gitCommitRegex = /^git commit -m "(.+?)"$/;
     const isEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      // check if the string is a valid email
+    // check if the string is a valid email
     const isGitCommitMatch = gitCommitRegex.test(string)
 
     if (isGitCommitMatch) {
@@ -122,17 +122,17 @@ function Terminal1() {
           ]);
 
           return;
-        } 
+        }
       } else {
-          setTerminalOutput((prevOutput) => [
-            ...prevOutput,
-            <div className="text-white font-mono text-sm">
-              <div className="text-red-500 font-bold mb-2">✗ Commit failed!</div>
-              <div className="text-gray-400">Please provide a valid email address.</div>
-            </div>
-          ]);
+        setTerminalOutput((prevOutput) => [
+          ...prevOutput,
+          <div className="text-white font-mono text-sm">
+            <div className="text-red-500 font-bold mb-2">✗ Commit failed!</div>
+            <div className="text-gray-400">Please provide a valid email address.</div>
+          </div>
+        ]);
 
-          return;
+        return;
       }
     }
 
@@ -255,22 +255,23 @@ function Terminal1() {
             <div className="text-white font-mono text-sm flex gap-8">
               {/* ASCII Art */}
               <pre className="text-blue-400 text-xs">
-                {`              -\`
-             .o+\`
-            \`ooo/
-           \`+oooo:
-          \`+oooooo:
-          -+oooooo+:
-        \`/:-:++oooo+:
-       \`/++++/+++++++:
-      \`/++++++++++++++:
-     \`/+++ooooooooooooo/\`
-    ./ooosssso++osssssso+\`
-   .oossssso-\`\`\`\`/ossssss+\`
-  -osssssso.      :ssssssso.
- :osssssss/        osssso+++.
-/ossssssss/        +ssssooo/-
-\`/ossssso+        -:/+osssso+-`}
+                {`
+                    -@                
+                   .##@               
+                  .####@              
+                  @#####@             
+                . *######@            
+               .##@o@#####@           
+              /############@          
+             /##############@         
+            @######@**%######@        
+           @######      %#####o       
+          @######@       ######%      
+        -@#######         ######@.    
+       /#####h**          **%@####@   
+      @H@*                      *%#@  
+     *                              *                          
+`}
 
               </pre>
 
@@ -319,6 +320,10 @@ function Terminal1() {
                 <div>
                   <span className="text-blue-400 font-bold">Memory: </span>
                   <span className="text-gray-300">2413MiB / 8096MiB</span>
+                </div>
+                <div>
+                  <span className="text-blue-400 font-bold">Videogames: </span>
+                  <span className="text-gray-300">I Love Fortnite</span>
                 </div>
               </div>
             </div>

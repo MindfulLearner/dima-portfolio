@@ -93,7 +93,7 @@ function TerminalLaptop() {
     const gitCommitRegex = /^git commit -m "(.+?)"$/;
     const isEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      // check if the string is a valid email
+    // check if the string is a valid email
     const isGitCommitMatch = gitCommitRegex.test(string)
 
     if (isGitCommitMatch) {
@@ -122,17 +122,17 @@ function TerminalLaptop() {
           ]);
 
           return;
-        } 
+        }
       } else {
-          setTerminalOutput((prevOutput) => [
-            ...prevOutput,
-            <div className="text-white font-mono text-sm">
-              <div className="text-red-500 font-bold mb-2">✗ Commit failed!</div>
-              <div className="text-gray-400">Please provide a valid email address.</div>
-            </div>
-          ]);
+        setTerminalOutput((prevOutput) => [
+          ...prevOutput,
+          <div className="text-white font-mono text-sm">
+            <div className="text-red-500 font-bold mb-2">✗ Commit failed!</div>
+            <div className="text-gray-400">Please provide a valid email address.</div>
+          </div>
+        ]);
 
-          return;
+        return;
       }
     }
 
@@ -235,10 +235,10 @@ function TerminalLaptop() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-yellow-500">LinkedIn:</span>
-                    <a 
-                      href="http://www.linkedin.com/in/joshua-dimaunahan-473977195" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="http://www.linkedin.com/in/joshua-dimaunahan-473977195"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-300 hover:text-blue-400"
                     >
                       Joshua Dimaunahan
@@ -255,22 +255,23 @@ function TerminalLaptop() {
             <div className="text-white font-mono text-sm flex gap-8">
               {/* ASCII Art */}
               <pre className="text-blue-400 text-xs">
-                {`              -\`
-             .o+\`
-            \`ooo/
-           \`+oooo:
-          \`+oooooo:
-          -+oooooo+:
-        \`/:-:++oooo+:
-       \`/++++/+++++++:
-      \`/++++++++++++++:
-     \`/+++ooooooooooooo/\`
-    ./ooosssso++osssssso+\`
-   .oossssso-\`\`\`\`/ossssss+\`
-  -osssssso.      :ssssssso.
- :osssssss/        osssso+++.
-/ossssssss/        +ssssooo/-
-\`/ossssso+        -:/+osssso+-`}
+                {`
+                    -@                
+                   .##@               
+                  .####@              
+                  @#####@             
+                . *######@            
+               .##@o@#####@           
+              /############@          
+             /##############@         
+            @######@**%######@        
+           @######      %#####o       
+          @######@       ######%      
+        -@#######         ######@.    
+       /#####h**          **%@####@   
+      @H@*                      *%#@  
+     *                              *                          
+`}
 
               </pre>
 
@@ -319,6 +320,10 @@ function TerminalLaptop() {
                 <div>
                   <span className="text-blue-400 font-bold">Memory: </span>
                   <span className="text-gray-300">2413MiB / 8096MiB</span>
+                </div>
+                <div>
+                  <span className="text-blue-400 font-bold">Videogames: </span>
+                  <span className="text-gray-300">I Love Fortnite</span>
                 </div>
               </div>
             </div>
