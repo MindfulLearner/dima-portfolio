@@ -29,6 +29,7 @@ export const TerminaleListOfCommands = [
       { helpCommand: "info", showInfo: "show more information about the project" }
     ] 
   },
+  { command: "git", description: "There's a feature where you can commit to the github repository of the project type help git to see how to use it" },
   { command: "ls", description: "show all the folders in the current directory" },
  { command: "cd", description: "change the current directory" },
   { command: "clear", description: "clear the terminal" },

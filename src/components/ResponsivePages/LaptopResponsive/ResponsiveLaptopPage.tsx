@@ -6,7 +6,6 @@ import MainContainer from './components/Maincontainer';
 const ResponsiveLaptopPage: React.FC = () => {
     return (
         <div>
-            {/* test */}
             <Header />
             <MainContainer />
             <Footer />
