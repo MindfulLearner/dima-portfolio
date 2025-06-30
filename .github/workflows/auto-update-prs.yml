@@ -30,7 +30,8 @@ jobs:
 
       - name: Fetch master and merge
         run: |
-          git fetch origin master
+          git checkout ${{ github.head_ref }}
+          git pull
           git merge origin/master --no-edit || true
 
       - name: Push result
