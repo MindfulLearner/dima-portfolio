@@ -43,7 +43,7 @@ jobs:
     # adding build
     steps:
       - name: "Checkout Github Action"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Install Node.js"
         uses: actions/setup-node@v4
