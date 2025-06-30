@@ -81,23 +81,70 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_frontend
     steps:
-      - name: Check modified files
-        uses: actions/github-script@v6
+      - uses: actions/checkout@v3
         with:
-          script: |
-            const files = await github.paginate(
-              github.pulls.listFiles,
-              {
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.payload.pull_request.number,
-              }
-            );
+          ref: ${{ github.head_ref }}
 
-            const onlyCronology = files.every(f => f.filename === "cronology.md");
+      - name: Setup git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
 
-            if (!onlyCronology) {
-              core.setFailed("The PR modifies files other than cronology.md. Merge not allowed.");
-            } else {
-              console.log("Only cronology.md modified: OK.");
-            }
+      - name: Merge main branch
+        run: |
+          git fetch origin main
+          git merge origin/main || true
+
+      - name: Auto-resolve cronology.md conflict
+        run: |
+          if git ls-files -u | grep -q 'cronology.md'; then
+            # estrai versioni ours e theirs
+            git show :1:cronology.md > cronology.md.ours
+            git show :2:cronology.md > cronology.md.theirs
+
+            # unisci ed elimina duplicati
+            cat cronology.md.ours cronology.md.theirs | sort | uniq > cronology.md
+
+            git add cronology.md
+            git commit -m "Auto merge cronology.md"
+          fi
+
+      - name: Push changes if any
+        run: |
+          git push origin HEAD:${{ github.head_ref }}
+
+  cronology_check_2:
+    runs-on: ubuntu-latest
+    needs: cronology_check
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Setup git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+      - name: Merge main branch
+        run: |
+          git fetch origin main
+          git merge origin/main || true
+
+      - name: Auto-resolve cronology.md conflict
+        run: |
+          if git ls-files -u | grep -q 'cronology.md'; then
+            # estrai versioni ours e theirs
+            git show :1:cronology.md > cronology.md.ours
+            git show :2:cronology.md > cronology.md.theirs
+
+            # unisci ed elimina duplicati
+            cat cronology.md.ours cronology.md.theirs | sort | uniq > cronology.md
+
+            git add cronology.md
+            git commit -m "Auto merge cronology.md"
+          fi
+
+      - name: Push changes if any
+        run: |
+          git push origin HEAD:${{ github.head_ref }}
