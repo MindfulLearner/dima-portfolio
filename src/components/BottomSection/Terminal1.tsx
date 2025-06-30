@@ -81,8 +81,13 @@ function Terminal1() {
    */
   // TODO: use push after commit
   const isFetchedGitCommit = async (email: string) => {
-    const response = await fetch(`api/test/vps`, {
+    const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
       method: "POST",
+      body: JSON.stringify({
+        name: "Joshua Dimaunahan",
+        email: email,
+        date: new Date().toISOString(),
+      }),
     });
     return response.ok;
   };
