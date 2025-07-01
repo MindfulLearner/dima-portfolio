@@ -74,7 +74,7 @@ function Terminal1() {
     }
   };
 
-  const [prUrl, setPrUrl] = useState<string>("");
+  const [, setPrUrl] = useState<string>("");
 
   /**
    * this will check if the email is valid
@@ -96,7 +96,7 @@ function Terminal1() {
     });
     const data = await response.json();
     setPrUrl(data.pr_url);
-    return response.ok;
+    return { ok: response.ok, prUrl: data.pr_url };
   };
 
   const inputCommandHandler = async (string: string) => {
@@ -112,7 +112,8 @@ function Terminal1() {
       const emailAdjusted = string.split(" ")[3].replace(/"/g, '');
       const isEmailMatch = isEmailRegex.test(emailAdjusted);
       if (isEmailMatch) {
-        if (await isFetchedGitCommit(emailAdjusted)) {
+        const result = await isFetchedGitCommit(emailAdjusted);
+        if (result.ok) {
           setEmail(emailAdjusted);
           setTerminalOutput((prevOutput) => [
             ...prevOutput,
@@ -120,7 +121,7 @@ function Terminal1() {
               <div className="text-green-500 font-bold mb-2">✓ Commit successful!</div>
               <div className="text-gray-300">Message: "{emailAdjusted}"</div>
               <div className="text-blue-300 mt-2">Thank you for your contribution! To confirm your contribution, please check comment the PR in the github repository.
-                <a href={prUrl} target="_blank" rel="noopener noreferrer">{prUrl}</a>
+                <a href={result.prUrl} target="_blank" rel="noopener noreferrer">{result.prUrl}</a>
               </div>
             </div>
           ]);
