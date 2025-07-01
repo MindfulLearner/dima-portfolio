@@ -43,7 +43,7 @@ jobs:
         run: git push origin HEAD:${{ github.event.pull_request.head.ref }}
 
   build:
-    if: ${{ github.event.pull_request.draft == false && startsWith(github.event.pull_request.base.ref, 'contribution-') }}
+    if: ${{ github.event.pull_request.draft == false && !startsWith(github.event.pull_request.base.ref, 'contribution-') }}
     name: Build
     needs: update-pr
     uses: ./.github/workflows/_build-template.yml
