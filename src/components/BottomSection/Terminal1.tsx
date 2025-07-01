@@ -95,23 +95,23 @@ function Terminal1() {
 
     const simulateGitCommands = async () => {
       const commands = [
-        { cmd: "git push", delay: 100, color: "text-red-300" },
-        { cmd: "Enumerating objects: 16, done.", delay: 150, color: "text-orange-300" },
-        { cmd: "Counting objects: 100% (16/16), done.", delay: 360, color: "text-blue-300" },
-        { cmd: "Compressing objects: 100% (12/12), done.", delay: 370, color: "text-blue-300" },
-        { cmd: "Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 380, color: "text-blue-300" },
-        { cmd: "Unpacking objects: 100% (16/16), 2.98 KiB | 277.00 KiB/s, done.", delay: 390, color: "text-indigo-500" },
-        { cmd: "remote: Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 400, color: "text-violet-500" },
-        { cmd: `git push origin origin/dima-portfolio/contribution-${email.split("@")[0]}`, delay: 800, color: "text-red-300" },
-        { cmd: "Creating Pull Request... , If you liked it, feel free to leave a star!", delay: 600, color: "text-orange-500" },
-        { cmd: "Thank you for your contribution! Click the link below to view and comment on the Pull Request:", delay: 700, color: "text-yellow-500" },
-        { cmd: `Keep on Learning!`, delay: 800, color: "text-green-300" }
+        { cmd: "➔ git push", delay: 100, color: "text-red-500" },
+        { cmd: "➔ Enumerating objects: 16, done.", delay: 120, color: "text-orange-500" },
+        { cmd: "➔ Counting objects: 100% (16/16), done.", delay: 150, color: "text-yellow-500" },
+        { cmd: "➔ Compressing objects: 100% (12/12), done.", delay: 180, color: "text-green-500" },
+        { cmd: "➔ Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 200, color: "text-blue-500" },
+        { cmd: "➔ Unpacking objects: 100% (16/16), 2.98 KiB | 277.00 KiB/s, done.", delay: 220, color: "text-indigo-500" },
+        { cmd: "➔ remote: Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 240, color: "text-violet-500" },
+        { cmd: `➔ git push origin origin/dima-portfolio/contribution-${email.split("@")[0]}`, delay: 260, color: "text-red-300" },
+        { cmd: "➔ Creating Pull Request... , If you liked it, feel free to leave a star!", delay: 280, color: "text-orange-500" },
+        { cmd: `➔ Thank you ${email.split("@")[0]} for your contribution! Click the link below to view and comment on the Pull Request:`, delay: 300, color: "text-yellow-500" },
+        { cmd: `➔ Keep on Learning!`, delay: 320, color: "text-green-300" }
       ];
 
       for (const command of commands) {
         setTerminalOutput((prevOutput) => [
           ...prevOutput,
-          <div className={`text-white font-mono font-bold text-md ${command.color}`}>
+          <div className={`font-mono font-bold text-md ${command.color}`}>
             <div>{command.cmd}</div>
           </div>
         ]);
@@ -119,8 +119,6 @@ function Terminal1() {
         await new Promise(resolve => setTimeout(resolve, command.delay));
       }
     };
-
-
 
     try {
       const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
@@ -134,10 +132,16 @@ function Terminal1() {
           date: new Date().toISOString(),
         }),
       });
-      simulateGitCommands();
+      
       const data = await response.json();
       setPrUrl(data.pr_url);
-      return { ok: response.ok, prUrl: data.pr_url };
+      
+      if (response.ok) {
+        await simulateGitCommands();
+        return { ok: true, prUrl: data.pr_url };
+      } else {
+        return { ok: false, prUrl: "" };
+      }
     } catch (error) {
       console.error(error);
       return { ok: false, prUrl: "" };
@@ -168,6 +172,15 @@ function Terminal1() {
               <div className="text-green-500 font-bold mb-2">✓ Pull Request created successfully!</div>
               <div className="text-gray-300">Message: "{emailAdjusted}"</div>
               <div className="text-blue-300 mt-2">Thank you for your contribution! Click the link below to view and comment on the Pull Request:
+                <div>
+                  Remind that if you want to the PR to be merged, you need to comment on the PR.
+                </div>
+                <div className="text-gray-300">
+                  If you liked it, feel free to leave a star!
+                  <a href="https://github.com/MindfulLearner/dima-portfolio" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
+                    https://github.com/MindfulLearner/dima-portfolio
+                  </a>
+                </div>
                 <div className="mt-2">
                   <a href={result.prUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
                     🔗 {result.prUrl}
@@ -182,7 +195,7 @@ function Terminal1() {
           setTerminalOutput((prevOutput) => [
             ...prevOutput,
             <div className="text-white font-mono text-sm">
-              <div className="text-red-500 font-bold mb-2">✗ VPS not found!</div>
+              <div className="text-red-500 font-bold mb-2">✗ Lambda API Gateway Failed!</div>
               <div className="text-gray-400">Please try again.</div>
             </div>
           ]);
