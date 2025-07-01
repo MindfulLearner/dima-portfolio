@@ -1,13 +1,6 @@
 name: PR Build
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - ready_for_review
-      - converted_to_draft
   pull_request_target:
     types:
       - opened
@@ -15,12 +8,7 @@ on:
       - reopened
       - ready_for_review
       - converted_to_draft
-  push:
-    branches:
-      - contribution-*
-      - master
 
-# concurrency
 concurrency:
   group: ${{ github.workflow }}-PR-${{ github.event.number }}
   cancel-in-progress: true
