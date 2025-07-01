@@ -14,16 +14,20 @@ on:
 concurrency:
   group: ${{ github.workflow }}-PR-${{ github.event.number }}
   cancel-in-progress: true
+  
 
 jobs:
   update-pr:
-    if: ${{ startsWith(github.event.pull_request.base.ref, 'contribution-') }}
+    if: ${{ !startsWith(github.event.pull_request.base.ref, 'contribution-') }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
 
     steps:
+      - name: Echo
+        run: echo ${{ github.event.pull_request.base.ref }}
+
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
 
