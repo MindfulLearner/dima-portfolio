@@ -1,6 +1,13 @@
 name: PR Build
 
 on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - converted_to_draft
   pull_request_target:
     types:
       - opened
