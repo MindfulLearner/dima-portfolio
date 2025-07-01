@@ -38,13 +38,8 @@ jobs:
 
       - name: Commit changes
         run: |
+          git merge origin/master --no-edit || true
           git commit -m "changes" || true
-
-      - name: Merge master into PR branch
-        run: |
-          git remote add upstream https://github.com/${{ github.repository }}.git
-          git fetch upstream
-          git merge upstream/master --no-edit || true
 
     # test
       - name: Push result to PR branch
