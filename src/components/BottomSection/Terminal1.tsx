@@ -194,22 +194,26 @@ function Terminal1() {
           setEmail(emailAdjusted);
           setTerminalOutput((prevOutput) => [
             ...prevOutput,
-            <div className="text-white font-mono text-sm">
+            <div className="text-white font-mono text-md font-bold">
               <div className="text-green-500 font-bold mb-2">✓ Pull Request created successfully!</div>
-              <div className="text-blue-300 mt-2">Thank you for your contribution! Click the link below to view and comment on the Pull Request: </div>
+              <div className="text-blue-300 mt-2">Thank you for your contribution! Click the link below to view and <span className="text-green-500 text-bold text-lg">➔ comment</span> on the Pull Request: </div>
               <div className="mt-2">
                 <a href={result.prUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
                   🔗 {result.prUrl}
                 </a>
               </div>
-              <div>
-                Also if you didn't know, If you're new, you're getting the "Pair Extraordinaire" badge achievements on GitHub!
+              <div className="flex gap-2 text-blue-300">
+                <div>🎉</div>
+                <div>Also if you didn't know, If you're new, you're getting the "Pair Extraordinaire" badge achievements on GitHub!</div>
               </div>
               <div>
-                Remind that if you want to the PR to be merged, you need to comment on the PR.
+                <div className="flex gap-2 text-green-300">
+                  <div>💡</div>
+                  <div>Remind that if you want to the PR to be merged, you need to comment on the PR.</div>
+                </div>
               </div>
               <div className="text-gray-300">
-                If you appreciate my work, feel free to leave a star! ⭐
+                If you appreciate my work, feel free to leave a <span className="text-yellow-500">star</span>! ⭐ 
                 <a href="https://github.com/MindfulLearner/dima-portfolio" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
                   https://github.com/MindfulLearner/dima-portfolio
                 </a>
