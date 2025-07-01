@@ -511,22 +511,22 @@ function Terminal1() {
           <div className="text-orange-400">feat/workingonit</div>
           <div className="text-white">...</div>
         </div>
-        {isLoading && (
+        {isLoading ? (
           <div className="flex items-center gap-2 text-yellow-500">
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-500"></div>
             <span className="text-sm">Fetching...</span>
           </div>
+        ) : (
+          <div className="flex gap-2">
+            <div>~</div>
+            <input
+              type="text"
+              className="bg-transparent outline-none w-full"
+              placeholder="Type your command..."
+              ref={commandInputRef}
+            />
+          </div>
         )}
-        <div className="flex gap-2">
-          <div>~</div>
-          <input
-            type="text"
-            className="bg-transparent outline-none w-full"
-            placeholder={isLoading ? "Processing..." : "Type your command..."}
-            ref={commandInputRef}
-            disabled={isLoading}
-          />
-        </div>
         <button type="submit" className="hidden"></button>
       </form>
     </div>
