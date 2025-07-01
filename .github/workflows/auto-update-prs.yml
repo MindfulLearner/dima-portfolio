@@ -30,11 +30,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Set merge driver (union) for cronology.md
+      - name: Commit changes
         run: |
-          echo "cronology.md merge=union" >> .gitattributes
-          git add .gitattributes
-          git commit -m "chore: apply union merge driver to cronology.md" || true
+          git commit -m "changes" || true
 
       - name: Merge master into PR branch
         run: |
