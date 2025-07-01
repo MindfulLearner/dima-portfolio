@@ -3,7 +3,7 @@ name: Auto‑Update PR (union)
 on:
   pull_request_target:
     branches:
-      - master          # branch di destinazione
+      - master 
     types:
       - opened
       - synchronize
@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   update-pr:
+    if: ${{ github.event.pull_request.base.ref != 'contribution-*'  }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
