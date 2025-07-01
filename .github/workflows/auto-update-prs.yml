@@ -1,4 +1,4 @@
-name: Auto-Update & Merge PRs
+name: PR Build
 
 on:
   pull_request_target:
@@ -55,5 +55,4 @@ jobs:
       build-only: true
       namespace: "pr"
       image-id: "pr-${{ github.event.pull_request.number }}"
-      cronology-check: true
     secrets: inherit
