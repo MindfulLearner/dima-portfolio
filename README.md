@@ -1,8 +1,10 @@
 # Dima Portfolio
 
 
-# OPEN SOURCE IDEA / Developer Program Member
+# OPEN SOURCE IDEA 
 i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
+
+IMAGE BELOW OUTADED IM using Lambda for that.
 
 ![image](https://github.com/user-attachments/assets/5102bfe4-65c9-4f78-ac23-fb1289274493)
 
