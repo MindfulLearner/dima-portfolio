@@ -11,6 +11,10 @@ on:
       - ready_for_review
       - converted_to_draft
 
+concurrency:
+  group: ${{ github.workflow }}-PR-${{ github.event.number }}
+  cancel-in-progress: true
+
 jobs:
   update-pr:
     runs-on: ubuntu-latest
@@ -35,3 +39,14 @@ jobs:
 
       - name: Push result
         run: git push origin HEAD:${{ github.event.pull_request.head.ref }}
+
+  build:
+    if: ${{ github.event.pull_request.draft == false }}
+    name: Build
+    needs: update-pr
+    uses: ./.github/workflows/_build-template.yml
+    with:
+      build-only: true
+      namespace: "pr"
+      image-id: "pr-${{ github.event.pull_request.number }}"
+    secrets: inherit
