@@ -1,6 +1,13 @@
-name: Auto-Update & Merge PRs
+name: PR Build
 
 on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - converted_to_draft
   pull_request_target:
     types:
       - opened
@@ -13,6 +20,7 @@ on:
       - contribution-*
       - master
 
+# concurrency
 concurrency:
   group: ${{ github.workflow }}-PR-${{ github.event.number }}
   cancel-in-progress: true
@@ -37,18 +45,33 @@ jobs:
 
       - name: Commit changes
         run: |
+          git merge origin/master --no-edit || true
           git commit -m "changes" || true
-
-      - name: Merge master into PR branch
-        run: |
-          git remote add upstream https://github.com/${{ github.repository }}.git
-          git fetch upstream
-          git merge upstream/master --no-edit || true
 
     # test
       - name: Push result to PR branch
         run: |
           git push || true
+
+      - name: Try to merge master and resolve cronology.md conflict
+        run: |
+          git fetch origin master
+          git merge origin/master --no-edit || true
+      
+          if git status | grep 'both modified:.*cronology.md'; then
+            echo "Conflict in cronology.md detected — trying to resolve automatically..."
+            # salva il contenuto della versione corrente e di master
+            git show :1:cronology.md > base.txt || true
+            git show :2:cronology.md > ours.txt || true
+            git show :3:cronology.md > theirs.txt || true
+      
+            # unisci le tre versioni rimuovendo duplicati
+            cat ours.txt theirs.txt | sort | uniq > merged.txt
+            mv merged.txt cronology.md
+            git add cronology.md
+          fi
+      
+          git commit -am "Merge master and resolve cronology.md automatically" || true
 
   build:
     if: ${{ github.event.pull_request.draft == false }}
@@ -59,5 +82,4 @@ jobs:
       build-only: true
       namespace: "pr"
       image-id: "pr-${{ github.event.pull_request.number }}"
-      cronology-check: true
     secrets: inherit

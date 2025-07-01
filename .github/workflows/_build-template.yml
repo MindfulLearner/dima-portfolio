@@ -13,10 +13,6 @@ on:
             required: true
             default: master
             type: string
-        cronology-check:
-            required: false
-            default: false
-            type: boolean
 
 name: _build
 env:
