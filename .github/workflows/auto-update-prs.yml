@@ -44,6 +44,6 @@ jobs:
 
       - name: Push result to PR branch
         run: |
-          git push origin HEAD:${{ github.head_ref }} || true
+          git push || true
 
           # test
