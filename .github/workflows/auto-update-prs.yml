@@ -11,6 +11,11 @@ on:
   push:
     branches:
       - contribution-*
+      - master
+
+concurrency:
+  group: ${{ github.workflow }}-PR-${{ github.event.number }}
+  cancel-in-progress: true
 
 jobs:
   update-pr:
@@ -44,3 +49,14 @@ jobs:
       - name: Push result to PR branch
         run: |
           git push || true
+
+  build:
+    if: ${{ github.event.pull_request.draft == false }}
+    name: Build
+    uses: ./.github/workflows/_build-template.yml
+    with:
+      build-only: true
+      namespace: "pr"
+      image-id: "pr-${{ github.event.pull_request.number }}"
+      cronology-check: true
+    secrets: inherit
