@@ -40,6 +40,7 @@ jobs:
           git fetch upstream
           git merge upstream/master --no-edit || true
 
+    # test
       - name: Push result to PR branch
         run: |
           git push || true
