@@ -1,5 +1,7 @@
 # Dima Portfolio
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 # OPEN SOURCE IDEA 
 i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
