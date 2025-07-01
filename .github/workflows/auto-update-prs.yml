@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   update-pr:
-    if: ${{ github.event.pull_request.base.ref != 'contribution-*'  }}
+    if: ${{ !startsWith(github.event.pull_request.base.ref, 'contribution-') }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
