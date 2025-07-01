@@ -53,6 +53,26 @@ jobs:
         run: |
           git push || true
 
+      - name: Try to merge master and resolve cronology.md conflict
+        run: |
+          git fetch origin master
+          git merge origin/master --no-edit || true
+      
+          if git status | grep 'both modified:.*cronology.md'; then
+            echo "Conflict in cronology.md detected — trying to resolve automatically..."
+            # salva il contenuto della versione corrente e di master
+            git show :1:cronology.md > base.txt || true
+            git show :2:cronology.md > ours.txt || true
+            git show :3:cronology.md > theirs.txt || true
+      
+            # unisci le tre versioni rimuovendo duplicati
+            cat ours.txt theirs.txt | sort | uniq > merged.txt
+            mv merged.txt cronology.md
+            git add cronology.md
+          fi
+      
+          git commit -am "Merge master and resolve cronology.md automatically" || true
+
   build:
     if: ${{ github.event.pull_request.draft == false }}
     name: Build
