@@ -132,10 +132,10 @@ function Terminal1() {
           date: new Date().toISOString(),
         }),
       });
-      
+
       const data = await response.json();
       setPrUrl(data.pr_url);
-      
+
       if (response.ok) {
         await simulateGitCommands();
         return { ok: true, prUrl: data.pr_url };
@@ -170,25 +170,23 @@ function Terminal1() {
             ...prevOutput,
             <div className="text-white font-mono text-sm">
               <div className="text-green-500 font-bold mb-2">✓ Pull Request created successfully!</div>
-              <div className="text-gray-300">Message: "{emailAdjusted}"</div>
-              <div className="text-blue-300 mt-2">Thank you for your contribution! Click the link below to view and comment on the Pull Request:
-                <div>
-                  Remind that if you want to the PR to be merged, you need to comment on the PR.
-                </div>
-                <div>
-                  Also if you didn't know, If you're new, you're getting the "Pair Extraordinaire" badge!
-                </div>
-                <div className="text-gray-300">
-                  If you liked it, feel free to leave a star!
-                  <a href="https://github.com/MindfulLearner/dima-portfolio" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
-                    https://github.com/MindfulLearner/dima-portfolio
-                  </a>
-                </div>
-                <div className="mt-2">
-                  <a href={result.prUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
-                    🔗 {result.prUrl}
-                  </a>
-                </div>
+              <div className="text-blue-300 mt-2">Thank you for your contribution! Click the link below to view and comment on the Pull Request: </div>
+              <div className="mt-2">
+                <a href={result.prUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
+                  🔗 {result.prUrl}
+                </a>
+              </div>
+              <div>
+                Also if you didn't know, If you're new, you're getting the "Pair Extraordinaire" badge achievements on GitHub!
+              </div>
+              <div>
+                Remind that if you want to the PR to be merged, you need to comment on the PR.
+              </div>
+              <div className="text-gray-300">
+                If you appreciate my work, feel free to leave a star! ⭐
+                <a href="https://github.com/MindfulLearner/dima-portfolio" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
+                  https://github.com/MindfulLearner/dima-portfolio
+                </a>
               </div>
             </div>
           ]);
@@ -402,10 +400,6 @@ function Terminal1() {
                 <div>
                   <span className="text-blue-400 font-bold">Memory: </span>
                   <span className="text-gray-300">2413MiB / 8096MiB</span>
-                </div>
-                <div>
-                  <span className="text-blue-400 font-bold">Videogames: </span>
-                  <span className="text-gray-300">I Love Fortnite</span>
                 </div>
               </div>
             </div>
