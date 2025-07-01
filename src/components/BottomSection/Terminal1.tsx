@@ -175,6 +175,9 @@ function Terminal1() {
                 <div>
                   Remind that if you want to the PR to be merged, you need to comment on the PR.
                 </div>
+                <div>
+                  Also if you didn't know, If you're new, you're getting the "Pair Extraordinaire" badge!
+                </div>
                 <div className="text-gray-300">
                   If you liked it, feel free to leave a star!
                   <a href="https://github.com/MindfulLearner/dima-portfolio" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
