@@ -9,10 +9,6 @@ on:
       - ready_for_review
       - converted_to_draft
 
-concurrency:
-  group: ${{ github.workflow }}-PR-${{ github.event.number }}
-  cancel-in-progress: true
-
 jobs:
   update-pr:
     runs-on: ubuntu-latest
