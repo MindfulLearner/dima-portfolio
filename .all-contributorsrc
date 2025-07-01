@@ -1,0 +1,44 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "spacemark3",
+      "name": "Mark Andro Guevarra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/135146939?v=4",
+      "profile": "https://github.com/spacemark3",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Nidalone29",
+      "name": "Nidal Guerouaja",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22301275?v=4",
+      "profile": "https://github.com/Nidalone29",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "IliasAzzaro",
+      "name": "IliasAzzaro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/175980052?v=4",
+      "profile": "https://github.com/IliasAzzaro",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "dima-portfolio",
+  "projectOwner": "MindfulLearner"
+}
