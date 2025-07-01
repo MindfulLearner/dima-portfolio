@@ -6,6 +6,9 @@ function Terminal1() {
   // email state
   const [, setEmail] = useState("");
 
+  // loading state for API calls
+  const [isLoading, setIsLoading] = useState(false);
+
   // list of commands that the user can type in the terminal
   const listOfCommands = TerminaleListOfCommands;
 
@@ -37,6 +40,11 @@ function Terminal1() {
    */
   const handleCommandSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Don't process commands if loading
+    if (isLoading) {
+      return;
+    }
 
     const previousCommand = commandInputRef.current?.value?.trim();
 
@@ -83,20 +91,59 @@ function Terminal1() {
    */
   // TODO: use push after commit
   const isFetchedGitCommit = async (email: string) => {
-    const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        name: email.split("@")[0],
-        email: email,
-        date: new Date().toISOString(),
-      }),
-    });
-    const data = await response.json();
-    setPrUrl(data.pr_url);
-    return { ok: response.ok, prUrl: data.pr_url };
+    setIsLoading(true);
+
+    const simulateGitCommands = async () => {
+      const commands = [
+        { cmd: "git push", delay: 100, color: "text-red-300" },
+        { cmd: "Enumerating objects: 16, done.", delay: 150, color: "text-orange-300" },
+        { cmd: "Counting objects: 100% (16/16), done.", delay: 360, color: "text-blue-300" },
+        { cmd: "Compressing objects: 100% (12/12), done.", delay: 370, color: "text-blue-300" },
+        { cmd: "Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 380, color: "text-blue-300" },
+        { cmd: "Unpacking objects: 100% (16/16), 2.98 KiB | 277.00 KiB/s, done.", delay: 390, color: "text-indigo-500" },
+        { cmd: "remote: Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 400, color: "text-violet-500" },
+        { cmd: `git push origin origin/dima-portfolio/contribution-${email.split("@")[0]}`, delay: 800, color: "text-red-300" },
+        { cmd: "Creating Pull Request... , If you liked it, feel free to leave a star!", delay: 600, color: "text-orange-500" },
+        { cmd: "Thank you for your contribution! Click the link below to view and comment on the Pull Request:", delay: 700, color: "text-yellow-500" },
+        { cmd: `Keep on Learning!`, delay: 800, color: "text-green-300" }
+      ];
+
+      for (const command of commands) {
+        setTerminalOutput((prevOutput) => [
+          ...prevOutput,
+          <div className={`text-white font-mono font-bold text-md ${command.color}`}>
+            <div>{command.cmd}</div>
+          </div>
+        ]);
+
+        await new Promise(resolve => setTimeout(resolve, command.delay));
+      }
+    };
+
+
+
+    try {
+      const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          name: email.split("@")[0],
+          email: email,
+          date: new Date().toISOString(),
+        }),
+      });
+      simulateGitCommands();
+      const data = await response.json();
+      setPrUrl(data.pr_url);
+      return { ok: response.ok, prUrl: data.pr_url };
+    } catch (error) {
+      console.error(error);
+      return { ok: false, prUrl: "" };
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const inputCommandHandler = async (string: string) => {
@@ -118,10 +165,14 @@ function Terminal1() {
           setTerminalOutput((prevOutput) => [
             ...prevOutput,
             <div className="text-white font-mono text-sm">
-              <div className="text-green-500 font-bold mb-2">✓ Commit successful!</div>
+              <div className="text-green-500 font-bold mb-2">✓ Pull Request created successfully!</div>
               <div className="text-gray-300">Message: "{emailAdjusted}"</div>
-              <div className="text-blue-300 mt-2">Thank you for your contribution! To confirm your contribution, please check comment the PR in the github repository.
-                <a href={result.prUrl} target="_blank" rel="noopener noreferrer">{result.prUrl}</a>
+              <div className="text-blue-300 mt-2">Thank you for your contribution! Click the link below to view and comment on the Pull Request:
+                <div className="mt-2">
+                  <a href={result.prUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
+                    🔗 {result.prUrl}
+                  </a>
+                </div>
               </div>
             </div>
           ]);
@@ -450,13 +501,20 @@ function Terminal1() {
           <div className="text-orange-400">feat/workingonit</div>
           <div className="text-white">...</div>
         </div>
+        {isLoading && (
+          <div className="flex items-center gap-2 text-yellow-500">
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-500"></div>
+            <span className="text-sm">Fetching...</span>
+          </div>
+        )}
         <div className="flex gap-2">
           <div>~</div>
           <input
             type="text"
             className="bg-transparent outline-none w-full"
-            placeholder="Type your command..."
+            placeholder={isLoading ? "Processing..." : "Type your command..."}
             ref={commandInputRef}
+            disabled={isLoading}
           />
         </div>
         <button type="submit" className="hidden"></button>
