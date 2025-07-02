@@ -90,10 +90,10 @@ function Terminal1() {
    * @returns true if the email is valid, false otherwise
    */
   // TODO: use push after commit
-  const isFetchedGitCommit = async (email: string) => {
+  const isFetchedGitCommit = async (email: string, fetchFailed: boolean) => {
     setIsLoading(true);
 
-    const simulateGitCommands = async () => {
+    const simulateGitCommands = async (fetchFailed: boolean) => {
       const commands = [
         { cmd: "➔ git push", delay: 100, color: "text-red-500" },
         { cmd: "➔ Enumerating objects: 16, done.", delay: 120, color: "text-orange-500" },
@@ -109,6 +109,10 @@ function Terminal1() {
       ];
 
       for (const command of commands) {
+        if (fetchFailed) {
+          simulateErrorGitCommands();
+          break
+        }
         setTerminalOutput((prevOutput) => [
           ...prevOutput,
           <div className={`font-mono font-bold text-md ${command.color}`}>
@@ -122,15 +126,10 @@ function Terminal1() {
 
     const simulateErrorGitCommands = async () => {
       const commands = [
-        { cmd: "➔ git push", delay: 100, color: "text-red-500" },
-        { cmd: "➔ Enumerating objects: 16, done.", delay: 120, color: "text-orange-500" },
-        { cmd: "➔ Counting objects: 100% (16/16), done.", delay: 150, color: "text-yellow-500" },
-        { cmd: "➔ Compressing objects: 100% (12/12), done.", delay: 180, color: "text-green-500" },
-        { cmd: "➔ Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 200, color: "text-blue-500" },
-        { cmd: "➔ Error: Failed to push some refs to 'https://github.com/MindfulLearner/dima-portfolio.git'", delay: 200, color: "text-red-500" },
-        { cmd: "➔ Error: Try again later, could be the server is down or is having issues", delay: 220, color: "text-red-500" },
-        { cmd: "➔ Error: I suggest you to open an issue on the repository", delay: 220, color: "text-red-500" },
-        { cmd: "➔ Error: Link for issue: https://github.com/MindfulLearner/dima-portfolio/issues", delay: 220, color: "text-red-500" },
+        { cmd: "➔ Error: Failed to push some refs to 'https://github.com/MindfulLearner/dima-portfolio.git'", delay: 100, color: "text-red-500" },
+        { cmd: "➔ Error: Try again later, could be the server is down or is having issues", delay: 120, color: "text-red-500" },
+        { cmd: "➔ Error: I suggest you to open an issue on the repository", delay: 150, color: "text-red-500" },
+        { cmd: "➔ Error: Link for issue: https://github.com/MindfulLearner/dima-portfolio/issues", delay: 180, color: "text-red-500" },
       ];
 
       for (const command of commands) {
@@ -144,6 +143,8 @@ function Terminal1() {
         await new Promise(resolve => setTimeout(resolve, command.delay));
       }
     };
+
+    const gitCommandsPromise = simulateGitCommands(fetchFailed);
 
     try {
       const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
@@ -161,15 +162,16 @@ function Terminal1() {
       const data = await response.json();
       setPrUrl(data.pr_url);
 
+      await gitCommandsPromise;
+
       if (response.ok) {
-        await simulateGitCommands();
         return { ok: true, prUrl: data.pr_url };
       } else {
         return { ok: false, prUrl: "" };
       }
     } catch (error) {
-      console.error(error);
-      await simulateErrorGitCommands();
+      fetchFailed = true;
+      await gitCommandsPromise;
       return { ok: false, prUrl: "" };
     } finally {
       setIsLoading(false);
@@ -189,7 +191,7 @@ function Terminal1() {
       const emailAdjusted = string.split(" ")[3].replace(/"/g, '');
       const isEmailMatch = isEmailRegex.test(emailAdjusted);
       if (isEmailMatch) {
-        const result = await isFetchedGitCommit(emailAdjusted);
+        const result = await isFetchedGitCommit(emailAdjusted, false);
         if (result.ok) {
           setEmail(emailAdjusted);
           setTerminalOutput((prevOutput) => [
