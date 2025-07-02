@@ -144,7 +144,6 @@ function Terminal1() {
       }
     };
 
-    const gitCommandsPromise = simulateGitCommands(fetchFailed);
 
     try {
       const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
@@ -162,7 +161,7 @@ function Terminal1() {
       const data = await response.json();
       setPrUrl(data.pr_url);
 
-      await gitCommandsPromise;
+      await simulateGitCommands(response.ok);
 
       if (response.ok) {
         return { ok: true, prUrl: data.pr_url };
@@ -171,7 +170,6 @@ function Terminal1() {
       }
     } catch (error) {
       fetchFailed = true;
-      await gitCommandsPromise;
       return { ok: false, prUrl: "" };
     } finally {
       setIsLoading(false);
