@@ -526,7 +526,8 @@ function Terminal1() {
         ))}
       </div>
       {/* Active command input */}
-      <form
+        {isLoading ? (
+        <form
         className=" w-full font-mono text-sm h-textsm"
         onSubmit={handleCommandSubmit}
       >
@@ -540,7 +541,6 @@ function Terminal1() {
           <div className="text-orange-400">feat/workingonit</div>
           <div className="text-white">...</div>
         </div>
-        {isLoading ? (
           <div className="flex items-center gap-2 text-yellow-500">
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-500"></div>
             <input
@@ -551,7 +551,23 @@ function Terminal1() {
               disabled
             />
           </div>
-        ) : (
+        <button type="submit" className="hidden"></button>
+      </form>
+      ) : (
+        <form
+        className=" w-full font-mono text-sm h-textsm"
+        onSubmit={handleCommandSubmit}
+      >
+        <div className="flex gap-2">
+          <div className="text-yellow-500">learner</div>
+          <div className="text-white">in</div>
+          <div className="text-blue-500">dima-portfolio</div>
+          <div className="text-white">at</div>
+          <div className="text-green-500">dimorega-net-ct</div>
+          <div className="text-white">on</div>
+          <div className="text-orange-400">feat/workingonit</div>
+          <div className="text-white">...</div>
+        </div>
           <div className="flex gap-2">
             <div>~</div>
             <input
@@ -561,9 +577,9 @@ function Terminal1() {
               ref={commandInputRef}
             />
           </div>
-        )}
         <button type="submit" className="hidden"></button>
-      </form>
+      </form> 
+      )}
     </div>
   );
 }
