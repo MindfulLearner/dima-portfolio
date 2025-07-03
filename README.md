@@ -8,7 +8,9 @@
 
 4. read incoming data
 
-5. give honest feed back! on issue or on the pr!
+5. wait confirmation!
+
+6. give honest feed back! on issue or on the pr!
 
 - let me know if u liked it and if you want give me a star!! :)
 
