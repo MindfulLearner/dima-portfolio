@@ -69,6 +69,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "chimeraa",
+      "name": "chimeraa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51544825?v=4",
+      "profile": "https://github.com/chimeraa",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
