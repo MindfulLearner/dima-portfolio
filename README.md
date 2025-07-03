@@ -1,4 +1,17 @@
 # Dima Portfolio
+
+1. go to website https://dima-portfolio.vercel.app/ on desktop
+
+2. pick a terminal 
+
+3. write `git commit -m "emailYouUseForGithub@gmail.com"`
+
+4. read incoming data
+
+5. give honest feed back! on issue or on the pr!
+
+- let me know if u liked it and if you want give me a star!! :)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
