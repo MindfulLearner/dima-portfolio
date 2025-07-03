@@ -6,6 +6,14 @@ function TerminalLaptop() {
   // email state
   const [, setEmail] = useState("");
 
+  // loading state for API calls
+  const [isLoading, setIsLoading] = useState(false);
+
+  // cooldown state for git commit
+  const [lastCommitTime, setLastCommitTime] = useState<number | null>(null);
+  const [cooldownRemaining, setCooldownRemaining] = useState<number>(0);
+  const COOLDOWN_DURATION = 10; // 10 seconds cooldown
+
   // list of commands that the user can type in the terminal
   const listOfCommands = TerminaleListOfCommands;
 
@@ -31,12 +39,40 @@ function TerminalLaptop() {
     scrollToBottom();
   }, [terminalOutput]);
 
+  /**
+   * Handle cooldown countdown
+   */
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    
+    if (cooldownRemaining > 0) {
+      interval = setInterval(() => {
+        setCooldownRemaining(prev => {
+          if (prev <= 1) {
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [cooldownRemaining]);
 
   /**
    * Handle the submit of the command input
    */
   const handleCommandSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Don't process commands if loading
+    if (isLoading) {
+      return;
+    }
 
     const previousCommand = commandInputRef.current?.value?.trim();
 
@@ -74,6 +110,8 @@ function TerminalLaptop() {
     }
   };
 
+  const [, setPrUrl] = useState<string>("");
+
   /**
    * this will check if the email is valid
    * @param email the email to check
@@ -81,52 +119,162 @@ function TerminalLaptop() {
    */
   // TODO: use push after commit
   const isFetchedGitCommit = async (email: string) => {
-    const response = await fetch(process.env.AWS_API_URL!, {
-      method: "POST",
-      body: JSON.stringify({
-        name: email,
-        email: email,
-        orarioDiArrivo: new Date().toISOString(),
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    console.log(response);
-    return response.ok;
+    setIsLoading(true);
+
+    let fetchFailed = false;
+
+    const simulateGitCommands = async () => {
+      const commands = [
+        { cmd: "➔ git push", delay: 100, color: "text-red-500" },
+        { cmd: "➔ Enumerating objects: 16, done.", delay: 120, color: "text-orange-500" },
+        { cmd: "➔ Counting objects: 100% (16/16), done.", delay: 150, color: "text-yellow-500" },
+        { cmd: "➔ Compressing objects: 100% (12/12), done.", delay: 180, color: "text-green-500" },
+        { cmd: "➔ Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 200, color: "text-blue-500" },
+        { cmd: "➔ Unpacking objects: 100% (16/16), 2.98 KiB | 277.00 KiB/s, done.", delay: 220, color: "text-indigo-500" },
+        { cmd: "➔ remote: Total 16 (delta 11), reused 5 (delta 4), pack-reused 0 (from 0)", delay: 240, color: "text-violet-500" },
+        { cmd: `➔ git push origin origin/dima-portfolio/contribution-${email.split("@")[0]}`, delay: 260, color: "text-red-300" },
+        { cmd: "➔ Creating Pull Request... , If you liked it, feel free to leave a star!", delay: 280, color: "text-orange-500" },
+        { cmd: `➔ Thank you ${email.split("@")[0]} for your contribution! Click the link below to view and comment on the Pull Request:`, delay: 300, color: "text-yellow-500" },
+        { cmd: `➔ Keep on Learning!`, delay: 320, color: "text-green-300" }
+      ];
+
+      for (const command of commands) {
+        if (fetchFailed) {
+          simulateErrorGitCommands();
+          break
+        }
+        setTerminalOutput((prevOutput) => [
+          ...prevOutput,
+          <div className={`font-mono font-bold text-md ${command.color}`}>
+            <div>{command.cmd}</div>
+          </div>
+        ]);
+
+        await new Promise(resolve => setTimeout(resolve, command.delay));
+      }
+    };
+
+    const simulateErrorGitCommands = async () => {
+      const commands = [
+        { cmd: "➔ Error: Failed to push some refs to 'https://github.com/MindfulLearner/dima-portfolio.git'", delay: 100, color: "text-red-500" },
+        { cmd: "➔ Error: Try again later, could be the server is down or is having issues", delay: 120, color: "text-red-500" },
+        { cmd: "➔ Error: I suggest you to open an issue on the repository", delay: 150, color: "text-red-500" },
+        { cmd: "➔ Error: Link for issue: https://github.com/MindfulLearner/dima-portfolio/issues", delay: 180, color: "text-red-500" },
+        { cmd: "➔ ✗ Lambda API Gateway Failed!", delay: 200, color: "text-red-500" },
+        { cmd: "➔ Error: Please try again.", delay: 220, color: "text-red-500" },
+      ];
+
+      for (const command of commands) {
+        setTerminalOutput((prevOutput) => [
+          ...prevOutput,
+          <div className={`font-mono font-bold text-md ${command.color}`}>
+            <div>{command.cmd}</div>
+          </div>
+        ]);
+
+        await new Promise(resolve => setTimeout(resolve, command.delay));
+      }
+    };
+
+    const gitCommandsPromise = simulateGitCommands();
+
+    try {
+
+      const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          name: email.split("@")[0],
+          email: email,
+          date: new Date().toISOString(),
+        }),
+      });
+
+      const data = await response.json();
+      setPrUrl(data.pr_url);
+
+      await gitCommandsPromise;
+
+      if (response.ok) {
+        return { ok: true, prUrl: data.pr_url };
+      } else {
+        return { ok: false, prUrl: "" };
+      }
+    } catch (error) {
+      fetchFailed = true;
+      await gitCommandsPromise;
+      return { ok: false, prUrl: "" };
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const inputCommandHandler = async (string: string) => {
     // this will handle the input command
 
+    const removeLastSpaces = string.replace(/\s+$/, '');
     const gitCommitRegex = /^git commit -m "(.+?)"$/;
     const isEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // check if the string is a valid email
-    const isGitCommitMatch = gitCommitRegex.test(string)
+    const isGitCommitMatch = gitCommitRegex.test(removeLastSpaces);
 
     if (isGitCommitMatch) {
+      // check if the user has already committed in the last 10 seconds
+      const now = Date.now();
+      const timeSinceLastCommit = lastCommitTime ? now - lastCommitTime : Infinity;
+      const remainingCooldown = Math.max(0, COOLDOWN_DURATION * 1000 - timeSinceLastCommit);
+      
+      if (remainingCooldown > 0) {
+        const remainingSeconds = Math.ceil(remainingCooldown / 1000);
+        setCooldownRemaining(remainingSeconds);
+        setTerminalOutput((prevOutput) => [
+          ...prevOutput,
+          <div className="text-white font-mono text-sm">
+            <div className="text-red-500 font-bold mb-2">✗ Commit failed!</div>
+            <div className="text-gray-400">You already did a commit. Please wait {remainingSeconds} second{remainingSeconds !== 1 ? 's' : ''} before trying again.</div>
+          </div>
+        ]);
+        return;
+      }
+
       const emailAdjusted = string.split(" ")[3].replace(/"/g, '');
       const isEmailMatch = isEmailRegex.test(emailAdjusted);
       if (isEmailMatch) {
-        if (await isFetchedGitCommit(emailAdjusted)) {
+        // Set the commit time when starting the commit process
+        setLastCommitTime(now);
+        const result = await isFetchedGitCommit(emailAdjusted);
+        if (result.ok) {
           setEmail(emailAdjusted);
           setTerminalOutput((prevOutput) => [
             ...prevOutput,
-            <div className="text-white font-mono text-sm">
-              <div className="text-green-500 font-bold mb-2">✓ Commit successful!</div>
-              <div className="text-gray-300">Message: "{emailAdjusted}"</div>
-              <div className="text-blue-300 mt-2">Push your contribution!</div>
-            </div>
-          ]);
-
-          return;
-        } else {
-          setTerminalOutput((prevOutput) => [
-            ...prevOutput,
-            <div className="text-white font-mono text-sm">
-              <div className="text-red-500 font-bold mb-2">✗ VPS not found!</div>
-              <div className="text-gray-400">Please try again.</div>
+            <div className="text-white font-mono text-md font-bold">
+              <div className="text-green-500 font-bold mb-2">✓ Pull Request created successfully!</div>
+              <div className="text-blue-300 mt-2">Thank you for your contribution! Click the link below to view and <span className="text-green-500 text-bold text-lg">➔ comment</span> on the Pull Request: </div>
+              <div className="mt-2">
+                <a href={result.prUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
+                  🔗 {result.prUrl}
+                </a>
+              </div>
+              <div className="flex gap-2 text-blue-300">
+                <div>🎉</div>
+                <div>Also if you didn't know, If you're new, you're getting the "Pair Extraordinaire" badge achievements on GitHub!</div>
+              </div>
+              <div>
+                <div className="flex gap-2 text-green-300">
+                  <div>💡</div>
+                  <div>Remind that if you want to the PR to be merged, you need to comment on the PR. You will also get email notification when the PR is merged.</div>
+                  <div>💌</div>
+                </div>
+              </div>
+              <div className="text-gray-300">
+                If you appreciate my work, feel free to leave a <span className="text-yellow-500">star</span>! ⭐
+                <a href="https://github.com/MindfulLearner/dima-portfolio" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
+                  https://github.com/MindfulLearner/dima-portfolio
+                </a>
+              </div>
             </div>
           ]);
 
@@ -143,6 +291,7 @@ function TerminalLaptop() {
 
         return;
       }
+      return;
     }
 
     if (listOfCommands.find((command) => command.command === string)) {
@@ -330,10 +479,6 @@ function TerminalLaptop() {
                   <span className="text-blue-400 font-bold">Memory: </span>
                   <span className="text-gray-300">2413MiB / 8096MiB</span>
                 </div>
-                <div>
-                  <span className="text-blue-400 font-bold">Videogames: </span>
-                  <span className="text-gray-300">I Love Fortnite</span>
-                </div>
               </div>
             </div>
           ]);
@@ -430,31 +575,51 @@ function TerminalLaptop() {
         ))}
       </div>
       {/* Active command input */}
-      <form
-        className=" w-full font-mono text-sm h-textsm"
-        onSubmit={handleCommandSubmit}
-      >
-        <div className="flex gap-2">
-          <div className="text-yellow-500">learner</div>
-          <div className="text-white">in</div>
-          <div className="text-blue-500">dima-portfolio</div>
-          <div className="text-white">at</div>
-          <div className="text-green-500">dimorega-net-ct</div>
-          <div className="text-white">on</div>
-          <div className="text-orange-400">feat/workingonit</div>
-          <div className="text-white">...</div>
-        </div>
-        <div className="flex gap-2">
-          <div>~</div>
+      {isLoading ? (
+        <div className="flex items-center gap-2 text-yellow-500">
+          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-500"></div>
           <input
             type="text"
             className="bg-transparent outline-none w-full"
-            placeholder="Type your command..."
+            placeholder="Fetching..."
             ref={commandInputRef}
+            disabled
           />
         </div>
-        <button type="submit" className="hidden"></button>
-      </form>
+      ) : (
+        <form
+          className=" w-full font-mono text-sm h-textsm"
+          onSubmit={handleCommandSubmit}
+        >
+          <div className="flex gap-2">
+            <div className="text-yellow-500">learner</div>
+            <div className="text-white">in</div>
+            <div className="text-blue-500">dima-portfolio</div>
+            <div className="text-white">at</div>
+            <div className="text-green-500">dimorega-net-ct</div>
+            <div className="text-white">on</div>
+            <div className="text-orange-400">feat/workingonit</div>
+            <div className="text-white">...</div>
+          </div>
+          <div className="flex gap-2">
+            <div>~</div>
+            {cooldownRemaining > 0 && (
+              <div className="text-red-500 text-xs flex items-center gap-1">
+                <span>⏰</span>
+                <span>{cooldownRemaining}s</span>
+              </div>
+            )}
+            <input
+              type="text"
+              className="bg-transparent outline-none w-full"
+              placeholder={cooldownRemaining > 0 ? `Cooldown active (${cooldownRemaining}s remaining)` : "Type your command..."}
+              ref={commandInputRef}
+              disabled={cooldownRemaining > 0}
+            />
+          </div>
+          <button type="submit" className="hidden"></button>
+        </form>
+      )}
     </div>
   );
 }
