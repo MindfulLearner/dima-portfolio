@@ -527,6 +527,17 @@ function Terminal1() {
       </div>
       {/* Active command input */}
       {isLoading ? (
+        <div className="flex items-center gap-2 text-yellow-500">
+          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-500"></div>
+          <input
+            type="text"
+            className="bg-transparent outline-none w-full"
+            placeholder="Fetching..."
+            ref={commandInputRef}
+            disabled
+          />
+        </div>
+      ) : (
         <form
           className=" w-full font-mono text-sm h-textsm"
           onSubmit={handleCommandSubmit}
@@ -541,28 +552,17 @@ function Terminal1() {
             <div className="text-orange-400">feat/workingonit</div>
             <div className="text-white">...</div>
           </div>
-          <div className="flex items-center gap-2 text-yellow-500">
-            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-500"></div>
+          <div className="flex gap-2">
+            <div>~</div>
             <input
               type="text"
               className="bg-transparent outline-none w-full"
-              placeholder="Fetching..."
+              placeholder="Type your command..."
               ref={commandInputRef}
-              disabled
             />
           </div>
           <button type="submit" className="hidden"></button>
         </form>
-      ) : (
-        <div className="flex gap-2">
-          <div>~</div>
-          <input
-            type="text"
-            className="bg-transparent outline-none w-full"
-            placeholder="Type your command..."
-            ref={commandInputRef}
-          />
-        </div>
       )}
     </div>
   );
