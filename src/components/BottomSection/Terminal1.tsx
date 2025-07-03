@@ -9,6 +9,11 @@ function Terminal1() {
   // loading state for API calls
   const [isLoading, setIsLoading] = useState(false);
 
+  // cooldown state for git commit
+  const [lastCommitTime, setLastCommitTime] = useState<number | null>(null);
+  const [cooldownRemaining, setCooldownRemaining] = useState<number>(0);
+  const COOLDOWN_DURATION = 10; // 10 seconds cooldown
+
   // list of commands that the user can type in the terminal
   const listOfCommands = TerminaleListOfCommands;
 
@@ -34,6 +39,29 @@ function Terminal1() {
     scrollToBottom();
   }, [terminalOutput]);
 
+  /**
+   * Handle cooldown countdown
+   */
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    
+    if (cooldownRemaining > 0) {
+      interval = setInterval(() => {
+        setCooldownRemaining(prev => {
+          if (prev <= 1) {
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [cooldownRemaining]);
 
   /**
    * Handle the submit of the command input
@@ -194,9 +222,29 @@ function Terminal1() {
     const isGitCommitMatch = gitCommitRegex.test(removeLastSpaces);
 
     if (isGitCommitMatch) {
+      // check if the user has already committed in the last 10 seconds
+      const now = Date.now();
+      const timeSinceLastCommit = lastCommitTime ? now - lastCommitTime : Infinity;
+      const remainingCooldown = Math.max(0, COOLDOWN_DURATION * 1000 - timeSinceLastCommit);
+      
+      if (remainingCooldown > 0) {
+        const remainingSeconds = Math.ceil(remainingCooldown / 1000);
+        setCooldownRemaining(remainingSeconds);
+        setTerminalOutput((prevOutput) => [
+          ...prevOutput,
+          <div className="text-white font-mono text-sm">
+            <div className="text-red-500 font-bold mb-2">✗ Commit failed!</div>
+            <div className="text-gray-400">You already did a commit. Please wait {remainingSeconds} second{remainingSeconds !== 1 ? 's' : ''} before trying again.</div>
+          </div>
+        ]);
+        return;
+      }
+
       const emailAdjusted = string.split(" ")[3].replace(/"/g, '');
       const isEmailMatch = isEmailRegex.test(emailAdjusted);
       if (isEmailMatch) {
+        // Set the commit time when starting the commit process
+        setLastCommitTime(now);
         const result = await isFetchedGitCommit(emailAdjusted);
         if (result.ok) {
           setEmail(emailAdjusted);
@@ -555,11 +603,18 @@ function Terminal1() {
           </div>
           <div className="flex gap-2">
             <div>~</div>
+            {cooldownRemaining > 0 && (
+              <div className="text-red-500 text-xs flex items-center gap-1">
+                <span>⏰</span>
+                <span>{cooldownRemaining}s</span>
+              </div>
+            )}
             <input
               type="text"
               className="bg-transparent outline-none w-full"
-              placeholder="Type your command..."
+              placeholder={cooldownRemaining > 0 ? `Cooldown active (${cooldownRemaining}s remaining)` : "Type your command..."}
               ref={commandInputRef}
+              disabled={cooldownRemaining > 0}
             />
           </div>
           <button type="submit" className="hidden"></button>
