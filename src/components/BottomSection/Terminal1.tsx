@@ -217,7 +217,8 @@ function Terminal1() {
               <div>
                 <div className="flex gap-2 text-green-300">
                   <div>💡</div>
-                  <div>Remind that if you want to the PR to be merged, you need to comment on the PR.</div>
+                  <div>Remind that if you want to the PR to be merged, you need to comment on the PR. You will also get email notification when the PR is merged.</div>
+                  <div>💌</div>
                 </div>
               </div>
               <div className="text-gray-300">
