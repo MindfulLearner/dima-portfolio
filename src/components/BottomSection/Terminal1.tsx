@@ -554,20 +554,6 @@ function Terminal1() {
         <button type="submit" className="hidden"></button>
       </form>
       ) : (
-        <form
-        className=" w-full font-mono text-sm h-textsm"
-        onSubmit={handleCommandSubmit}
-      >
-        <div className="flex gap-2">
-          <div className="text-yellow-500">learner</div>
-          <div className="text-white">in</div>
-          <div className="text-blue-500">dima-portfolio</div>
-          <div className="text-white">at</div>
-          <div className="text-green-500">dimorega-net-ct</div>
-          <div className="text-white">on</div>
-          <div className="text-orange-400">feat/workingonit</div>
-          <div className="text-white">...</div>
-        </div>
           <div className="flex gap-2">
             <div>~</div>
             <input
@@ -577,8 +563,6 @@ function Terminal1() {
               ref={commandInputRef}
             />
           </div>
-        <button type="submit" className="hidden"></button>
-      </form> 
       )}
     </div>
   );
