@@ -90,10 +90,12 @@ function Terminal1() {
    * @returns true if the email is valid, false otherwise
    */
   // TODO: use push after commit
-  const isFetchedGitCommit = async (email: string, fetchFailed: boolean) => {
+  const isFetchedGitCommit = async (email: string) => {
     setIsLoading(true);
 
-    const simulateGitCommands = async (fetchFailed: boolean) => {
+    let fetchFailed = false;
+
+    const simulateGitCommands = async () => {
       const commands = [
         { cmd: "➔ git push", delay: 100, color: "text-red-500" },
         { cmd: "➔ Enumerating objects: 16, done.", delay: 120, color: "text-orange-500" },
@@ -130,6 +132,8 @@ function Terminal1() {
         { cmd: "➔ Error: Try again later, could be the server is down or is having issues", delay: 120, color: "text-red-500" },
         { cmd: "➔ Error: I suggest you to open an issue on the repository", delay: 150, color: "text-red-500" },
         { cmd: "➔ Error: Link for issue: https://github.com/MindfulLearner/dima-portfolio/issues", delay: 180, color: "text-red-500" },
+        { cmd: "➔ ✗ Lambda API Gateway Failed!", delay: 200, color: "text-red-500" },
+        { cmd: "➔ Error: Please try again.", delay: 220, color: "text-red-500" },
       ];
 
       for (const command of commands) {
@@ -144,9 +148,10 @@ function Terminal1() {
       }
     };
 
-    const gitCommandsPromise = simulateGitCommands(fetchFailed);
+    const gitCommandsPromise = simulateGitCommands();
 
     try {
+
       const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
         headers: {
           "Content-Type": "application/json",
@@ -181,17 +186,18 @@ function Terminal1() {
   const inputCommandHandler = async (string: string) => {
     // this will handle the input command
 
+    const removeLastSpaces = string.replace(/\s+$/, '');
     const gitCommitRegex = /^git commit -m "(.+?)"$/;
     const isEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // check if the string is a valid email
-    const isGitCommitMatch = gitCommitRegex.test(string)
+    const isGitCommitMatch = gitCommitRegex.test(removeLastSpaces);
 
     if (isGitCommitMatch) {
       const emailAdjusted = string.split(" ")[3].replace(/"/g, '');
       const isEmailMatch = isEmailRegex.test(emailAdjusted);
       if (isEmailMatch) {
-        const result = await isFetchedGitCommit(emailAdjusted, false);
+        const result = await isFetchedGitCommit(emailAdjusted);
         if (result.ok) {
           setEmail(emailAdjusted);
           setTerminalOutput((prevOutput) => [
@@ -224,16 +230,6 @@ function Terminal1() {
           ]);
 
           return;
-        } else {
-          setTerminalOutput((prevOutput) => [
-            ...prevOutput,
-            <div className="text-white font-mono text-sm">
-              <div className="text-red-500 font-bold mb-2">✗ Lambda API Gateway Failed!</div>
-              <div className="text-gray-400">Please try again.</div>
-            </div>
-          ]);
-
-          return;
         }
       } else {
         setTerminalOutput((prevOutput) => [
@@ -245,7 +241,8 @@ function Terminal1() {
         ]);
 
         return;
-      }
+      } 
+      return;
     }
 
     if (listOfCommands.find((command) => command.command === string)) {
