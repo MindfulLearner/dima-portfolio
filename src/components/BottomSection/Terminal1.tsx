@@ -180,7 +180,7 @@ function Terminal1() {
 
     try {
 
-      const response = await fetch(`https://tjq0muver1.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
+      const response = await fetch(`https://0t3kmtqwgg.execute-api.us-east-1.amazonaws.com/default/handlePrPOST`, {
         headers: {
           "Content-Type": "application/json",
         },
