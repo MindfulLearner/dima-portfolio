@@ -221,7 +221,7 @@ function Terminal1() {
                 </div>
               </div>
               <div className="text-gray-300">
-                If you appreciate my work, feel free to leave a <span className="text-yellow-500">star</span>! ⭐ 
+                If you appreciate my work, feel free to leave a <span className="text-yellow-500">star</span>! ⭐
                 <a href="https://github.com/MindfulLearner/dima-portfolio" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
                   https://github.com/MindfulLearner/dima-portfolio
                 </a>
@@ -241,7 +241,7 @@ function Terminal1() {
         ]);
 
         return;
-      } 
+      }
       return;
     }
 
@@ -526,21 +526,21 @@ function Terminal1() {
         ))}
       </div>
       {/* Active command input */}
-        {isLoading ? (
+      {isLoading ? (
         <form
-        className=" w-full font-mono text-sm h-textsm"
-        onSubmit={handleCommandSubmit}
-      >
-        <div className="flex gap-2">
-          <div className="text-yellow-500">learner</div>
-          <div className="text-white">in</div>
-          <div className="text-blue-500">dima-portfolio</div>
-          <div className="text-white">at</div>
-          <div className="text-green-500">dimorega-net-ct</div>
-          <div className="text-white">on</div>
-          <div className="text-orange-400">feat/workingonit</div>
-          <div className="text-white">...</div>
-        </div>
+          className=" w-full font-mono text-sm h-textsm"
+          onSubmit={handleCommandSubmit}
+        >
+          <div className="flex gap-2">
+            <div className="text-yellow-500">learner</div>
+            <div className="text-white">in</div>
+            <div className="text-blue-500">dima-portfolio</div>
+            <div className="text-white">at</div>
+            <div className="text-green-500">dimorega-net-ct</div>
+            <div className="text-white">on</div>
+            <div className="text-orange-400">feat/workingonit</div>
+            <div className="text-white">...</div>
+          </div>
           <div className="flex items-center gap-2 text-yellow-500">
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-500"></div>
             <input
@@ -551,18 +551,18 @@ function Terminal1() {
               disabled
             />
           </div>
-        <button type="submit" className="hidden"></button>
-      </form>
+          <button type="submit" className="hidden"></button>
+        </form>
       ) : (
-          <div className="flex gap-2">
-            <div>~</div>
-            <input
-              type="text"
-              className="bg-transparent outline-none w-full"
-              placeholder="Type your command..."
-              ref={commandInputRef}
-            />
-          </div>
+        <div className="flex gap-2">
+          <div>~</div>
+          <input
+            type="text"
+            className="bg-transparent outline-none w-full"
+            placeholder="Type your command..."
+            ref={commandInputRef}
+          />
+        </div>
       )}
     </div>
   );
