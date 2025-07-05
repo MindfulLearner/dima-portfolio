@@ -1,5 +1,7 @@
 # Dima Portfolio
 
+to adjust readme
+
 1. go to website https://dima-portfolio.vercel.app/ on desktop
 
 2. pick a terminal 
