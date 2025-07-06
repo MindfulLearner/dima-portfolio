@@ -6,7 +6,7 @@ Check the issue to see how i implemented it
 
 [Issue #49 - Implementation Details](https://github.com/MindfulLearner/dima-portfolio/issues/49)
 
-**English:**
+**English 🇬🇧:**
 - [Overview Documentation](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/overview.md)
 - [Tutorial Guide](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitEng.md)
 
