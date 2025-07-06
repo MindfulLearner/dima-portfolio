@@ -1,6 +1,6 @@
 ## 🛠️ Try My No-Login GitHub PR Contribution System
 
-If you'd like to experience a GitHub Pull Request (PR) contribution flow **without logging in**, and earn the **Contributor Pair Badge** (if you haven’t already), just follow these steps:
+If you'd like to experience a GitHub Pull Request (PR) contribution flow **without logging in**, and earn the **Contributor Pair Badge** (if you haven't already), just follow these steps:
 
 1. Visit: [https://dima-portfolio.vercel.app/](https://dima-portfolio.vercel.app/)
    *(Desktop only)*
@@ -10,7 +10,7 @@ If you'd like to experience a GitHub Pull Request (PR) contribution flow **witho
    ```bash
    git commit -m "YourGithubEmail@example.com"
    ```
-4. Review the incoming data. A PR will be proposed based on your input — you’re free to accept or ignore it.
+4. Review the incoming data. A PR will be proposed based on your input — you're free to accept or ignore it.
 5. Wait for the confirmation message.
 6. Leave honest feedback — either by commenting on the PR or opening a new issue.
 
