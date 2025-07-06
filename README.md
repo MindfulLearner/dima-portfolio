@@ -1,20 +1,18 @@
 # Dima Portfolio - Interactive Developer Portfolio
 
-## 🚀 Try My No-Login GitHub PR Contribution System
+Try My No-Login GitHub PR Contribution System
 
-Experience my innovative contribution system that allows visitors to contribute to this project without needing a GitHub account!
+Check the issue to see how i implemented it
 
 [Issue #49 - Implementation Details](https://github.com/MindfulLearner/dima-portfolio/issues/49)
 
-### 📖 Documentation & Tutorials
-
 **English 🇬🇧:**
-- [📋 Overview Documentation](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/overview.md)
-- [📚 Tutorial Guide](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitEng.md)
+- [Overview Documentation](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/overview.md)
+- [Tutorial Guide](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitEng.md)
 
 **Italiano 🇮🇹:**
-- [📋 Documentazione Panoramica](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/overview-it.md)
-- [📚 Guida Tutorial](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitIta.md)
+- [Documentazione Panoramica](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/overview-it.md)
+- [Guida Tutorial](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitIta.md)
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
