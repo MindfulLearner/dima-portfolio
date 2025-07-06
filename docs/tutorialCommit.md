@@ -16,3 +16,7 @@ If you'd like to experience a GitHub Pull Request (PR) contribution flow **witho
 
 🌟 If you enjoyed the experience, feel free to star the repository — it really helps!
 
+## 🔗 Useful Links
+
+* **Repository:** [MindfulLearner/dima-portfolio](https://github.com/MindfulLearner/dima-portfolio)
+* **Build Overview (Issue #49):** [View here](https://github.com/MindfulLearner/dima-portfolio/issues/49)
