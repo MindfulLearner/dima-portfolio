@@ -58,8 +58,11 @@ https://github.com/MindfulLearner/dima-portfolio/issues/49
 # OPEN SOURCE IDEA 
 i would like to give feat where you can git push from my website like a message and will be showed there, so we will be using Github API to do this!
 
-IMAGE BELOW OUTADED IM using Lambda for that.
+# New Img
+![image](https://github.com/user-attachments/assets/8283a71c-00d9-486d-a5f0-215f4d598c27)
 
+
+IMAGE BELOW OUTADED OLD IM using Lambda for that.
 ![image](https://github.com/user-attachments/assets/5102bfe4-65c9-4f78-ac23-fb1289274493)
 
 
