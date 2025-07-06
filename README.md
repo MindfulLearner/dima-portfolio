@@ -1,10 +1,21 @@
-# SPECIAL THANKS TO CONTRIBUTORS
+# Dima Portfolio - Interactive Developer Portfolio
 
-To try my Try My No-Login GitHub PR Contribution System go to:
-<br/>
-[TUTORIAL ENG 🇬🇧](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitEng.md)
-<br/>
-[TUTORIAL ITA 🇮🇹](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitIta.md)
+## 🚀 Try My No-Login GitHub PR Contribution System
+
+Experience my innovative contribution system that allows visitors to contribute to this project without needing a GitHub account!
+
+[Issue #49 - Implementation Details](https://github.com/MindfulLearner/dima-portfolio/issues/49)
+
+### 📖 Documentation & Tutorials
+
+**English 🇬🇧:**
+- [📋 Overview Documentation](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/overview.md)
+- [📚 Tutorial Guide](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitEng.md)
+
+**Italiano 🇮🇹:**
+- [📋 Documentazione Panoramica](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/overview-it.md)
+- [📚 Guida Tutorial](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitIta.md)
+
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
