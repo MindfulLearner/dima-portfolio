@@ -1,6 +1,10 @@
 # SPECIAL THANKS TO CONTRIBUTORS
 
-To try my Try My No-Login GitHub PR Contribution System go to [TUTORIAL ENG/IT](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommit.md)
+To try my Try My No-Login GitHub PR Contribution System go to:
+<br/>
+[TUTORIAL ENG 🇬🇧](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitEng.md)
+<br/>
+[TUTORIAL ITA 🇮🇹](https://github.com/MindfulLearner/dima-portfolio/blob/master/docs/tutorialCommitIta.md)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
