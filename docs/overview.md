@@ -14,16 +14,16 @@ This is a personal portfolio website built with a VSCode theme design. The proje
 
 I'm planning to implement a feature where visitors can push messages to my GitHub repository directly from the website using the GitHub API. This will create an interactive guestbook experience.
 
-### Current Implementation Status
-- **New Implementation:** Using GitHub API directly
-- **Previous Approach:** AWS Lambda (deprecated)
+### Implementation Status
+- **Current Approach:** AWS Lambda (in progress)
+- **Previous Approach:** Direct GitHub API (deprecated)
 
 ![Current Implementation](https://github.com/user-attachments/assets/8283a71c-00d9-486d-a5f0-215f4d598c27)
 
-*Previous Lambda-based implementation (deprecated):*
+*Previous direct GitHub API implementation (deprecated):*
 ![Old Implementation](https://github.com/user-attachments/assets/5102bfe4-65c9-4f78-ac23-fb1289274493)
 
-## Core Features
+## Planned Features
 
 ### 1. Code Visibility Toggle
 - Interactive switch to display the entire source code
@@ -31,7 +31,7 @@ I'm planning to implement a feature where visitors can push messages to my GitHu
 - Provides transparency and learning opportunities
 
 ### 2. Resizable Panels
-- All panels in the website are resizable
+- All panels in the website will be resizable
 - Customizable layout for better user experience
 
 ### 3. Modular Architecture

@@ -14,16 +14,16 @@ Questo è un sito web portfolio personale costruito con un design a tema VSCode.
 
 Sto pianificando di implementare una funzionalità dove i visitatori possono inviare messaggi al mio repository GitHub direttamente dal sito web utilizzando l'API di GitHub. Questo creerà un'esperienza di guestbook interattiva.
 
-### Stato Attuale dell'Implementazione
-- **Nuova Implementazione:** Utilizzo diretto dell'API GitHub
-- **Approccio Precedente:** AWS Lambda (deprecato)
+### Stato dell'Implementazione
+- **Approccio Attuale:** AWS Lambda (in corso)
+- **Approccio Precedente:** API GitHub diretta (deprecato)
 
 ![Implementazione Attuale](https://github.com/user-attachments/assets/8283a71c-00d9-486d-a5f0-215f4d598c27)
 
-*Implementazione precedente basata su Lambda (deprecata):*
+*Implementazione precedente basata su API GitHub diretta (deprecata):*
 ![Vecchia Implementazione](https://github.com/user-attachments/assets/5102bfe4-65c9-4f78-ac23-fb1289274493)
 
-## Funzionalità Principali
+## Funzionalità Pianificate
 
 ### 1. Toggle di Visibilità del Codice
 - Switch interattivo per mostrare l'intero codice sorgente
@@ -31,7 +31,7 @@ Sto pianificando di implementare una funzionalità dove i visitatori possono inv
 - Fornisce trasparenza e opportunità di apprendimento
 
 ### 2. Pannelli Ridimensionabili
-- Tutti i pannelli nel sito web sono ridimensionabili
+- Tutti i pannelli nel sito web saranno ridimensionabili
 - Layout personalizzabile per una migliore esperienza utente
 
 ### 3. Architettura Modulare
