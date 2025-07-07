@@ -78,6 +78,15 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "joshrandall8478",
+      "name": "Joshua Randall",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39863829?v=4",
+      "profile": "http://joshrandall.net",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
