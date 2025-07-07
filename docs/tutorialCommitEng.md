@@ -19,6 +19,9 @@ If you'd like to experience a GitHub Pull Request (PR) contribution flow **witho
 ## DEMO
 https://github.com/user-attachments/assets/ce8e791f-32fd-443d-89d8-893e6c4483f9
 
+![image](https://github.com/user-attachments/assets/b01d3add-4229-43e8-a1c9-37e534fab321)
+
+
 ## 🔗 Useful Links
 
 * **Build Overview (Issue #49):** [View here](https://github.com/MindfulLearner/dima-portfolio/issues/49)
