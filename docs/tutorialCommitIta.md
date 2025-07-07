@@ -22,7 +22,7 @@ https://github.com/user-attachments/assets/ce8e791f-32fd-443d-89d8-893e6c4483f9
 
 ## 🔗 Link Utili
 
-* **Repository:** [MindfulLearner/dima-portfolio](https://github.com/MindfulLearner/dima-portfolio)
 * **Panoramica Build (Issue #49):** [Visualizza qui](https://github.com/MindfulLearner/dima-portfolio/issues/49)
+* **Repository:** [MindfulLearner/dima-portfolio](https://github.com/MindfulLearner/dima-portfolio)
 
 
