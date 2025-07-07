@@ -20,6 +20,9 @@ Se vuoi sperimentare un flusso di contribuzione GitHub Pull Request (PR) **senza
 ## DEMO
 https://github.com/user-attachments/assets/ce8e791f-32fd-443d-89d8-893e6c4483f9
 
+![image](https://github.com/user-attachments/assets/8511871c-a655-4d76-9373-7d50dac4da11)
+
+
 ## 🔗 Link Utili
 
 * **Panoramica Build (Issue #49):** [Visualizza qui](https://github.com/MindfulLearner/dima-portfolio/issues/49)
