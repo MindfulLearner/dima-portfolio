@@ -16,7 +16,7 @@ Check the issue to see how i implemented it
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -40,6 +40,7 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/chimeraa"><img src="https://avatars.githubusercontent.com/u/51544825?v=4?s=100" width="100px;" alt="chimeraa"/><br /><sub><b>chimeraa</b></sub></a><br /><a href="https://github.com/MindfulLearner/dima-portfolio/commits?author=chimeraa" title="Tests">⚠️</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://joshrandall.net"><img src="https://avatars.githubusercontent.com/u/39863829?v=4?s=100" width="100px;" alt="Joshua Randall"/><br /><sub><b>Joshua Randall</b></sub></a><br /><a href="#design-joshrandall8478" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mosahel01"><img src="https://avatars.githubusercontent.com/u/207353671?v=4?s=100" width="100px;" alt="Mohd Sahil"/><br /><sub><b>Mohd Sahil</b></sub></a><br /><a href="#content-mosahel01" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/J0hn3ric"><img src="https://avatars.githubusercontent.com/u/96300940?v=4?s=100" width="100px;" alt="J0hn3ric"/><br /><sub><b>J0hn3ric</b></sub></a><br /><a href="https://github.com/MindfulLearner/dima-portfolio/pulls?q=is%3Apr+reviewed-by%3AJ0hn3ric" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
