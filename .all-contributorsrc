@@ -114,6 +114,15 @@
       "contributions": [
         "maintenance"
       ]
+    },
+    {
+      "login": "AntonioForchi",
+      "name": "Antonio Forchi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/169792027?v=4",
+      "profile": "https://github.com/AntonioForchi",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
