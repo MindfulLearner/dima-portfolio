@@ -16,7 +16,7 @@ Check the issue to see how i implemented it
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -44,6 +44,9 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://discord.gg/xFhZJBvjpn"><img src="https://avatars.githubusercontent.com/u/73227508?v=4?s=100" width="100px;" alt="Antonio Stassi"/><br /><sub><b>Antonio Stassi</b></sub></a><br /><a href="#maintenance-antoniostassi" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AntonioForchi"><img src="https://avatars.githubusercontent.com/u/169792027?v=4?s=100" width="100px;" alt="Antonio Forchi"/><br /><sub><b>Antonio Forchi</b></sub></a><br /><a href="#content-AntonioForchi" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jaco-berti"><img src="https://avatars.githubusercontent.com/u/127600117?v=4?s=100" width="100px;" alt="berti"/><br /><sub><b>berti</b></sub></a><br /><a href="#ideas-jaco-berti" title="Ideas, Planning, & Feedback">🤔</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/surefire-hu"><img src="https://avatars.githubusercontent.com/u/166971184?v=4?s=100" width="100px;" alt="surefire-hu"/><br /><sub><b>surefire-hu</b></sub></a><br /><a href="#infra-surefire-hu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     </tr>
   </tbody>
 </table>

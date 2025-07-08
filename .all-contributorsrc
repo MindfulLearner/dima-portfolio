@@ -132,6 +132,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "surefire-hu",
+      "name": "surefire-hu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/166971184?v=4",
+      "profile": "https://github.com/surefire-hu",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
