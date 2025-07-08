@@ -78,6 +78,24 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "joshrandall8478",
+      "name": "Joshua Randall",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39863829?v=4",
+      "profile": "http://joshrandall.net",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "mosahel01",
+      "name": "Mohd Sahil",
+      "avatar_url": "https://avatars.githubusercontent.com/u/207353671?v=4",
+      "profile": "https://github.com/mosahel01",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,

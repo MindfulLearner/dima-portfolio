@@ -11,13 +11,21 @@ Se vuoi sperimentare un flusso di contribuzione GitHub Pull Request (PR) **senza
    ```bash
    git commit -m "TuaEmailGitHub@esempio.com"
    ```
-4. Rivedi i dati in arrivo. Una PR sarà proposta in base al tuo input — sei libero di accettarla o ignorarla.
+4. Rivedi i dati in arrivo. Una PR sarà proposta in base al tuo input sei libero di accettarla o ignorarla.
 5. Aspetta il messaggio di conferma.
-6. Lascia un feedback onesto — sia commentando la PR che aprendo una nuova issue.
+6. Lascia un feedback onesto sia commentando la PR che aprendo una nuova issue.
 
-🌟 Se ti è piaciuta l'esperienza, sentiti libero di mettere una stella al repository — aiuta davvero!
+🌟 Se ti è piaciuta l'esperienza, sentiti libero di mettere una stella al repository aiuta davvero!
+
+## DEMO
+https://github.com/user-attachments/assets/ce8e791f-32fd-443d-89d8-893e6c4483f9
+
+![image](https://github.com/user-attachments/assets/8511871c-a655-4d76-9373-7d50dac4da11)
+
 
 ## 🔗 Link Utili
 
-* **Repository:** [MindfulLearner/dima-portfolio](https://github.com/MindfulLearner/dima-portfolio)
 * **Panoramica Build (Issue #49):** [Visualizza qui](https://github.com/MindfulLearner/dima-portfolio/issues/49)
+* **Repository:** [MindfulLearner/dima-portfolio](https://github.com/MindfulLearner/dima-portfolio)
+
+
