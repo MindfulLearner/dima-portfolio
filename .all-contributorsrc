@@ -105,6 +105,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "antoniostassi",
+      "name": "Antonio Stassi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/73227508?v=4",
+      "profile": "https://discord.gg/xFhZJBvjpn",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
