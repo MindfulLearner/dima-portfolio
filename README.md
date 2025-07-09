@@ -16,7 +16,7 @@ Check the issue to see how i implemented it
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -49,6 +49,7 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/surefire-hu"><img src="https://avatars.githubusercontent.com/u/166971184?v=4?s=100" width="100px;" alt="surefire-hu"/><br /><sub><b>surefire-hu</b></sub></a><br /><a href="#infra-surefire-hu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://dima-portfolio.vercel.app"><img src="https://avatars.githubusercontent.com/u/170177550?v=4?s=100" width="100px;" alt="Joshua Dimaunahan"/><br /><sub><b>Joshua Dimaunahan</b></sub></a><br /><a href="#infra-MindfulLearner" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/lorizz"><img src="https://avatars.githubusercontent.com/u/2664477?v=4?s=100" width="100px;" alt="Alessandro Burza"/><br /><sub><b>Alessandro Burza</b></sub></a><br /><a href="#tool-lorizz" title="Tools">🔧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://my-portfolio-chi-ten-74.vercel.app/"><img src="https://avatars.githubusercontent.com/u/110291544?v=4?s=100" width="100px;" alt="Alessio Tegoni"/><br /><sub><b>Alessio Tegoni</b></sub></a><br /><a href="#design-alessiotegoni" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
