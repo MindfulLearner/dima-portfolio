@@ -150,6 +150,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "lorizz",
+      "name": "Alessandro Burza",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2664477?v=4",
+      "profile": "https://github.com/lorizz",
+      "contributions": [
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7,
