@@ -141,6 +141,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "MindfulLearner",
+      "name": "Joshua Dimaunahan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/170177550?v=4",
+      "profile": "https://dima-portfolio.vercel.app",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
