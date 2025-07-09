@@ -159,6 +159,15 @@
       "contributions": [
         "tool"
       ]
+    },
+    {
+      "login": "alessiotegoni",
+      "name": "Alessio Tegoni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/110291544?v=4",
+      "profile": "https://my-portfolio-chi-ten-74.vercel.app/",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
