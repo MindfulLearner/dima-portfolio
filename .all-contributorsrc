@@ -168,6 +168,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "Pasta08",
+      "name": "Pasta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76975074?v=4",
+      "profile": "https://github.com/Pasta08",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
