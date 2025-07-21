@@ -1,8 +1,7 @@
 # Dima Portfolio - Interactive Developer Portfolio
 
+## [How I Made Open Source PRs Without Logging In! Watch Now](https://youtu.be/jAPsogc6pxU)
 [![Watch the video](https://img.youtube.com/vi/jAPsogc6pxU/maxresdefault.jpg)](https://youtu.be/jAPsogc6pxU)
-
-### [Watch this video on YouTube](https://youtu.be/jAPsogc6pxU)
 
 Try My No-Login GitHub PR Contribution System
 
