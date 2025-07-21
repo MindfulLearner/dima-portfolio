@@ -47,7 +47,7 @@ Thanks goes to these wonderful people
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/surefire-hu"><img src="https://avatars.githubusercontent.com/u/166971184?v=4?s=100" width="100px;" alt="surefire-hu"/><br /><sub><b>surefire-hu</b></sub></a><br /><a href="#infra-surefire-hu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://dima-portfolio.vercel.app"><img src="https://avatars.githubusercontent.com/u/170177550?v=4?s=100" width="100px;" alt="Joshua Dimaunahan"/><br /><sub><b>Joshua Dimaunahan</b></sub></a><br /><a href="#infra-MindfulLearner" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://dima-portfolio.vercel.app"><img src="https://avatars.githubusercontent.com/u/170177550?v=4?s=100" width="100px;" alt="Joshua Dimaunahan"/><br /><sub><b>Joshua Dimaunahan</b></sub></a><br /><a href="#infra-MindfulLearner" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/MindfulLearner/dima-portfolio/commits?author=MindfulLearner" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
