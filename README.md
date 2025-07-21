@@ -1,6 +1,8 @@
 # Dima Portfolio - Interactive Developer Portfolio
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=jAPsogc6pxU)
+[![Watch the video](https://img.youtube.com/vi/jAPsogc6pxU/maxresdefault.jpg)](https://youtu.be/jAPsogc6pxU)
+
+### [Watch this video on YouTube](https://youtu.be/jAPsogc6pxU)
 
 Try My No-Login GitHub PR Contribution System
 
