@@ -180,7 +180,7 @@ function TerminalLaptop() {
 
     try {
 
-      const response = await fetch(`https://8q1velhs9i.execute-api.eu-west-3.amazonaws.com/default/prCallerV2`, {
+      const response = await fetch(`https://1hy381ch1j.execute-api.eu-west-3.amazonaws.com/default/prCallerV2`, {
         headers: {
           "Content-Type": "application/json",
         },
