@@ -188,6 +188,15 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "asddsasdasda",
+      "name": "asddsasdasda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70233238?v=4",
+      "profile": "https://github.com/asddsasdasda",
+      "contributions": [
+        "userTesting"
+      ]
     }
   ],
   "contributorsPerLine": 7,
