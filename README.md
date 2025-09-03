@@ -19,7 +19,7 @@ Check the issue to see how i implemented it
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -55,6 +55,7 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://my-portfolio-chi-ten-74.vercel.app/"><img src="https://avatars.githubusercontent.com/u/110291544?v=4?s=100" width="100px;" alt="Alessio Tegoni"/><br /><sub><b>Alessio Tegoni</b></sub></a><br /><a href="#design-alessiotegoni" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Pasta08"><img src="https://avatars.githubusercontent.com/u/76975074?v=4?s=100" width="100px;" alt="Pasta"/><br /><sub><b>Pasta</b></sub></a><br /><a href="#infra-Pasta08" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/RichLewis007"><img src="https://avatars.githubusercontent.com/u/1149213?v=4?s=100" width="100px;" alt="Rich Lewis"/><br /><sub><b>Rich Lewis</b></sub></a><br /><a href="https://github.com/MindfulLearner/dima-portfolio/commits?author=RichLewis007" title="Code">💻</a> <a href="https://github.com/MindfulLearner/dima-portfolio/commits?author=RichLewis007" title="Documentation">📖</a> <a href="https://github.com/MindfulLearner/dima-portfolio/commits?author=RichLewis007" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/asddsasdasda"><img src="https://avatars.githubusercontent.com/u/70233238?v=4?s=100" width="100px;" alt="asddsasdasda"/><br /><sub><b>asddsasdasda</b></sub></a><br /><a href="#userTesting-asddsasdasda" title="User Testing">📓</a></td>
     </tr>
   </tbody>
 </table>
