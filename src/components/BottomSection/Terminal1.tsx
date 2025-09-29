@@ -180,7 +180,7 @@ function Terminal1() {
 
     try {
 
-      const response = await fetch(`https://1hy381ch1j.execute-api.eu-west-3.amazonaws.com/default/prCallerV2`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/prCallerV2`, {
         headers: {
           "Content-Type": "application/json",
         },
