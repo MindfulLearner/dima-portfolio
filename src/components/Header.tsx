@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight, faSearch, faGear, faSignOut, faSignIn, faBell, faUser, faDownload, faTimes, faMinus, faSquare } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight, faSearch, faGear, faBell, faUser, faDownload, faTimes, faMinus, faSquare } from "@fortawesome/free-solid-svg-icons";
 import Toast from "./Toast";
 
 interface MenuDropdownProps {
