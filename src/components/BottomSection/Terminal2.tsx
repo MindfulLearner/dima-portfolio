@@ -180,7 +180,7 @@ function Terminal2() {
 
     try {
 
-      const response = await fetch(`${process.env.AWS_API_URL}`, {
+      const response = await fetch(`https://tz1fjz3yf1.execute-api.eu-west-3.amazonaws.com/default/prCallerV2`, {
         headers: {
           "Content-Type": "application/json",
         },
