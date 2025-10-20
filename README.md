@@ -19,7 +19,7 @@ Check the issue to see how i implemented it
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -59,6 +59,7 @@ Thanks goes to these wonderful people
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ebrancati"><img src="https://avatars.githubusercontent.com/u/76585562?v=4?s=100" width="100px;" alt="ebrancati"/><br /><sub><b>ebrancati</b></sub></a><br /><a href="https://github.com/MindfulLearner/dima-portfolio/commits?author=ebrancati" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Luck0511"><img src="https://avatars.githubusercontent.com/u/193778260?v=4?s=100" width="100px;" alt="Luc"/><br /><sub><b>Luc</b></sub></a><br /><a href="https://github.com/MindfulLearner/dima-portfolio/commits?author=Luck0511" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
