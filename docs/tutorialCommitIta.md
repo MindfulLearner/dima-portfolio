@@ -1,5 +1,5 @@
 
-## 🛠️ Prova Il Mio Sistema di Contribuzione GitHub PR Senza Login
+## Prova Il Mio Sistema di Contribuzione GitHub PR Senza Login
 
 Se vuoi sperimentare un flusso di contribuzione GitHub Pull Request (PR) **senza effettuare il login** e guadagnare il **Contributor Pair Badge** (se non l'hai già fatto), segui semplicemente questi passaggi:
 
@@ -15,7 +15,7 @@ Se vuoi sperimentare un flusso di contribuzione GitHub Pull Request (PR) **senza
 5. Aspetta il messaggio di conferma.
 6. Lascia un feedback onesto sia commentando la PR che aprendo una nuova issue.
 
-🌟 Se ti è piaciuta l'esperienza, sentiti libero di mettere una stella al repository aiuta davvero!
+Se ti è piaciuta l'esperienza, sentiti libero di mettere una stella al repository aiuta davvero!
 
 ## DEMO
 https://github.com/user-attachments/assets/ce8e791f-32fd-443d-89d8-893e6c4483f9
